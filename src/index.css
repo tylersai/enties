@@ -26,3 +26,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.ent-text-shadow{
+  text-shadow: rgba(0, 30, 40, 0.15) 1px 4px 10px;
+}

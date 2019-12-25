@@ -10,7 +10,7 @@ function App() {
       <section id="search">
         <Navbar/>
         <br/>
-        <h2>Search Movie</h2>
+        <h1 className="ent-text-shadow">Let's Watch Movie</h1>
       </section>
     </div>
   );
