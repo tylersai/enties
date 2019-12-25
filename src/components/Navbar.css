@@ -3,6 +3,7 @@
     padding: 5px 90px;
     align-items: center;
     justify-content: right;
+    background-image: linear-gradient(to bottom, #001e281a, #00000000);
 }
 
 .Navbar > div {
@@ -10,10 +11,11 @@
     cursor: pointer;
     font-weight: 400px;
     font-size: 1.2rem;
-    text-shadow: rgba(0, 30, 40, 0.1) 1px 4px 10px;
+    text-shadow: rgba(0, 30, 40, 0.15) 1px 4px 10px;
 }
 
 .Navbar .nav-menu{
+    padding-top: 10px;
     transition: all 100ms ease-in;
 }
 
