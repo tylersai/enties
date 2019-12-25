@@ -39,6 +39,7 @@ input, select, textarea, button{
   letter-spacing: 1px;
   
   color: var(--entblack);
+  background-color: var(--entwhite);
 }
 
 input:focus,
