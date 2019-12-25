@@ -1,19 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Axio from 'axios';
 import './App.css';
 
-import { API_END_POINT, API_KEY } from './utils/Constant';
+import { API_END_POINT, API_KEY, toQueryString } from './utils/Constant';
 
 import Navbar from './components/Navbar';
 import Search from './components/Search';
 
 function App() {
 
-  const processSearch = (obj) => {
+  const [movieList, setMovieList] = useState([]);
+
+  const processSearch = async (obj) => {
     const queryObj = {
       api_key : API_KEY
     };
     Object.assign(queryObj, obj);
-    console.log(queryObj);
+    
+    const link = API_END_POINT + '/search/movie?' + toQueryString(queryObj);
+    console.log(link);
+    const res = await Axio.get(link);
+    setMovieList(res.data.results);
   };
 
   return (
@@ -24,6 +31,15 @@ function App() {
         <h1 className="ent-text-shadow">Let's Watch Movie</h1>
         <br/>
         <Search process={processSearch} />
+        <br/>
+        {
+          movieList.map(m => (
+            <div key={m.id} className="movie-card">
+              <h3>m.title</h3>
+              <small>m.overview</small>
+            </div>
+          ))
+        }
       </section>
     </div>
   );
