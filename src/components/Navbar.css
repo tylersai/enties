@@ -20,7 +20,7 @@
 }
 
 .Navbar .nav-menu::after{
-    background-color: rgb(238, 204, 9);
+    background-color: rgb(216, 186, 19);
     content: "";
     display: block;
     bottom: 0;
@@ -32,7 +32,7 @@
 }
 
 .Navbar .nav-menu:hover{
-    color: rgb(243, 209, 16);
+    color: rgb(245, 212, 16);
     text-shadow: none;
     transition: all 200ms 50ms ease-out;
 }
