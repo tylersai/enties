@@ -35,8 +35,8 @@ function App() {
         {
           movieList.map(m => (
             <div key={m.id} className="movie-card">
-              <h3>m.title</h3>
-              <small>m.overview</small>
+              <h3>{m.title}</h3>
+              <p>{m.overview}</p>
             </div>
           ))
         }
