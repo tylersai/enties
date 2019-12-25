@@ -1,5 +1,5 @@
-export const API_END_POINT = process.env.API_END_POINT;
-export const API_KEY = process.env.API_KEY;
+export const API_END_POINT = process.env.REACT_APP_API_END_POINT;
+export const API_KEY = process.env.REACT_APP_API_KEY;
 
 export const toQueryString = (obj) => {
 

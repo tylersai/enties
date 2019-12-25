@@ -5,6 +5,7 @@
 .App > #search {
   width: 100%;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.25);
+  transition: all 300ms ease-out;
 }
 
