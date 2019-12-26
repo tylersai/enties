@@ -41,7 +41,7 @@ function App() {
           ))
         }
       </section>
-      <section>
+      <section id="result">
       </section>
     </div>
   );
