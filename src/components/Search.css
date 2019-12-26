@@ -14,21 +14,21 @@
     outline: none;
 }
 
-@media screen and (max-width:320px){
+@media only screen and (max-width:320px){
     .Search{
         width: 90%;
         padding: 10px;
     }
 }
 
-@media screen and (max-width:480px){
+@media only screen and (max-width:480px){
     .Search{
         width: 80%;
         padding: 15px;
     }
 }
 
-@media screen and (max-width:600px){
+@media only screen and (max-width:600px){
     .Search{
         width: 70%;
         padding: 20px;
