@@ -9,13 +9,15 @@
 }
 
 .App > #search {
+  height: 100vh;
   max-height: 100vh;
   background-color: rgba(0, 0, 0, 0.2);
-  transition: background-color 300ms ease-out;
-  transition: height 100ms ease-out;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 500ms ease-out;
 }
 
 .App .movie-card {
+  display: flex;
   margin-top: 10px;
   padding: 15px;
   width: 90%;
@@ -25,4 +27,13 @@
   font-size: 1.2em;
   margin: auto;
   background-color: rgb(231, 240, 245);
+}
+
+.App .movie-card > .poster{
+  height: 200px;
+  width: auto;
+}
+.App .movie-card > .description{
+  text-align: left;
+  padding: 10px;
 }
