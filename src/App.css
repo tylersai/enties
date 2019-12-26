@@ -6,13 +6,11 @@
   width: 100%;
   height: 100vh;
   max-height: 100vh;
-  background-color: var(-entwhite);
+  background-color: var(--entwhite);
+  z-index: 1;
 }
 
 .App > #search {
-  width: 100%;
-  height: 100vh;
-  max-height: 100vh;
   background-color: rgba(0, 0, 0, 0.2);
   transition: all 300ms ease-out;
   overflow: visible;
@@ -27,5 +25,7 @@
   color: var(--entblack);
   font-size: 1.2em;
   margin: auto;
-  background-image: linear-gradient(to top, #fdcbf1 0%, #fdcbf1 1%, #e6dee9 100%);
+  /* z-index: 1000; */
+  background-color: wheat;
+  /* background-image: linear-gradient(to top, #fdcbf1 0%, #fdcbf1 1%, #e6dee9 100%); */
 }
