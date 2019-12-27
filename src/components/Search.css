@@ -1,12 +1,12 @@
 .Search{
     width: 60%;
-    padding: 30px;
+    padding: 30px 25px;
     background-color: var(--entwhite);
     margin: auto;
 }
 
 .Search input{
-    width: 90%;
+    width: calc(100% - 25px);
     height: 2.5rem;
 }
 
@@ -38,6 +38,6 @@
 @media only screen and (min-width:720px){
     .Search{
         width: 60%;
-        padding: 30px;
+        padding: 30px 25px;
     }
 }
