@@ -1,22 +1,28 @@
 .Navbar{
     display: flex;
+    flex-wrap: wrap;
     padding: 5px 90px;
     align-items: center;
-    justify-content: right;
+    justify-content: space-between;
     background-image: linear-gradient(to bottom, #001e2815, #00000000);
-}
 
-.Navbar > div {
-    margin: 15px;
     cursor: pointer;
     font-weight: 400px;
     font-size: 1.2rem;
     text-shadow: rgba(0, 30, 40, 0.15) 1px 4px 10px;
 }
 
+.Navbar > div{
+    display: flex;
+}
+
 .Navbar .nav-menu{
-    padding-top: 10px;
+    margin: 15px;
     transition: all 100ms ease-in;
+}
+
+.Navbar .nav-menu > h3 {
+    margin-top: 5px;
 }
 
 .Navbar .nav-menu::after{
@@ -28,7 +34,6 @@
     margin-left: 5px;
     height: 3px;
     transition: all 100ms ease-in;
-    justify-self: center;
 }
 
 .Navbar .nav-menu:hover{
@@ -44,10 +49,8 @@
 }
 
 .Navbar > #logo {
-    position: absolute;
     font-family: 'Lobster', cursive;
     font-size: 2.5rem;
     font-weight: 400;
-    left: 0;
-    margin-left: 90px;
+    margin-left: 15px;
 }
