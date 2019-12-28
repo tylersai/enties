@@ -12,6 +12,7 @@ const Search = props => {
 
   const processSubmit = event => {
     event.preventDefault();
+    document.getElementById('query').blur();
     const obj = {
       query: input.current.value
     };

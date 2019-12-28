@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Axio from "axios";
 import "./App.css";
 
-import { API_END_POINT, API_KEY, toQueryString } from "./utils/Constant";
+import { API_END_POINT, API_KEY, toQueryString, POSTER_PATH } from "./utils/Constant";
 
 import Navbar from "./components/Navbar";
 import Search from "./components/Search";
@@ -63,7 +63,7 @@ function App() {
           <div key={m.id} className="movie-card">
             <img
               className="poster"
-              src={`https://image.tmdb.org/t/p/w500${m.poster_path}`}
+              src={ POSTER_PATH + m.poster_path}
               alt="Poster"
             />
             <div className="description">
