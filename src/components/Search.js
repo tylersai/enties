@@ -7,14 +7,7 @@ const Search = props => {
   const process = props.process;
 
   useEffect(() => {
-    const searchInputs = document.querySelector(".Search input");
-    const searchSection = document.getElementById('search');
-    searchInputs.addEventListener("focus", e => {
-        searchSection.style.backgroundColor = 'rgba(0, 0, 0, 0.35)';
-    });
-    searchInputs.addEventListener("focusout", e => {
-        searchSection.style.backgroundColor = 'rgba(0, 0, 0, 0.2)';
-    });
+    
   }, []);
 
   const processSubmit = event => {
