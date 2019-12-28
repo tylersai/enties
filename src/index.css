@@ -1,6 +1,16 @@
 :root{
   --entwhite: #fafafa;
-  --entblack: #555;
+  --entlight: #f2f2f2;
+  --entlightgray: #dadde1;
+
+  --entgray: #33373e;
+
+  --entdarkgray: #282c34;
+  --entdark: #20232a;
+  --entblack: #121212;
+
+  --reactblue: #61dafb;
+  --reactgreen: #09d3ac;
 }
 
 body {
