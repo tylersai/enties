@@ -1,5 +1,6 @@
 export const API_END_POINT = process.env.REACT_APP_API_END_POINT;
 export const API_KEY = process.env.REACT_APP_API_KEY;
+export const POSTER_PATH = process.env.REACT_APP_POSTER_PATH;
 
 export const toQueryString = (obj) => {
 
