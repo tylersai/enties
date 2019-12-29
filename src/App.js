@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import Axio from "axios";
 import "./App.css";
 
-import { API_END_POINT, API_KEY, toQueryString, POSTER_PATH } from "./utils/Constant";
+import { API_END_POINT, API_KEY, toQueryString } from "./utils/Constant";
 
 import Navbar from "./components/Navbar";
 import Search from "./components/Search";
+import ResultSection from "./components/ResultSection";
 
 function App() {
   const [movieList, setMovieList] = useState([]);
@@ -58,21 +59,8 @@ function App() {
           <div id="searchend"/>
         </div>
       </section>
-      <section id="result">
-        {movieList.map(m => (
-          <div key={m.id} className="movie-card">
-            <img
-              className="poster"
-              src={ POSTER_PATH + m.poster_path}
-              alt="Poster"
-            />
-            <div className="description">
-              <h3>{m.title}</h3>
-              <p>{m.overview}</p>
-            </div>
-          </div>
-        ))}
-      </section>
+      <ResultSection movieList={movieList}/>
+      
     </div>
   );
 }
