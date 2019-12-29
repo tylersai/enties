@@ -13,6 +13,34 @@
   --reactgreen: #09d3ac;
 }
 
+.fg {
+  transition: color 300ms ease-in;
+}
+
+.bg {
+  transition: background-color 300ms ease-in;
+}
+
+.fg1 {
+  color: var(--entwhite);
+}
+.fg2 {
+  color: var(--entlight);
+}
+.fg3 {
+  color: var(--entlightgray);
+}
+
+.bg1 {
+  background-color: var(--entblack);
+}
+.bg2 {
+  background-color: var(--entdark);
+}
+.bg3 {
+  background-color: var(--entdarkgray);
+}
+
 body {
   margin: 0;
   padding: 0;
