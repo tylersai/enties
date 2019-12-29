@@ -8,7 +8,7 @@
   --uiSwitchBgColorActive: var(--switchBgColorActive, #4ed164);
   --uiSwitchBorderColorActive: var(--switchBorderColorActive, #fff);
   --uiSwitchBorderColorFocus: var(--switchBgColorFocus, #43b556);
-  --uiSwitchButtonBgColor: var(--switchButtonBgColor, #fff);
+  --uiSwitchButtonBgColor: var(--switchButtonBgColor, #09d3ac);
 
   display: inline-block;
   position: relative;
@@ -113,12 +113,12 @@
 }
 
 .switch {
-  --switchSize: 70px;
+  --switchSize: 60px;
 }
 
 .switch_type2 {
   /* --switchBgColorActive: #e85c3f;
   --switchBgColorFocus: #d54b2e; */
-  --switchBgColorActive: #20232a;
+  --switchBgColorActive: #282c34;
   --switchBgColorFocus: #09d3ac;
 }
