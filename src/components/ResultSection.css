@@ -8,7 +8,7 @@
 
 .movie-card {
   flex: 1 1 250px;
-  margin: 20px 20px;
+  margin: 15px 20px;
   text-align: left;
   padding: 2.5vmin;
   max-height: 22vmax;
@@ -36,7 +36,7 @@
 }
 
 .movie-card .movie-desc {
-  font-size: 1.3vmax;
+  font-size: 0.8rem;
 }
 .movie-card .movie-desc p {
   margin-top: 8px;
@@ -47,8 +47,12 @@
 
 @media only screen and (min-width: 380px) {
   .movie-card {
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 2px;
+    margin-right: 2px;
+  }
+
+  .movie-card .movie-desc {
+    font-size: 0.8rem;
   }
 
   .movie-card .movie-header > .movie-poster {
@@ -64,11 +68,13 @@
     margin-left: 15px;
     margin-right: 15px;
   }
+  .movie-card .movie-desc {
+    font-size: 0.8rem;
+  }
 }
 
 @media only screen and (min-width: 720px) {
-  .movie-card {
-    margin-left: 20px;
-    margin-right: 20px;
+  .movie-card .movie-desc {
+    font-size: 0.9rem;
   }
 }
