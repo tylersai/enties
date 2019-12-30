@@ -38,9 +38,11 @@
 .movie-card .movie-desc {
   font-size: 1.3vmax;
 }
-
+.movie-card .movie-desc p {
+  margin-top: 8px;
+}
 .movie-card .movie-desc span{
-  line-height: 20px;
+  line-height: 25px;
 }
 
 @media only screen and (min-width: 380px) {

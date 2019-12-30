@@ -22,7 +22,7 @@ const ResultSection = ({ movieList }) => {
               </div>
 
               <div className="movie-desc">
-                <span>Description</span><br/>{m.overview}
+                <p><span>Description</span><br/>{m.overview}</p>
               </div>
             </div>
           ))}
