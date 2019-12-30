@@ -5,8 +5,8 @@
 
   --entgray: #33373e;
 
-  --entdarkgray: #282c34;
-  --entdark: #20232a;
+  --entdarkgray: #38393b;
+  --entdark: #1d1d27;
   --entblack: #121212;
 
   --reactblue: #61dafb;
@@ -58,7 +58,7 @@ body {
 h1, h2, h3, h4, h5, h6{
   margin: 0;
   font-weight: 400;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
 }
 
 input, select, textarea, button{

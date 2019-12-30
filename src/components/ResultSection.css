@@ -1,24 +1,85 @@
-.ResultSection {
-}
-
-.App .movie-card {
+.res-wrapper {
   display: flex;
-  margin-top: 10px;
-  padding: 15px;
-  width: 90%;
-  border: 1px solid lightgray;
-  border-radius: 10px;
-  color: var(--entblack);
-  font-size: 1.2em;
-  margin: auto;
-  background-color: rgb(231, 240, 245);
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+  padding: 5vmin;
 }
 
-.App .movie-card > .poster {
-  height: 200px;
-  width: auto;
-}
-.App .movie-card > .description {
+.movie-card {
+  flex: 1 1 250px;
+  margin: 15px 20px;
   text-align: left;
-  padding: 10px;
+  padding: 2.5vmin;
+  max-height: 25vmax;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.movie-card .movie-header {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.movie-card .movie-header > .movie-poster {
+  width: 40%;
+}
+
+.movie-card .movie-header > .movie-title {
+  width: 60%;
+  padding: 3px 0px 5px 15px;
+}
+
+.movie-card img {
+  height: auto;
+  width: 100%;
+}
+
+.movie-card .movie-desc {
+  font-size: 0.9rem;
+}
+.movie-card .movie-desc p {
+  margin-top: 8px;
+}
+.movie-card .movie-desc span{
+  line-height: 25px;
+}
+
+@media only screen and (min-width: 380px) {
+  .movie-card {
+    margin-left: 2px;
+    margin-right: 2px;
+  }
+
+  .movie-card .movie-desc {
+    font-size: 0.8rem;
+  }
+
+  .movie-card .movie-header > .movie-poster {
+    width: 30%;
+  }
+  .movie-card .movie-header > .movie-title {
+    width: 70%;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .movie-card {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  .movie-card .movie-header > .movie-poster {
+    width: 40%;
+  }
+  .movie-card .movie-header > .movie-title {
+    width: 60%;
+  }
+}
+
+
+@media only screen and (min-width: 920px) {
+  .movie-card .movie-desc {
+    font-size: 0.9rem;
+  }
 }
