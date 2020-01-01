@@ -7,13 +7,18 @@ import { API_END_POINT, API_KEY, toQueryString } from "./utils/Constant";
 import Navbar from "./components/Navbar";
 import Search from "./components/Search";
 import ResultSection from "./components/ResultSection";
+import LoadingSection from "./components/LoadingSection";
 
 function App() {
+  const [isLoading, setIsLoading] = useState(false);
   const [movieList, setMovieList] = useState([]);
 
   const processSearch = async obj => {
-    const searchend = document.getElementById("searchend").getBoundingClientRect().top;
-    document.getElementById("search").style.height = searchend + 30 + 'px';
+    setIsLoading(true);
+    const searchend = document
+      .getElementById("searchend")
+      .getBoundingClientRect().top;
+    document.getElementById("search").style.height = searchend + 30 + "px";
 
     const queryObj = {
       api_key: API_KEY
@@ -21,9 +26,9 @@ function App() {
     Object.assign(queryObj, obj);
 
     const link = API_END_POINT + "/search/movie?" + toQueryString(queryObj);
-    console.log(link);
     const res = await Axio.get(link);
     setMovieList(res.data.results);
+    setIsLoading(false);
   };
 
   return (
@@ -56,10 +61,14 @@ function App() {
           <br />
           <Search process={processSearch} />
           <br />
-          <div id="searchend"/>
+          <div id="searchend" />
         </div>
       </section>
-      <ResultSection movieList={movieList}/>
+      {isLoading ? (
+        <LoadingSection/>
+      ) : (
+        <ResultSection movieList={movieList} />
+      )}
     </div>
   );
 }
