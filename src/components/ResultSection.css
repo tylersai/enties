@@ -23,6 +23,7 @@
 
 .movie-card .movie-header > .movie-poster {
   width: 40%;
+  max-width: 30vmin;
 }
 
 .movie-card .movie-header > .movie-title {
