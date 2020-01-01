@@ -60,7 +60,6 @@ function App() {
         </div>
       </section>
       <ResultSection movieList={movieList}/>
-      
     </div>
   );
 }
