@@ -13,7 +13,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [movieList, setMovieList] = useState([]);
 
-  const processSearch = async obj => {
+  const processSearch = obj => {
     setIsLoading(true);
     const searchend = document
       .getElementById("searchend")
@@ -26,9 +26,14 @@ function App() {
     Object.assign(queryObj, obj);
 
     const link = API_END_POINT + "/search/movie?" + toQueryString(queryObj);
-    const res = await Axio.get(link);
-    setMovieList(res.data.results);
-    setIsLoading(false);
+    Axio.get(link).then( res => {
+      setMovieList(res.data.results);
+      setIsLoading(false);
+    }).catch( err => {
+      console.log(err);
+      setMovieList([]);
+      setIsLoading(false);
+    });
   };
 
   return (
