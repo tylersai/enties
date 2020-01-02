@@ -7,7 +7,6 @@ import { API_END_POINT, API_KEY, toQueryString } from "./utils/Constant";
 import Navbar from "./components/Navbar";
 import Search from "./components/Search";
 import ResultSection from "./components/ResultSection";
-import LoadingSection from "./components/LoadingSection";
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
@@ -26,14 +25,16 @@ function App() {
     Object.assign(queryObj, obj);
 
     const link = API_END_POINT + "/search/movie?" + toQueryString(queryObj);
-    Axio.get(link).then( res => {
-      setMovieList(res.data.results);
-      setIsLoading(false);
-    }).catch( err => {
-      console.log(err);
-      setMovieList([]);
-      setIsLoading(false);
-    });
+    Axio.get(link)
+      .then(res => {
+        setMovieList(res.data.results);
+        setIsLoading(false);
+      })
+      .catch(err => {
+        console.log(err);
+        setMovieList([]);
+        // setIsLoading(false);
+      });
   };
 
   return (
@@ -69,11 +70,7 @@ function App() {
           <div id="searchend" />
         </div>
       </section>
-      {isLoading ? (
-        <LoadingSection/>
-      ) : (
-        <ResultSection movieList={movieList} />
-      )}
+      <ResultSection isLoading={isLoading} movieList={movieList} />
     </div>
   );
 }
