@@ -31,6 +31,7 @@ const ResultSection = ({ isLoading, movieList }) => {
                 </div>
                 <div className="movie-title">
                   <h4>{m.title}</h4>
+                  <button className="price-tag">$19.99</button>
                 </div>
               </div>
 

@@ -34,6 +34,22 @@
   padding: 3px 0px 5px 15px;
 }
 
+.movie-card .movie-header > .movie-title > button.price-tag {
+  background-color: var(--entdark);
+  color: var(--reactgreen);
+  padding: 4px 7px;
+  margin: 8px 0px;
+  font-size: 14px;
+  border: 1px solid var(--reactgreen);
+  border-radius: 5px;
+  transition: all 100ms ease-out;
+}
+
+.movie-card .movie-header > .movie-title > button.price-tag:active {
+  color: var(--entlightgray);
+  border-color: var(--entlightgray);
+}
+
 .movie-card img {
   height: auto;
   width: 100%;
