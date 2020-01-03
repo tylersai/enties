@@ -6,12 +6,11 @@ import { POSTER_PATH } from "../utils/Constant";
 import Loading from "./Loading";
 
 const ResultSection = ({ isLoading, movieList }) => {
-
   useEffect(() => {
     const h = document.documentElement.clientHeight;
     const searchHeight = document.getElementById("search").clientHeight;
 
-    document.getElementById("result").style.minHeight = (h - searchHeight) + "px";
+    document.getElementById("result").style.minHeight = h - searchHeight + "px";
   });
 
   return (
@@ -24,7 +23,11 @@ const ResultSection = ({ isLoading, movieList }) => {
             <div key={m.id} className="movie-card bg bg2">
               <div className="movie-header">
                 <div className="movie-poster">
-                  <img src={POSTER_PATH + m.poster_path} alt="POSTER" />
+                  {m.poster_path ? (
+                    <img src={POSTER_PATH + m.poster_path} alt="POSTER" />
+                  ) : (
+                    <img src={movie} alt="POSTER" />
+                  )}
                 </div>
                 <div className="movie-title">
                   <h4>{m.title}</h4>

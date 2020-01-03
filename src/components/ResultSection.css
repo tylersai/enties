@@ -24,6 +24,7 @@
 .movie-card .movie-header > .movie-poster {
   width: 40%;
   max-width: 30vmin;
+  align-items: center;
 }
 
 .movie-card .movie-header > .movie-title {
