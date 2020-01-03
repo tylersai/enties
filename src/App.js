@@ -14,10 +14,11 @@ function App() {
 
   const processSearch = obj => {
     setIsLoading(true);
-    const searchend = document
-      .getElementById("searchend")
-      .getBoundingClientRect().top;
-    document.getElementById("search").style.height = searchend + 30 + "px";
+    // const searchend = document
+    //   .getElementById("searchend")
+    //   .getBoundingClientRect().top;
+    // document.getElementById("search").style.height = searchend + 30 + "px";
+    document.getElementById("search").style.height = "unset";
 
     const queryObj = {
       api_key: API_KEY
