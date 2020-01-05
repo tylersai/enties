@@ -17,7 +17,7 @@ const ResultSection = ({ isLoading, movieList, searchQuery }) => {
   return (
     <section className="ResultSection bg bg1" id="result">
       <div className="search-desc">
-        <h4 className="fg fg3">{isLoading ? "Searching for : " : "Showing results for : "}<span>"{searchQuery}"</span></h4>
+        <h4 className="fg fgg">{isLoading ? "Searching for : " : "Showing results for : "}<span>"{searchQuery}"</span></h4>
       </div>
       {isLoading ? (
         <Loading />
