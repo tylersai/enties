@@ -19,6 +19,7 @@
 .Navbar .nav-menu{
     position: relative;
     margin: 15px;
+    color: var(--reactgreen);
     transition: all 100ms ease-in;
 }
 
@@ -29,7 +30,7 @@
 }
 
 .Navbar .nav-menu::after{
-    background-color: rgb(216, 186, 19);
+    background-color: var(--reactblue);
     content: "";
     display: block;
     position: absolute;
@@ -37,12 +38,12 @@
     left: 50%;
     width: 0;
     margin-left: 5px;
-    height: 3px;
+    height: 2px;
     transition: all 100ms ease-in;
 }
 
 .Navbar .nav-menu:hover{
-    color: rgb(245, 212, 16);
+    color: var(--reactblue);
     text-shadow: none;
     transition: all 200ms 50ms ease-out;
 }
