@@ -4,6 +4,7 @@ import movie from "../assets/movie-dark.svg";
 
 import { POSTER_PATH } from "../utils/Constant";
 import Loading from "./Loading";
+import Rating from "./Rating";
 
 const ResultSection = ({ isLoading, movieList }) => {
   useEffect(() => {
@@ -33,6 +34,9 @@ const ResultSection = ({ isLoading, movieList }) => {
                   <h4>{m.title}</h4>
                   <div className="year-genre">{m.release_date ? new Date(m.release_date).getFullYear():null} &bull; Romance</div>
                   <button className="price-tag">$19.99</button>
+                  <div className="movie-rating">
+                    <Rating voteCount={m.vote_count ? m.vote_count:0} />
+                  </div>
                 </div>
               </div>
 

@@ -1,0 +1,28 @@
+.Rating {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+}
+
+.Rating > div{
+    padding: 3px;
+}
+
+.Rating > div.star{
+    width: 11px;
+}
+
+.Rating > div.vote-count {
+    font-size: 14px;
+    font-weight: 200;
+    color: var(--entlightgray);
+    flex-grow: 1;
+}
+
+.Rating img{
+    max-width: 100%;
+    max-height: auto;
+}
