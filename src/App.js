@@ -11,9 +11,11 @@ import ResultSection from "./components/ResultSection";
 function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [movieList, setMovieList] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const processSearch = obj => {
     setIsLoading(true);
+    setSearchQuery(obj.query);
     // const searchend = document
     //   .getElementById("searchend")
     //   .getBoundingClientRect().top;
@@ -34,7 +36,7 @@ function App() {
       .catch(err => {
         console.log(err);
         setMovieList([]);
-        // setIsLoading(false);
+        setIsLoading(false);
       });
   };
 
@@ -71,7 +73,7 @@ function App() {
           <div id="searchend" />
         </div>
       </section>
-      <ResultSection isLoading={isLoading} movieList={movieList} />
+      <ResultSection isLoading={isLoading} movieList={movieList} searchQuery={searchQuery} />
     </div>
   );
 }

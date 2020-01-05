@@ -6,7 +6,7 @@ import { POSTER_PATH } from "../utils/Constant";
 import Loading from "./Loading";
 import Rating from "./Rating";
 
-const ResultSection = ({ isLoading, movieList }) => {
+const ResultSection = ({ isLoading, movieList, searchQuery }) => {
   useEffect(() => {
     const h = document.documentElement.clientHeight;
     const searchHeight = document.getElementById("search").clientHeight;
@@ -16,6 +16,9 @@ const ResultSection = ({ isLoading, movieList }) => {
 
   return (
     <section className="ResultSection bg bg1" id="result">
+      <div className="search-desc">
+        <h4 className="fg fg3">{isLoading ? "Searching for : " : "Showing results for : "}<span>"{searchQuery}"</span></h4>
+      </div>
       {isLoading ? (
         <Loading />
       ) : movieList.length !== 0 ? (
@@ -32,10 +35,15 @@ const ResultSection = ({ isLoading, movieList }) => {
                 </div>
                 <div className="movie-title">
                   <h4>{m.title}</h4>
-                  <div className="year-genre">{m.release_date ? new Date(m.release_date).getFullYear():null} &bull; Romance</div>
+                  <div className="year-genre">
+                    {m.release_date
+                      ? new Date(m.release_date).getFullYear()
+                      : null}{" "}
+                    &bull; Romance
+                  </div>
                   <button className="price-tag">$19.99</button>
                   <div className="movie-rating">
-                    <Rating voteCount={m.vote_count ? m.vote_count:0} />
+                    <Rating voteCount={m.vote_count ? m.vote_count : 0} />
                   </div>
                 </div>
               </div>
