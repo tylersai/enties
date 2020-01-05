@@ -1,12 +1,18 @@
 import React, { useEffect } from "react";
 import "./ResultSection.css";
 import movie from "../assets/movie-dark.svg";
+import cross from "../assets/cross.svg";
 
 import { POSTER_PATH } from "../utils/Constant";
 import Loading from "./Loading";
 import Rating from "./Rating";
 
-const ResultSection = ({ isLoading, movieList, searchQuery, clearSearchQuery }) => {
+const ResultSection = ({
+  isLoading,
+  movieList,
+  searchQuery,
+  clearSearchQuery
+}) => {
   useEffect(() => {
     const h = document.documentElement.clientHeight;
     const searchHeight = document.getElementById("search").clientHeight;
@@ -22,6 +28,9 @@ const ResultSection = ({ isLoading, movieList, searchQuery, clearSearchQuery }) 
             {isLoading ? "Searching for : " : "Showing results for : "}
             <span>"{searchQuery}"</span>
           </h4>
+          <button className="fg fg2 bg bg2 clear-search">
+            <img src={cross} alt="x"/>
+          </button>
         </div>
       ) : null}
       {isLoading ? (
