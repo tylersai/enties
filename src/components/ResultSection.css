@@ -27,7 +27,6 @@
   margin: 15px 20px;
   text-align: left;
   padding: 2.5vmin;
-  max-height: 25vmax;
   overflow: hidden;
   border-radius: 5px;
   cursor: default;
@@ -89,8 +88,13 @@
 .movie-card .movie-desc {
   font-size: 0.9rem;
 }
-.movie-card .movie-desc p {
-  margin-top: 8px;
+.movie-card .movie-desc p{
+  margin: 8px 3px 3px 3px;
+  overflow: hidden;
+  position: relative;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
 }
 .movie-card .movie-desc span{
   line-height: 25px;
