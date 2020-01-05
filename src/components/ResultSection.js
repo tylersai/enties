@@ -72,7 +72,7 @@ const ResultSection = ({
             </div>
           ))}
         </div>
-      ) : null}
+      ) : <div className="fg fgg not-found">NOT FOUND</div>}
     </section>
   );
 };

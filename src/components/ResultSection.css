@@ -17,6 +17,7 @@
   font-weight: 600;
   letter-spacing: 2px;
   color: var(--reactgreen);
+  opacity: 0.8;
 }
 
 .ResultSection > .search-desc > button.clear-search{
@@ -130,6 +131,14 @@
 }
 .movie-card .movie-desc span{
   line-height: 25px;
+}
+
+.ResultSection .not-found{
+  font-size: 22px;
+  font-weight: 600px;
+  letter-spacing: 2px;
+  margin-top: 100px;
+  cursor: default;
 }
 
 @media only screen and (min-width: 380px) {
