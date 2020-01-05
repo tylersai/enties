@@ -65,10 +65,6 @@
   border-color: var(--entlightgray);
 }
 
-.movie-card .movie-header > .movie-title > div.movie-rating {
-
-}
-
 .movie-card .movie-poster > img {
   height: auto;
   width: 100%;
