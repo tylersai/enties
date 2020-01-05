@@ -6,7 +6,7 @@ import { POSTER_PATH } from "../utils/Constant";
 import Loading from "./Loading";
 import Rating from "./Rating";
 
-const ResultSection = ({ isLoading, movieList, searchQuery }) => {
+const ResultSection = ({ isLoading, movieList, searchQuery, clearSearchQuery }) => {
   useEffect(() => {
     const h = document.documentElement.clientHeight;
     const searchHeight = document.getElementById("search").clientHeight;
@@ -16,9 +16,14 @@ const ResultSection = ({ isLoading, movieList, searchQuery }) => {
 
   return (
     <section className="ResultSection bg bg1" id="result">
-      <div className="search-desc">
-        <h4 className="fg fgg">{isLoading ? "Searching for : " : "Showing results for : "}<span>"{searchQuery}"</span></h4>
-      </div>
+      {searchQuery ? (
+        <div className="search-desc">
+          <h4 className="fg fgg">
+            {isLoading ? "Searching for : " : "Showing results for : "}
+            <span>"{searchQuery}"</span>
+          </h4>
+        </div>
+      ) : null}
       {isLoading ? (
         <Loading />
       ) : movieList.length !== 0 ? (
