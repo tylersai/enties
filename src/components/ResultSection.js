@@ -31,6 +31,7 @@ const ResultSection = ({ isLoading, movieList }) => {
                 </div>
                 <div className="movie-title">
                   <h4>{m.title}</h4>
+                  <div className="year-genre">{m.release_date ? new Date(m.release_date).getFullYear():null} &bull; Romance</div>
                   <button className="price-tag">$19.99</button>
                 </div>
               </div>
