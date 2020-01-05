@@ -13,7 +13,7 @@ const Rating = ({ voteCount, voteAverage }) => {
       <div className="star"><img src={starFull} alt="S"/></div>
       <div className="star"><img src={starHalf} alt="S"/></div>
       <div className="star"><img src={starEmpty} alt="S"/></div>
-      <div className="vote-count">({voteCount})</div>
+      <div className="vote-count fg fg3">({voteCount})</div>
     </div>
   );
 };

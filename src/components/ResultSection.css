@@ -94,11 +94,9 @@
   font-size: 12px;
   font-weight: 200;
   margin: 5px 0px 2px 0px;
-  color: var(--entlightgray);
 }
 
 .movie-card .movie-header > .movie-title > button.price-tag {
-  background-color: var(--entdark);
   color: var(--reactgreen);
   padding: 4px 7px;
   margin: 8px 0px;

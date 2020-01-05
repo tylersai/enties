@@ -48,13 +48,13 @@ const ResultSection = ({
                   )}
                 </div>
                 <div className="movie-title">
-                  <h4>{m.title}</h4>
-                  <div className="year-genre">
+                  <h4 className="fg fg1">{m.title}</h4>
+                  <div className="fg fg3 year-genre">
                     {m.release_date
                       ? new Date(m.release_date).getFullYear() + " \u2022"
                       : null} Romance
                   </div>
-                  <button className="price-tag">$19.99</button>
+                  <button className="price-tag bg bg2">$19.99</button>
                   <div className="movie-rating">
                     <Rating voteCount={m.vote_count ? m.vote_count : 0} />
                   </div>
@@ -62,7 +62,7 @@ const ResultSection = ({
               </div>
 
               <div className="movie-desc">
-                <p>
+                <p className="fg fg2">
                   <span>Description</span>
                   <br />
                   {m.overview}
