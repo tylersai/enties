@@ -11,6 +11,7 @@
 .ResultSection > .search-desc > h4 > span{
   font-weight: 600;
   letter-spacing: 2px;
+  color: var(--reactgreen);
 }
 
 .ResultSection .res-wrapper {
