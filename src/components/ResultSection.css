@@ -28,11 +28,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 250ms ease-out;
+  -webkit-transition: all 100ms ease-out;;
+  -o-transition: all 100ms ease-out;
+  transition: all 100ms ease-out;
 }
 
 .ResultSection > .search-desc > button.clear-search:active{
   background-color: var(--reactred);
+  -webkit-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  transform: scale(0.9);
 }
 
 .ResultSection > .search-desc > button.clear-search > img {

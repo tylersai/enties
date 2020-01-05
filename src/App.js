@@ -13,6 +13,13 @@ function App() {
   const [movieList, setMovieList] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
 
+  const clearSearchQuery = () => {
+    setSearchQuery("");
+    setMovieList([]);
+    setIsLoading(false);
+    document.getElementById("search").style.height = "100vh";
+  };
+
   const processSearch = obj => {
     setIsLoading(true);
     setSearchQuery(obj.query);
@@ -73,7 +80,14 @@ function App() {
           <div id="searchend" />
         </div>
       </section>
-      <ResultSection isLoading={isLoading} movieList={movieList} searchQuery={searchQuery} />
+      {searchQuery ? (
+        <ResultSection
+          isLoading={isLoading}
+          movieList={movieList}
+          searchQuery={searchQuery}
+          clearSearchQuery={clearSearchQuery}
+        />
+      ) : null}
     </div>
   );
 }
