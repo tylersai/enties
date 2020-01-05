@@ -20,9 +20,10 @@ const Search = props => {
   };
 
   return (
-    <div className="Search">
+    <div className="bg bg3 Search">
       <form onSubmit={processSubmit}>
         <input
+          className="bg bg3 fg fg3"
           name="query"
           id="query"
           type="text"

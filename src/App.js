@@ -73,7 +73,7 @@ function App() {
         <div id="searchwidgets">
           <Navbar />
           <br />
-          <h1 className="ent-text-shadow">Let's Watch Movie</h1>
+          <h1 className="fg fg2 ent-text-shadow">Let's Watch Movie</h1>
           <br />
           <Search process={processSearch} />
           <br />
