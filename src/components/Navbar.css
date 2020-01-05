@@ -122,3 +122,18 @@
     }
 
 }
+
+@media (hover:none) {
+    .Navbar .nav-menu:hover{
+        color: var(--reactgreen);
+        text-shadow: rgba(0, 30, 40, 0.15) 1px 4px 10px;
+        transition: none;
+    }
+    
+    .Navbar .nav-menu:hover::after{
+        width: 0;
+        left: 50%;
+        margin-left:5px;
+        transition: none;
+    }
+}
