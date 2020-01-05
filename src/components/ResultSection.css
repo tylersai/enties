@@ -28,6 +28,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background-color 250ms ease-out;
+}
+
+.ResultSection > .search-desc > button.clear-search:active{
+  background-color: var(--reactred);
 }
 
 .ResultSection > .search-desc > button.clear-search > img {
