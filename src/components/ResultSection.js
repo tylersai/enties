@@ -28,8 +28,11 @@ const ResultSection = ({
             {isLoading ? "Searching for : " : "Showing results for : "}
             <span>"{searchQuery}"</span>
           </h4>
-          <button onClick={clearSearchQuery} className="fg fg2 bg bg2 clear-search">
-            <img src={cross} alt="x"/>
+          <button
+            onClick={clearSearchQuery}
+            className="fg fg2 bg bg2 clear-search"
+          >
+            <img src={cross} alt="x" />
           </button>
         </div>
       ) : null}
@@ -52,11 +55,17 @@ const ResultSection = ({
                   <div className="fg fg3 year-genre">
                     {m.release_date
                       ? new Date(m.release_date).getFullYear() + " \u2022"
-                      : null} Romance
+                      : null}{" "}
+                    Romance
                   </div>
                   <button className="price-tag bg bg2">$19.99</button>
                   <div className="movie-rating">
-                    <Rating voteCount={m.vote_count ? m.vote_count : 0} />
+                    {m.vote_average && m.vote_count ? (
+                      <Rating
+                        voteAverage={m.vote_average}
+                        voteCount={m.vote_count}
+                      />
+                    ) : null}
                   </div>
                 </div>
               </div>
@@ -71,7 +80,9 @@ const ResultSection = ({
             </div>
           ))}
         </div>
-      ) : <div className="fg fgg not-found">NOT FOUND</div>}
+      ) : (
+        <div className="fg fgg not-found">NOT FOUND</div>
+      )}
     </section>
   );
 };
