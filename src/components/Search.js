@@ -6,17 +6,17 @@ const Search = props => {
 
   const process = props.process;
 
-  useEffect(() => {
-    
-  }, []);
+  useEffect(() => {}, []);
 
   const processSubmit = event => {
     event.preventDefault();
-    document.getElementById('query').blur();
-    const obj = {
-      query: input.current.value
-    };
-    process(obj);
+    document.getElementById("query").blur();
+    if (input.current.value.trim()) {
+      const obj = {
+        query: input.current.value.trim()
+      };
+      process(obj);
+    }
   };
 
   return (
