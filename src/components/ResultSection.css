@@ -23,6 +23,7 @@
 }
 
 .ResultSection > .search-desc > button.clear-search{
+  margin-right: 20px;
   padding: 0 !important;
   width: 1.6rem;
   height: 1.6rem;
@@ -145,6 +146,8 @@
 @media only screen and (min-width: 380px) {
   .movie-card, .ResultSection > .search-desc > h4 {
     margin-left: 2px;
+  }
+  .movie-card, .ResultSection > .search-desc > button.clear-search {
     margin-right: 2px;
   }
 
@@ -163,6 +166,8 @@
 @media only screen and (min-width: 600px) {
   .movie-card, .ResultSection > .search-desc > h4 {
     margin-left: 15px;
+  }
+  .movie-card, .ResultSection > .search-desc > button.clear-search {
     margin-right: 15px;
   }
 
