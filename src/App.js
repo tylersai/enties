@@ -69,6 +69,18 @@ function App() {
       });
   };
 
+  const changeTheme = e => {
+    const rootStyle = getComputedStyle(document.documentElement);
+    
+    const black = rootStyle.getPropertyValue('--bokehblack');
+    const white = rootStyle.getPropertyValue('--bokehwhite');
+
+    document.documentElement.style.setProperty('--bokehblack', white);
+    document.documentElement.style.setProperty('--bokehwhite', black);
+    
+    console.log(black, white);
+  }
+
   return (
     <div className="App">
       <section id="search" className="background">
@@ -99,6 +111,7 @@ function App() {
           </h1>
           <Search process={processSearch} />
           <br />
+          <button onClick={changeTheme}>Change Theme</button>
           <div id="searchend" />
         </div>
       </section>
