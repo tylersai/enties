@@ -105,6 +105,7 @@ code {
 .background {
   background: var(--bokehblack);
   position: relative;
+  transition: background 300ms ease-out;
 }
 
 .background > span {

@@ -13,11 +13,33 @@ function App() {
   const [movieList, setMovieList] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
 
-  const clearSearchQuery = () => {
+  const resetEverything = () => {
     setSearchQuery("");
     setMovieList([]);
     setIsLoading(false);
     document.getElementById("search").style.height = "100vh";
+  };
+
+  const clearSearchQuery = () => {
+    try {
+      document.getElementById("result").animate(
+        [
+          {
+            opacity: 1,
+            transform: "translateY(0)"
+          },
+          {
+            opacity: 0,
+            transform: "translateY(10vh)"
+          }
+        ],
+        200
+      ).onfinish = () => {
+        resetEverything();
+      };
+    } catch {
+      resetEverything();
+    }
   };
 
   const processSearch = obj => {
@@ -72,7 +94,9 @@ function App() {
         <span />
         <div id="searchwidgets">
           <Navbar />
-          <h1 className="fg fg2 ent-text-shadow" id="lets-watch-movie">Let's Watch Movie</h1>
+          <h1 className="fg fg2 ent-text-shadow" id="lets-watch-movie">
+            Let's Watch Movie
+          </h1>
           <Search process={processSearch} />
           <br />
           <div id="searchend" />
