@@ -11,12 +11,7 @@ const Search = props => {
   const processSubmit = event => {
     event.preventDefault();
     document.getElementById("query").blur();
-    if (input.current.value.trim()) {
-      const obj = {
-        query: input.current.value.trim()
-      };
-      process(obj);
-    }
+    process(input.current.value.trim().replace(" ","+"));
   };
 
   return (

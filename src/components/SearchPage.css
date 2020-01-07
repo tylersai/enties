@@ -1,11 +1,11 @@
-.ResultSection > .search-desc {
+.SearchPage > .search-desc {
   padding: 5vmin 5vmin 1vmin 5vmin;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.ResultSection > .search-desc > h4{
+.SearchPage > .search-desc > h4{
   text-align: left;
   margin-left: 20px;
   letter-spacing: 1px;
@@ -13,7 +13,7 @@
   overflow: ellipsis;
 }
 
-.ResultSection > .search-desc > h4 > span{
+.SearchPage > .search-desc > h4 > span{
   font-weight: 600;
   letter-spacing: 2px;
   color: var(--reactgreen);
@@ -22,7 +22,7 @@
   line-height: 1.5rem;
 }
 
-.ResultSection > .search-desc > button.clear-search{
+.SearchPage > .search-desc > button.clear-search{
   margin-right: 20px;
   padding: 0 !important;
   width: 1.6rem;
@@ -37,20 +37,20 @@
   transition: all 100ms ease-out;
 }
 
-.ResultSection > .search-desc > button.clear-search:active{
+.SearchPage > .search-desc > button.clear-search:active{
   background-color: var(--reactred);
   -webkit-transform: scale(0.9);
   -ms-transform: scale(0.9);
   transform: scale(0.9);
 }
 
-.ResultSection > .search-desc > button.clear-search > img {
+.SearchPage > .search-desc > button.clear-search > img {
   width: 0.8rem;
   height: 0.8rem;
   display: block;
 }
 
-.ResultSection .res-wrapper {
+.SearchPage .res-wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -58,7 +58,7 @@
   padding: 5vmin;
 }
 
-.ResultSection .not-found{
+.SearchPage .not-found{
   font-size: 22px;
   font-weight: 600px;
   letter-spacing: 2px;
@@ -68,19 +68,19 @@
 }
 
 @media only screen and (min-width: 380px) {
-  .ResultSection > .search-desc > h4 {
+  .SearchPage > .search-desc > h4 {
     margin-left: 2px;
   }
-  .ResultSection > .search-desc > button.clear-search {
+  .SearchPage > .search-desc > button.clear-search {
     margin-right: 2px;
   }
 }
 
 @media only screen and (min-width: 600px) {
-  .ResultSection > .search-desc > h4 {
+  .SearchPage > .search-desc > h4 {
     margin-left: 15px;
   }
-  .ResultSection > .search-desc > button.clear-search {
+  .SearchPage > .search-desc > button.clear-search {
     margin-right: 15px;
   }
 

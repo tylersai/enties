@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Axio from "axios";
 import "./App.css";
 
@@ -6,7 +7,7 @@ import { API_END_POINT, API_KEY, toQueryString } from "./utils/Constant";
 
 import Navbar from "./components/Navbar";
 import Search from "./components/Search";
-import ResultSection from "./components/ResultSection";
+import SearchPage from "./components/SearchPage";
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
@@ -103,7 +104,7 @@ function App() {
         </div>
       </section>
       {searchQuery ? (
-        <ResultSection
+        <SearchPage
           isLoading={isLoading}
           movieList={movieList}
           searchQuery={searchQuery}
