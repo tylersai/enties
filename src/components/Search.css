@@ -8,6 +8,7 @@
 .Search input{
     width: calc(100% - 25px);
     height: 2rem;
+    color: var(--reactgreen);
 }
 
 .Search #query{

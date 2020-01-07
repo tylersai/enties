@@ -23,7 +23,7 @@ const Search = props => {
     <div className="bg bg3 Search ent-shadow">
       <form onSubmit={processSubmit}>
         <input
-          className="bg bg3 fg fg3"
+          className="bg bg3"
           name="query"
           id="query"
           type="text"
