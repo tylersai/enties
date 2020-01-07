@@ -34,3 +34,7 @@
     display: flex;
     padding: 3vmin;
 }
+
+.DiscoverSection > div.discover-list > div.list-header > img {
+    transform: rotate(90deg);
+}
