@@ -1,18 +1,30 @@
 .Search{
     width: 60%;
-    padding: 30px 25px;
+    height: auto;
     margin: auto;
+    padding: 0;
     border-bottom: 3px solid var(--reactgreen);
+    display: flex;
+    align-items: stretch;
+    overflow-x: hidden;
+}
+
+.Search > form {
+    flex-grow: 1;
+    display: flex;
+    align-items: stretch;
+    margin: 0;
+    padding: 0;
 }
 
 .Search input{
-    width: calc(100% - 25px);
-    height: 2rem;
+    /* width: calc(100% - 25px);
+    height: 2rem; */
+    margin: 0px;
+    padding: 30px 25px;
+    flex-grow: 1;
+    border-radius: 0;
     color: var(--reactgreen);
-}
-
-.Search #query{
-    outline: none;
 }
 
 .Search #query::-webkit-input-placeholder {
@@ -26,27 +38,23 @@
 @media only screen and (min-width:320px){
     .Search{
         width: 90%;
-        padding: 20px 10px;
     }
 }
 
 @media only screen and (min-width:480px){
     .Search{
         width: 80%;
-        padding: 20px 15px;
     }
 }
 
 @media only screen and (min-width:600px){
     .Search{
         width: 70%;
-        padding: 25px;
     }
 }
 
 @media only screen and (min-width:720px){
     .Search{
         width: 60%;
-        padding: 30px 25px;
     }
 }
