@@ -7,7 +7,7 @@ import Rating from "./Rating";
 
 const MovieCard = ({ m }) => {
   return (
-    <div className="movie-card bg bg2">
+    <div className="movie-card bg bg2 ent-shadow">
       <div className="movie-header">
         <div className="movie-poster">
           {m.poster_path ? (
