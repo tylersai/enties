@@ -21,6 +21,7 @@ const ThemeButton = props => {
     swapStyle('--entdarkgray', '--entlightgray');
 
     swapStyle('--blackshadow', '--whiteshadow');
+    swapStyle('--black', '--white');
   }
 
   return (

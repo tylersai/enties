@@ -18,6 +18,9 @@
 
   --blackshadow: black;
   --whiteshadow: #919fa7;
+
+  --black: #000;
+  --white: #fff;
 }
 
 .fg {
@@ -40,6 +43,9 @@
 .fgg {
   color: var(--entgray);
 }
+.fg4 {
+  color: var(--black);
+}
 
 .bg1 {
   background-color: var(--entblack);
@@ -52,6 +58,9 @@
 }
 .bgg {
   background-color: var(--entgray);
+}
+.bg4 {
+  background-color: var(--black);
 }
 
 body {

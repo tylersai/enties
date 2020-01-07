@@ -4,6 +4,7 @@ import "./HomePage.css";
 
 import Navbar from "./Navbar";
 import Search from "./Search";
+import DiscoverSection from "./DiscoverSection";
 
 function HomePage() {
 
@@ -42,6 +43,7 @@ function HomePage() {
           <Search process={processSearch} />
         </div>
       </section>
+      <DiscoverSection/>
     </Fragment>
   );
 }
