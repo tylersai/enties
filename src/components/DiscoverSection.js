@@ -5,7 +5,7 @@ import trend from "../assets/trend.svg";
 
 const DiscoverSection = () => {
     return (
-        <section id="discover" className="DiscoverSection bg bg4">
+        <section id="discover" className="DiscoverSection bg bg1">
             <br/><br/>
             <div className="list discover-list">
                 <div className="list-header bg bg3">
