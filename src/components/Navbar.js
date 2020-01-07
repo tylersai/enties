@@ -1,11 +1,17 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import "./Navbar.css";
 import ThemeButton from "./ThemeButton";
 
 const Navbar = props => {
+
+  const history = useHistory();
+
+  const routeTo = () => history.push("/");
+
   return (
     <nav className="Navbar">
-      <div id="logo" className="fg fg1">Enties</div>
+      <div onClick={routeTo} id="logo" className="fg fg1">Enties</div>
       <div className="nav-menu-group">
         <ThemeButton className="nav-menu"/>
         <div className="nav-menu">
