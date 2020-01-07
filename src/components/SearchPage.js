@@ -16,7 +16,6 @@ const SearchPage = props => {
 
   const queryParams = queryString.parse(props.location.search);
   const searchQuery = queryParams.q ? queryParams.q.replace("+", " ").trim() : "";
-  console.log(searchQuery);
 
   const [isLoading, setIsLoading] = useState(false);
   const [movieList, setMovieList] = useState([]);
@@ -27,9 +26,8 @@ const SearchPage = props => {
 
       const queryObj = {
         api_key: API_KEY,
-        query: encodeURIComponent(searchQuery)
+        query: searchQuery
       };
-      console.log(queryObj);
 
       const link = API_END_POINT + "/search/movie?" + toQueryString(queryObj);
       Axio.get(link)
