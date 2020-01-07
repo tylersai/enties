@@ -2,6 +2,7 @@
     width: 60%;
     padding: 30px 25px;
     margin: auto;
+    border-bottom: 3px solid var(--reactgreen);
 }
 
 .Search input{
