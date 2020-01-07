@@ -37,12 +37,24 @@
   font-size: 14px;
   border: 1px solid var(--reactgreen);
   border-radius: 5px;
-  transition: all 100ms ease-out;
+  transition: all 150ms ease-out;
+}
+
+.movie-card .movie-header > .movie-title > button.price-tag:hover {
+  background-color: var(--reactgreen);
+  color: var(--entdark);
 }
 
 .movie-card .movie-header > .movie-title > button.price-tag:active {
-  color: var(--entlightgray);
-  border-color: var(--entlightgray);
+  color: var(--entdarkgray);
+  border-color: var(--entdarkgray);
+}
+
+@media (hover:none){
+  .movie-card .movie-header > .movie-title > button.price-tag:hover {
+    color: var(--reactgreen);
+    background-color: inherit;
+  }
 }
 
 .movie-card .movie-poster > img {
