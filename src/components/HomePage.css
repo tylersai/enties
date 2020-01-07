@@ -1,0 +1,17 @@
+.App > #search {
+  height: 100vh;
+  max-height: 100vh;
+  overflow-y: hidden;
+}
+
+.App > #search > #searchwidgets {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.App > #search #lets-watch-movie {
+  margin-top: 12vh;
+  margin-bottom: 4vh;
+  cursor: default;
+}

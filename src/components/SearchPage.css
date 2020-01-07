@@ -1,3 +1,18 @@
+.App > #result {
+  animation: popup 200ms ease-out;
+}
+
+@keyframes popup {
+  0%{
+    opacity: 0;
+    transform: translateY(15vh);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .SearchPage > .search-desc {
   padding: 5vmin 5vmin 1vmin 5vmin;
   display: flex;
