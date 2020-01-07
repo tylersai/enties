@@ -24,9 +24,15 @@
 }
 
 .Navbar .nav-menu > h3 {
-    margin-top: 10px;
+    margin-top: 8px;
     margin-bottom: 5px;
     text-align: center;
+    transition: all 200ms ease-out;
+}
+.Navbar .nav-menu > h3:active {
+    color: var(--reactblue);
+    transform: scale(0.95);
+    transition: all 200ms ease-in;
 }
 
 .Navbar .nav-menu::after{
