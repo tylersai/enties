@@ -28,7 +28,7 @@ const ResultSection = ({
           </h4>
           <button
             onClick={clearSearchQuery}
-            className="fg fg2 bg bg2 clear-search"
+            className="fg fg2 bg bg3 clear-search"
           >
             <img src={cross} alt="x" />
           </button>
