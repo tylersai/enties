@@ -1,3 +1,7 @@
+.SearchPage {
+  min-height: 100vh;
+}
+
 .SearchPage > .search-desc {
   padding: 5vmin 5vmin 1vmin 5vmin;
   display: flex;
