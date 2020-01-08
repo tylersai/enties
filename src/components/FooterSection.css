@@ -1,7 +1,7 @@
 .FooterSection {
     max-width: calc(100% - 10vmax);
     text-align: left;
-    min-height: 50vh;
+    min-height: 42vh;
     padding: 5vmax;
     z-index: 5;
 }
