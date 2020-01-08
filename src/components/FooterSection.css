@@ -21,7 +21,7 @@
     padding-top: 40px;
 }
 
-.FooterSection .footer-wrapper > div > h3 {
+.FooterSection .footer-wrapper > div > h4 {
     font-weight: 800;
     text-transform: uppercase;
     color: var(--entgray);
@@ -34,7 +34,7 @@
     white-space: nowrap;
     margin: 7px 3px;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 16px;
     letter-spacing: 1px;
     cursor: default;
     color: var(--entlightgray);
@@ -47,7 +47,7 @@
 
 .footer-link:active {
     color: var(--reactgreen);
-    transform: scale(0.75);
+    transform: scale(0.8);
 }
 
 @media (hover:none){

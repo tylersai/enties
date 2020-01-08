@@ -10,13 +10,13 @@ const FooterSection = () => {
           <div className="fg fgg">Entertainment website for movie geeks!</div>
         </div>
         <div>
-          <h3>company</h3>
+          <h4>company</h4>
           <div><span className="footer-link">About</span></div>
           <div><span className="footer-link">Jobs</span></div>
           <div><span className="footer-link">Contact Us</span></div>
         </div>
         <div>
-          <h3>community</h3>
+          <h4>community</h4>
           <div><span className="footer-link">For Enties</span></div>
           <div><span className="footer-link">For Developers</span></div>
           <div><span className="footer-link">Brand</span></div>
@@ -24,7 +24,7 @@ const FooterSection = () => {
           <div><span className="footer-link">Vendor</span></div>
         </div>
         <div>
-          <h3>useful links</h3>
+          <h4>useful links</h4>
           <div><span className="footer-link">Help</span></div>
           <div><span className="footer-link">Countries</span></div>
           <div><span className="footer-link">Free Mobile App</span></div>
