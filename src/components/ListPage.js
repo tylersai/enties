@@ -7,6 +7,7 @@ import cross from "../assets/cross.svg";
 
 import { API_END_POINT, API_KEY } from "../utils/Constant";
 import Loading from "./Loading";
+import ThemeButton from "./ThemeButton";
 import MovieCardList from "./MovieCardList";
 
 const ListPage = ({ link, title }) => {
@@ -58,7 +59,8 @@ const ListPage = ({ link, title }) => {
     <section className="ListPage bg bg1 animate-popup" id="result">
       <div className="title-bar">
         <h2>{title}</h2>
-        <button onClick={closePage} className="fg fg2 bg bg2 close-page">
+        <ThemeButton/>
+        <button onClick={closePage} className="fg fg2 close-page">
           <img src={cross} alt="x" />
         </button>
       </div>
