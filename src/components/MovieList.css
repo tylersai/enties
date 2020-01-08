@@ -24,6 +24,31 @@ div.list > div.list-header > h2 {
   text-align: left;
   margin: 2vmin;
   color: var(--reactgreen);
+  flex-grow: 1;
+}
+
+div.list > div.list-header > a {
+  text-align: right;
+  justify-self: flex-end;
+  margin: 2vmin;
+  color: var(--reactgreen);
+  text-decoration: none;
+  -webkit-tap-highlight-color: none;
+  font-weight: 200;
+  letter-spacing: normal;
+  display: flex;
+  align-items: center;
+}
+
+div.list > div.list-header > a > h4 {
+  white-space: nowrap;
+  font-weight: 300;
+  letter-spacing: normal;
+  margin-right: 5px;
+}
+div.list > div.list-header > a > img {
+  height: 0.9rem;
+  width: auto;
 }
 
 div.list > div.list-body {
