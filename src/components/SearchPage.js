@@ -8,7 +8,7 @@ import cross from "../assets/cross.svg";
 
 import { API_END_POINT, API_KEY, toQueryString } from "../utils/Constant";
 import Loading from "./Loading";
-import MovieCard from "./MovieCard";
+import MovieCardList from "./MovieCardList";
 
 const SearchPage = props => {
 
@@ -84,17 +84,7 @@ const SearchPage = props => {
           </button>
         </div>
       ) : null}
-      {isLoading ? (
-        <Loading />
-      ) : movieList.length !== 0 ? (
-        <div className="res-wrapper">
-          {movieList.map(m => (
-            <MovieCard key={m.id} m={m} />
-          ))}
-        </div>
-      ) : (
-        <div className="fg fgg not-found">NOT FOUND</div>
-      )}
+      {isLoading ? <Loading />: <MovieCardList movieList={movieList}/>}
     </section>
   );
 };

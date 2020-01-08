@@ -19,6 +19,7 @@
 .FooterSection .footer-wrapper > div {
     flex: 1 1 250px;
     padding-top: 40px;
+    padding-left: 10px;
 }
 
 .FooterSection .footer-wrapper > div > h4 {

@@ -1,0 +1,73 @@
+.ListPage {
+  min-height: 100vh;
+}
+
+.ListPage > .search-desc {
+  padding: 5vmin 5vmin 1vmin 5vmin;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ListPage > .search-desc > h4 {
+  text-align: left;
+  margin-left: 20px;
+  letter-spacing: 1px;
+  flex-grow: 1;
+  overflow: ellipsis;
+}
+
+.ListPage > .search-desc > h4 > span {
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--reactgreen);
+  opacity: 0.75;
+  white-space: nowrap;
+  line-height: 1.5rem;
+}
+
+.ListPage > .search-desc > button.clear-search {
+  margin-right: 20px;
+  padding: 0 !important;
+  width: 1.6rem;
+  height: 1.6rem;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-transition: all 100ms ease-out;
+  -o-transition: all 100ms ease-out;
+  transition: all 100ms ease-out;
+}
+
+.ListPage > .search-desc > button.clear-search:active {
+  background-color: var(--reactred);
+  -webkit-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  transform: scale(0.9);
+}
+
+.ListPage > .search-desc > button.clear-search > img {
+  width: 0.8rem;
+  height: 0.8rem;
+  display: block;
+}
+
+@media only screen and (min-width: 380px) {
+  .ListPage > .search-desc > h4 {
+    margin-left: 2px;
+  }
+  .ListPage > .search-desc > button.clear-search {
+    margin-right: 2px;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .ListPage > .search-desc > h4 {
+    margin-left: 15px;
+  }
+  .ListPage > .search-desc > button.clear-search {
+    margin-right: 15px;
+  }
+}
