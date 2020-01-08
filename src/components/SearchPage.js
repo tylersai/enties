@@ -69,7 +69,7 @@ const SearchPage = props => {
   };
 
   return (
-    <section className="SearchPage bg bg1" id="result">
+    <section className="SearchPage bg bg1 animate-popup" id="result">
       {searchQuery ? (
         <div className="search-desc">
           <h4 className="fg fgg">

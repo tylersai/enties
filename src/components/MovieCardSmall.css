@@ -1,5 +1,5 @@
 .MovieCardSmall {
-    margin: 7px;
+    margin: 10px;
 }
 
 .MovieCardSmall > img {
@@ -12,7 +12,7 @@
 }
 
 .MovieCardSmall > div > h5 {
-    letter-spacing: 1px;
+    letter-spacing: normal;
     text-align: left;
     overflow: hidden;
     position: relative;

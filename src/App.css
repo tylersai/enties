@@ -6,3 +6,18 @@
   width: 100%;
   overflow-x: hidden;
 }
+
+.animate-popup {
+  animation: popup 200ms ease-out forwards;
+}
+
+@keyframes popup {
+  0%{
+    opacity: 0;
+    transform: translateY(15vh);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -11,7 +11,7 @@ const MovieList = ({ icon, title, list }) => {
         <img src={icon} alt="D" />
         <h2>{title}</h2>
         <Link to="/search?q=love">
-            <a href="">See All &gt;</a>
+            See All &gt;
         </Link>
       </div>
       <div className="list-body bg bg2 fg fg3">
