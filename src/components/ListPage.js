@@ -5,18 +5,18 @@ import Axio from "axios";
 import "./ListPage.css";
 import cross from "../assets/cross.svg";
 
-import { API_END_POINT } from "../utils/Constant";
+import { API_END_POINT, API_KEY } from "../utils/Constant";
 import Loading from "./Loading";
 import MovieCardList from "./MovieCardList";
 
-const ListPage = ({ link, title, searchQuery }) => {
+const ListPage = ({ link, title }) => {
   const history = useHistory();
 
   const [isLoading, setIsLoading] = useState(false);
   const [movieList, setMovieList] = useState([]);
 
   useEffect(() => {
-    const fullLink = API_END_POINT + link;
+    const fullLink = API_END_POINT + link + `?api_key=${API_KEY}`;
     Axio.get(fullLink)
       .then(res => {
         setMovieList(res.data.results);
@@ -57,16 +57,9 @@ const ListPage = ({ link, title, searchQuery }) => {
   return (
     <section className="ListPage bg bg1 animate-popup" id="result">
       <div className="search-desc">
-        {searchQuery ? (
-          <h4 className="fg fgg">
-            {isLoading ? "Searching for : " : "Showing results for : "}
-            <span>"{searchQuery}"</span>
-          </h4>
-        ) : (
-          <h4 className="fg fgg">
-            <span>{title}</span>
-          </h4>
-        )}
+        <h4 className="fg fgg">
+          <span>{title}</span>
+        </h4>
         <button onClick={closePage} className="fg fg2 bg bg2 clear-search">
           <img src={cross} alt="x" />
         </button>
