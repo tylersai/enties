@@ -1,12 +1,19 @@
 .MovieCardSmall {
-    margin: 5px;
+    margin: 7px;
+}
+
+.MovieCardSmall > img {
+    height: 15vmax;
+    width: auto;
 }
 
 .MovieCardSmall > div {
     padding: 3px;
 }
 
-.MovieCardSmall > div > h4 {
+.MovieCardSmall > div > h5 {
+    letter-spacing: 1px;
+    text-align: left;
     overflow: hidden;
     position: relative;
     display: -webkit-box;

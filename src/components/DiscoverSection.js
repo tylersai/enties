@@ -1,33 +1,48 @@
 import React, { useState, useEffect } from "react";
+import Axios from "axios";
 import "./DiscoverSection.css";
 import discover from "../assets/discover.svg";
 import trend from "../assets/trend.svg";
 
+import { API_END_POINT, API_KEY } from "../utils/Constant";
+import MovieList from "./MovieList";
+
 const DiscoverSection = () => {
-    return (
-        <section id="discover" className="DiscoverSection bg bg1">
-            <br/><br/>
-            <div className="list discover-list">
-                <div className="list-header bg bg3">
-                    <img src={discover} alt="D"/>
-                    <h2>Discover</h2>
-                </div>
-                <div className="list-body bg bg2 fg fg3">
-                    Discover List Goes Here
-                </div>
-            </div>
-            <br/><br/>
-            <div className="list trend-list">
-                <div className="list-header bg bg3">
-                    <img src={trend} alt="T"/>
-                    <h2>Trend</h2>
-                </div>
-                <div className="list-body bg bg2 fg fg3">
-                    Trend List Goes Here
-                </div>
-            </div>
-        </section>
-    );
-}
+  const [discoverList, setDiscoverList] = useState([]);
+  const [trendList, setTrendList] = useState([]);
+
+  useEffect(() => {
+    Axios.get(API_END_POINT + `/discover/movie?api_key=${API_KEY}`)
+      .then(res => {
+        setDiscoverList(res.data.results);
+      })
+      .catch(err => {
+        console.log(err);
+        setDiscoverList([]);
+      });
+  }, []);
+
+  useEffect(() => {
+    Axios.get(API_END_POINT + `/trending/movie/week?api_key=${API_KEY}`)
+      .then(res => {
+        setTrendList(res.data.results);
+      })
+      .catch(err => {
+        console.log(err);
+        setTrendList([]);
+      });
+  }, []);
+
+  return (
+    <section id="discover" className="DiscoverSection bg bg1">
+      <br />
+      <br />
+      <MovieList list={discoverList} icon={discover} title="Discover"/>
+      <br />
+      <br />
+      <MovieList list={trendList} icon={trend} title="Trending"/>
+    </section>
+  );
+};
 
 export default DiscoverSection;

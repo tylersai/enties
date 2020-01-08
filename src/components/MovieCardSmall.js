@@ -9,7 +9,7 @@ const MovieCardSmall = ({ m }) => {
     <div className="MovieCardSmall">
       <img src={POSTER_PATH + m.poster_path} alt="POSTER"/>
       <div>
-          <h4 className="fg fg2">{m.title}</h4>
+          <h5 className="fg fg3">{m.title}</h5>
       </div>
     </div>
   );
