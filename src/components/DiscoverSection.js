@@ -37,10 +37,10 @@ const DiscoverSection = () => {
     <section id="discover" className="DiscoverSection bg bg1">
       <br />
       <div className="add-padding">
-        <MovieList list={discoverList} icon={discover} title="Discover" />
+        <MovieList list={discoverList} icon={discover} title="Discover" toLink="/discover" />
       </div>
       <div className="add-padding">
-        <MovieList list={trendList} icon={trend} title="Trending" />
+        <MovieList list={trendList} icon={trend} title="Trending" toLink="/trending" />
       </div>
     </section>
   );

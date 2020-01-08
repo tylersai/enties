@@ -5,13 +5,13 @@ import "./MovieList.css";
 import right from "../assets/right.svg";
 import MovieCardSmall from "./MovieCardSmall";
 
-const MovieList = ({ icon, title, list }) => {
+const MovieList = ({ icon, title, list, toLink }) => {
   return (
     <div className={"MovieList list" + (title === "Discover" ? " discover-list":"")}>
       <div className="list-header bg bg3">
         <img src={icon} alt="D" />
         <h2>{title}</h2>
-        <Link to="/search?q=love">
+        <Link to={toLink}>
           <h4>See All</h4>
           <img src={right} alt=">"/>
         </Link>
