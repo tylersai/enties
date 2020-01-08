@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./DiscoverSection.css";
 import discover from "../assets/discover.svg";
 import trend from "../assets/trend.svg";

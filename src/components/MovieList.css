@@ -1,0 +1,37 @@
+div.list {
+  max-width: 70vmax;
+  margin: auto;
+  display: block;
+  border-radius: 10px;
+  overflow-x: hidden;
+}
+
+div.list > div.list-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  height: 10vmin;
+  max-height: 10vmin;
+}
+
+div.list > div.list-header > img {
+  margin: 2vmin;
+  height: 6vmin;
+  width: auto;
+}
+
+div.list > div.list-header > h2 {
+  text-align: left;
+  margin: 2vmin;
+  color: var(--reactgreen);
+}
+
+div.list > div.list-body {
+  display: flex;
+  padding: 3vmin;
+  overflow-x: auto;
+}
+
+div.discover-list > div.list-header > img {
+  transform: rotate(100deg);
+}
