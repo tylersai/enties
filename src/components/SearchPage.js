@@ -56,12 +56,15 @@ const SearchPage = props => {
             transform: "translateY(10vh)"
           }
         ],
-        200
+        {
+          duration: 200,
+          fill: "forwards"
+        }
       ).onfinish = () => {
-        history.push("/");
+        history.goBack();
       };
     } catch {
-      history.push("/");
+      history.goBack();
     }
   };
 

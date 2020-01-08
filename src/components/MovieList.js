@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import "./MovieList.css";
 import MovieCardSmall from "./MovieCardSmall";
@@ -9,6 +10,9 @@ const MovieList = ({ icon, title, list }) => {
       <div className="list-header bg bg3">
         <img src={icon} alt="D" />
         <h2>{title}</h2>
+        <Link to="/search?q=love">
+            <a href="">See All &gt;</a>
+        </Link>
       </div>
       <div className="list-body bg bg2 fg fg3">
         {
