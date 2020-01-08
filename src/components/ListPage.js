@@ -56,11 +56,9 @@ const ListPage = ({ link, title }) => {
 
   return (
     <section className="ListPage bg bg1 animate-popup" id="result">
-      <div className="search-desc">
-        <h4 className="fg fgg">
-          <span>{title}</span>
-        </h4>
-        <button onClick={closePage} className="fg fg2 bg bg2 clear-search">
+      <div className="title-bar">
+        <h2>{title}</h2>
+        <button onClick={closePage} className="fg fg2 bg bg2 close-page">
           <img src={cross} alt="x" />
         </button>
       </div>

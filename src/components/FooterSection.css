@@ -3,6 +3,7 @@
     text-align: left;
     min-height: 50vh;
     padding: 5vmax;
+    z-index: 5;
 }
 
 .FooterSection .text-center {
