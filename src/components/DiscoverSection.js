@@ -36,11 +36,12 @@ const DiscoverSection = () => {
   return (
     <section id="discover" className="DiscoverSection bg bg1">
       <br />
-      <br />
-      <MovieList list={discoverList} icon={discover} title="Discover"/>
-      <br />
-      <br />
-      <MovieList list={trendList} icon={trend} title="Trending"/>
+      <div className="add-padding">
+        <MovieList list={discoverList} icon={discover} title="Discover" />
+      </div>
+      <div className="add-padding">
+        <MovieList list={trendList} icon={trend} title="Trending" />
+      </div>
     </section>
   );
 };

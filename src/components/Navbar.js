@@ -11,7 +11,7 @@ const Navbar = props => {
 
   return (
     <nav className="Navbar">
-      <div onClick={routeTo} id="logo" className="fg fg1">Enties</div>
+      <div onClick={routeTo} id="logo" className="logo fg fg1">Enties</div>
       <div className="nav-menu-group">
         <ThemeButton className="nav-menu"/>
         <div className="nav-menu">

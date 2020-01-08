@@ -12,6 +12,14 @@
 
 .App > #search #lets-watch-movie {
   margin-top: 12vh;
-  margin-bottom: 4vh;
+  font-weight: 500;
   cursor: default;
+  font-size: 32px;
+}
+
+.App > #search > #searchwidgets h4.label {
+  letter-spacing: normal;
+  margin-bottom: 4vh;
+  margin-left: 30px;
+  margin-right: 30px;
 }

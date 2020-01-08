@@ -60,12 +60,14 @@
     margin-left:0px;
     transition: all 200ms 50ms ease-out;
 }
+.Navbar #logo {
+    margin-left: 15px;
+}
 
-.Navbar > #logo {
+.logo {
     font-family: 'Lobster', cursive;
     font-size: 2.5rem;
     font-weight: 400;
-    margin-left: 15px;
     cursor: pointer;
 }
 

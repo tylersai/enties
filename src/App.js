@@ -4,6 +4,7 @@ import "./App.css";
 
 import HomePage from "./components/HomePage";
 import SearchPage from "./components/SearchPage";
+import FooterSection from "./components/FooterSection";
 
 const App = () => {
 
@@ -15,6 +16,7 @@ const App = () => {
           <Route component={SearchPage} path="/search" />
         </Switch>
       </Router>
+      <FooterSection/>
     </div>
   );
 }

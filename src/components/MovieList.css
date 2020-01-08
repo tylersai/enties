@@ -1,5 +1,5 @@
 div.list {
-  max-width: 70vmax;
+  max-width: 75vmax;
   margin: auto;
   display: block;
   border-radius: 10px;
@@ -38,6 +38,11 @@ div.list > div.list-header > a {
   letter-spacing: normal;
   display: flex;
   align-items: center;
+  transition: opacity 150ms ease-out;
+}
+
+div.list > div.list-header > a:active {
+  opacity: 0.2;
 }
 
 div.list > div.list-header > a > h4 {

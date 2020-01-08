@@ -40,6 +40,7 @@ function HomePage() {
           <h1 className="fg fg3 ent-text-shadow" id="lets-watch-movie">
             Let's Watch Movie
           </h1>
+          <h4 className="fg fg3 label">Search 100,000+ movies, discover new releases, and see what's trending.</h4>
           <Search process={processSearch} />
         </div>
       </section>
