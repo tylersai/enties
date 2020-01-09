@@ -32,7 +32,7 @@ const MovieCard = ({ m }) => {
             </div>
           ) : null}
 
-          <PriceTag/>
+          <PriceTag popularity={m.popularity} />
           <div className="movie-rating">
             {m.vote_average && m.vote_count ? (
               <Rating voteAverage={m.vote_average} voteCount={m.vote_count} />

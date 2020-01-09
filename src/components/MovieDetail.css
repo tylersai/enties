@@ -23,6 +23,18 @@
   cursor: default;
 }
 
+.MovieDetail .download {
+  padding: 0px 4vw 30px 4vw;
+}
+
+.MovieDetail .download > div {
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  margin-right: 10px;
+}
+
 .detail-wrapper {
   display: flex;
   flex-direction: row;
@@ -30,7 +42,7 @@
 }
 
 .detail-wrapper .detail-poster img {
-  margin: 30px 4vw;
+  margin: 30px 4vw 20px 4vw;
   max-width: 30vmin;
   height: auto;
 }
@@ -52,4 +64,17 @@
 .center-loading {
     display: flex;
     justify-content: center;
+}
+
+.collection {
+  padding: 0px 4vw 4vw 4vw;
+}
+
+.collection img {
+  height: 30vmin;
+  width: auto;
+}
+
+hr{
+  max-width: 110vmin;
 }

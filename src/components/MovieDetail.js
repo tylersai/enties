@@ -4,21 +4,17 @@ import Axio from "axios";
 import "./MovieDetail.css";
 import movieLogo from "../assets/movie-dark.svg";
 
-import {
-  API_END_POINT,
-  API_KEY,
-  POSTER_PATH,
-  POSTER_PATH_FULL
-} from "../utils/Constant";
+import { API_END_POINT, API_KEY, POSTER_PATH } from "../utils/Constant";
 import Loading from "./Loading";
 import Rating from "./Rating";
+import PriceTag from "./PriceTag";
 
 const MovieDetail = ({ match }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [movie, setMovie] = useState({});
 
-  window.scrollTo(0,0);
-  
+  window.scrollTo(0, 0);
+
   useEffect(() => {
     setIsLoading(true);
     const fullLink =
@@ -36,29 +32,34 @@ const MovieDetail = ({ match }) => {
   }, []);
 
   const renderOverview = () => {
+    let id = "upper";
+
     const dp = document.getElementById("detail-poster").clientHeight;
     const dt = document.getElementById("detail-title").clientHeight;
-    let id = "upper";
-    if (dt > dp / 2 + 50) {
+    console.log(dp, dt);
+
+    if (dt > (dp / 2)) {
       id = "lower";
       document.getElementById("lower").style.padding = "4vw";
       document.getElementById("upper").style.display = "none";
     }
-
     const Overview = props => {
       return (
         <>
           <h3 className="fg fg3">About the Movie</h3>
-          <hr className="bgg" />
+          <hr align="left" className="bgg" />
           <p className="fg fg3">{movie.overview}</p>
         </>
       );
     };
+    console.log(id);
     ReactDOM.render(<Overview />, document.getElementById(id));
   };
 
   useEffect(() => {
-    try{renderOverview();}catch{}
+    try {
+      renderOverview();
+    } catch {}
   });
 
   // const bgStyle = {
@@ -74,7 +75,11 @@ const MovieDetail = ({ match }) => {
 
   return (
     <section className="MovieDetail bg bg1 animate-popup">
-      {isLoading ? <div className="center-loading"><Loading/></div> : movie.title ? (
+      {isLoading ? (
+        <div className="center-loading">
+          <Loading />
+        </div>
+      ) : movie.title ? (
         <>
           <div className="detail-wrapper">
             <div className="detail-poster" id="detail-poster">
@@ -108,7 +113,18 @@ const MovieDetail = ({ match }) => {
               </div>
             </div>
           </div>
-          <div id="lower" className="fg fg2" />{" "}
+          <div className="download">
+            <div className="fg fg3">Download : </div>
+            <PriceTag popularity={movie.popularity} />
+          </div>
+          <div id="lower" className="fg fg2" />
+          {
+            movie.belongs_to_collection ? (<div className="collection">
+              <h3 className="fg fg3">Also Included In</h3><hr align="left" className="bgg" />
+              <img src={ POSTER_PATH + movie.belongs_to_collection.backdrop_path} alt="POSTER"/>
+              <h4 className="fg fg3">{movie.belongs_to_collection.name}</h4>
+            </div>):null
+          }
         </>
       ) : (
         <div className="no-movie">
