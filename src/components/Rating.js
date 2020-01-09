@@ -33,7 +33,7 @@ const Rating = ({ voteCount, voteAverage }) => {
   return (
     <div className="Rating">
       {stars}
-      <div key="vc" className="vote-count fg fg3">({voteCount})</div>
+      <div key="vc" className="vote-count fg fgg">({voteCount})</div>
     </div>
   );
 };

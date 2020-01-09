@@ -1,3 +1,55 @@
 .MovieDetail {
-    min-height: 58vh;
+  min-height: 58vh;
+  text-align: left;
+}
+
+.MovieDetail .no-movie {
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.MovieDetail .no-movie img {
+  width: 30vmin;
+  height: auto;
+}
+
+.MovieDetail .no-movie div {
+  margin-top: 20px;
+  font-size: 22px;
+  font-weight: 600px;
+  letter-spacing: 2px;
+  word-spacing: 5px;
+  cursor: default;
+}
+
+.detail-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.detail-wrapper .detail-poster img {
+  margin: 30px 4vw;
+  max-width: 30vmin;
+  height: auto;
+}
+
+.detail-wrapper .detail-title {
+  flex-grow: 1;
+  padding-top: 30px;
+  padding-right: 4vw;
+}
+
+.detail-wrapper .detail-title > div > * {
+  margin-bottom: 8px;
+}
+
+#upper > h3 {
+  margin-top: 30px;
+}
+
+.center-loading {
+    display: flex;
+    justify-content: center;
 }

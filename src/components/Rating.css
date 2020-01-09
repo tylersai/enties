@@ -4,7 +4,6 @@
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: center;
-    height: 100%;
 }
 
 .Rating > div{
@@ -17,7 +16,6 @@
 
 .Rating > div.vote-count {
     font-size: 14px;
-    font-weight: 200;
     flex-grow: 1;
 }
 
