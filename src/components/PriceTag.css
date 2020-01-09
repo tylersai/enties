@@ -1,0 +1,26 @@
+button.price-tag {
+  color: var(--reactgreen);
+  padding: 4px 7px;
+  margin: 8px 0px;
+  font-size: 14px;
+  border: 1px solid var(--reactgreen);
+  border-radius: 5px;
+  transition: all 150ms ease-out;
+}
+
+button.price-tag:hover {
+  background-color: var(--reactgreen);
+  color: var(--entdark);
+}
+
+button.price-tag:active {
+  color: var(--entdarkgray);
+  border-color: var(--entdarkgray);
+}
+
+@media (hover: none) {
+  button.price-tag:hover {
+    color: var(--reactgreen);
+    background-color: inherit;
+  }
+}

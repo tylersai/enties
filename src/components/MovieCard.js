@@ -5,6 +5,7 @@ import movie from "../assets/movie-dark.svg";
 
 import { POSTER_PATH } from "../utils/Constant";
 import Rating from "./Rating";
+import PriceTag from "./PriceTag";
 
 const MovieCard = ({ m }) => {
   const options = { year: "numeric", month: "short", day: "numeric" };
@@ -31,7 +32,7 @@ const MovieCard = ({ m }) => {
             </div>
           ) : null}
 
-          <button className="price-tag bg bg2">$19.99</button>
+          <PriceTag/>
           <div className="movie-rating">
             {m.vote_average && m.vote_count ? (
               <Rating voteAverage={m.vote_average} voteCount={m.vote_count} />
