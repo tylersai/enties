@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import "./MovieCard.css";
 import movie from "../assets/movie-dark.svg";
 
@@ -8,8 +9,11 @@ import Rating from "./Rating";
 const MovieCard = ({ m }) => {
   const options = { year: "numeric", month: "short", day: "numeric" };
 
+  const history = useHistory();
+  const goDetail = () => { history.push(`/movie/${m.id}`) };
+
   return (
-    <div className="movie-card bg bg2 ent-shadow">
+    <div onClick={goDetail} className="movie-card bg bg2 ent-shadow">
       <div className="movie-header">
         <div className="movie-poster">
           {m.poster_path ? (
