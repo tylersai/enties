@@ -78,7 +78,7 @@ const SearchPage = props => {
           </h4>
           <button
             onClick={closeSearch}
-            className="fg fg2 bg bg2 clear-search"
+            className="fg fg2 clear-search"
           >
             <img src={cross} alt="x" />
           </button>

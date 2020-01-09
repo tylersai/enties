@@ -36,16 +36,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  -webkit-transition: all 100ms ease-out;;
-  -o-transition: all 100ms ease-out;
-  transition: all 100ms ease-out;
+  -webkit-transition: all 200ms ease-out;;
+  -o-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  background-color: var(--reactred);
 }
 
 .SearchPage > .search-desc > button.clear-search:active{
-  background-color: var(--reactred);
-  -webkit-transform: scale(0.9);
-  -ms-transform: scale(0.9);
-  transform: scale(0.9);
+  background-color: var(--entdarkgray);
+  -webkit-transform: scale(0.85);
+  -ms-transform: scale(0.85);
+  transform: scale(0.85);
 }
 
 .SearchPage > .search-desc > button.clear-search > img {
