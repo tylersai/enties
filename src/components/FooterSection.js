@@ -1,12 +1,15 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import "./FooterSection.css";
 
 const FooterSection = () => {
+  const history = useHistory();
+  const goHome = () => { history.push("/"); };
   return (
     <section className="FooterSection bg bg2" id="footer">
       <div className="footer-wrapper">
         <div className="text-center">
-          <div className="logo fg fg1">Enties</div>
+          <div className="logo fg fg1"><span onClick={goHome}>Enties</span></div>
           <div className="fg fgg">Entertainment website for movie geeks!</div>
         </div>
         <div>

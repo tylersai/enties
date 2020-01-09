@@ -20,8 +20,8 @@ const App = () => {
           <Route path="/discover" render={ routeProps => (<ListPage {...routeProps} title="Discover" link="/discover/movie"/>)} />
           <Route path="/trending" render={ routeProps => (<ListPage {...routeProps} title="Trending" link="/trending/movie/week"/>)} />
         </Switch>
+        <FooterSection/>
       </Router>
-      <FooterSection/>
     </div>
   );
 }
