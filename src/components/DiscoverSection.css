@@ -1,7 +1,3 @@
-.DiscoverSection {
-    min-height: 100vh;
-}
-
 .DiscoverSection > div.add-padding{
     padding: 25px 15px;
 }

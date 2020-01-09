@@ -42,6 +42,7 @@ const DiscoverSection = () => {
       <div className="add-padding">
         <MovieList list={trendList} icon={trend} title="Trending" toLink="/trending" />
       </div>
+      <br/>
     </section>
   );
 };
