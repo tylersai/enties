@@ -17,6 +17,8 @@ const MovieDetail = ({ match }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [movie, setMovie] = useState({});
 
+  window.scrollTo(0,0);
+  
   useEffect(() => {
     setIsLoading(true);
     const fullLink =
