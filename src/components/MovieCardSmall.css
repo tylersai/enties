@@ -1,11 +1,28 @@
 .MovieCardSmall {
     margin: 10px;
     cursor: default;
+    position: relative;
 }
 
 .MovieCardSmall > img {
     height: 15vmax;
     width: auto;
+}
+.MovieCardSmall::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 15vmax;
+    display: block;
+    background-color: var(--reactgreen);
+    opacity: 0;
+    top: 0;
+    -webkit-transition: opacity 200ms 50ms ease-out;
+    -o-transition: opacity 200ms 50ms ease-out;
+    transition: opacity 200ms 50ms ease-out;
+}
+.MovieCardSmall:hover::after {
+    opacity: 0.5;
 }
 
 .MovieCardSmall > div {
@@ -20,4 +37,10 @@
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
+}
+
+@media (hover:none) {
+    .MovieCardSmall:hover::after {
+        opacity: 0;
+    }
 }
