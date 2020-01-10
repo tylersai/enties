@@ -35,6 +35,33 @@
     display: block;
 }
 
+.FooterSection .copy-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 5vh 0vw 0 0vw;
+}
+
+.FooterSection .copy-wrapper div {
+    margin: 0px 1.5vw;
+    font-size: 0.9rem;
+    font-weight: 200px;
+    color: var(--entgray);
+    cursor: default;
+}
+.FooterSection .copy-wrapper > div.flex-too {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    flex-grow: 1;
+}
+.FooterSection .copy-wrapper > div.copyright {
+    text-align: right;
+    margin-right: 0px;
+    white-space: nowrap;
+}
+
 .footer-link {
     display: inline-block;
     white-space: nowrap;
