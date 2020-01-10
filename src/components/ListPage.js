@@ -17,6 +17,8 @@ const ListPage = ({ link, title }) => {
   const [movieList, setMovieList] = useState([]);
 
   useEffect(() => {
+    window.scrollTo(0,0);
+    setIsLoading(true);
     const fullLink = API_END_POINT + link + `?api_key=${API_KEY}`;
     Axio.get(fullLink)
       .then(res => {
@@ -60,7 +62,7 @@ const ListPage = ({ link, title }) => {
       <div className="title-bar">
         <h2>{title}</h2>
         <ThemeButton/>
-        <button onClick={closePage} className="fg fg2 close-page">
+        <button onClick={closePage} className="fg fg2 close-page animate-enlarge">
           <img src={cross} alt="x" />
         </button>
       </div>

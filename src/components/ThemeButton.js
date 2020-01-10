@@ -25,7 +25,7 @@ const ThemeButton = props => {
   }
 
   return (
-    <div className="ThemeButton">
+    <div className="ThemeButton animate-enlarge">
       <label className="switch switch_type2" role="switch" aria-checked>
         <input onChange={changeTheme} type="checkbox" className="switch__toggle" />
         <span className="switch__label" />

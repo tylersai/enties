@@ -11,13 +11,13 @@ const Navbar = props => {
 
   return (
     <nav className="Navbar">
-      <div onClick={routeTo} id="logo" className="logo fg fg1">Enties</div>
+      <div onClick={routeTo} id="logo" className="logo fg fg1 animate-enlarge">Enties</div>
       <div className="nav-menu-group">
         <ThemeButton className="nav-menu"/>
-        <div className="nav-menu">
+        <div className="nav-menu animate-enlarge">
           <h3>Pricing</h3>
         </div>
-        <div className="nav-menu">
+        <div className="nav-menu animate-enlarge">
           <h3>Login</h3>
         </div>
       </div>

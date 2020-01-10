@@ -37,10 +37,10 @@ function HomePage() {
         <span />
         <div id="searchwidgets">
           <Navbar />
-          <h1 className="fg fg3 ent-text-shadow" id="lets-watch-movie">
+          <h1 className="fg fg3 ent-text-shadow animate-popup-1" id="lets-watch-movie">
             Let's Watch Movie
           </h1>
-          <h4 className="fg fg3 label">Search 100,000+ movies, discover new releases, and see what's trending.</h4>
+          <h4 className="fg fg3 label animate-popup-2">Search 100,000+ movies, discover new releases, and see what's trending.</h4>
           <Search process={processSearch} />
         </div>
       </section>

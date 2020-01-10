@@ -15,7 +15,7 @@ const Search = props => {
   };
 
   return (
-    <div className="bg bg3 Search ent-shadow">
+    <div className="bg bg3 Search ent-shadow animate-popup-3">
       <form onSubmit={processSubmit}>
         <input
           className="bg bg3"
