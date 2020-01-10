@@ -6,6 +6,10 @@
     z-index: 5;
 }
 
+.FooterSection .logo {
+    color: var(--reactgreen);
+}
+
 .FooterSection .text-center {
     text-align: center;
 }

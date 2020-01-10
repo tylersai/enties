@@ -84,9 +84,9 @@ const MovieDetail = ({ match }) => {
           <div className="detail-wrapper">
             <div className="detail-poster" id="detail-poster">
               {movie.poster_path ? (
-                <img src={POSTER_PATH + movie.poster_path} alt="POSTER" />
+                <img className="animate-enlarge" src={POSTER_PATH + movie.poster_path} alt="POSTER" />
               ) : (
-                <img src={movieLogo} alt="POSTER" />
+                <img className="animate-enlarge" src={movieLogo} alt="POSTER" />
               )}
             </div>
             <div className="detail-title">
@@ -121,7 +121,7 @@ const MovieDetail = ({ match }) => {
           {
             movie.belongs_to_collection ? (<div className="collection">
               <h3 className="fg fg3">Also Included In</h3><hr align="left" className="bgg" />
-              <img src={ POSTER_PATH + movie.belongs_to_collection.backdrop_path} alt="POSTER"/>
+              <img className="animate-enlarge" src={ POSTER_PATH + movie.belongs_to_collection.backdrop_path} alt="POSTER"/>
               <h4 className="fg fg3">{movie.belongs_to_collection.name}</h4>
             </div>):null
           }
@@ -129,8 +129,8 @@ const MovieDetail = ({ match }) => {
         </>
       ) : (
         <div className="no-movie">
-          <img src={movieLogo} alt="POSTER" />
-          <div className="fgg">NOT FOUND</div>
+          <img className="animate-enlarge" src={movieLogo} alt="POSTER" />
+          <div className="fgganimate-enlarge">NOT FOUND</div>
         </div>
       )}
     </section>
