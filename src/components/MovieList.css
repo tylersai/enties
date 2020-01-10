@@ -58,7 +58,7 @@ div.list > div.list-header > a > img {
 
 div.list > div.list-body {
   display: flex;
-  padding: 3vmin;
+  padding: 1vmin 3vmin 3vmin 3vmin;
   overflow-x: auto;
 }
 

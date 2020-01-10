@@ -71,8 +71,13 @@
 }
 
 .collection img {
-  height: 30vmin;
+  height: 25vmin;
   width: auto;
+  margin: 10px 0px 4px 10px;
+}
+
+.collection h4 {
+  margin-left: 10px;
 }
 
 hr{

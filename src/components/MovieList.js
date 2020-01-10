@@ -8,7 +8,7 @@ import MovieCardSmall from "./MovieCardSmall";
 const MovieList = ({ icon, title, list, toLink }) => {
   return (
     <div className={"MovieList list" + (title === "Discover" ? " discover-list":"")}>
-      <div className="list-header bg bg3">
+      <div className="list-header">
         <img src={icon} alt="D" />
         <h2>{title}</h2>
         <Link to={toLink}>
@@ -16,7 +16,7 @@ const MovieList = ({ icon, title, list, toLink }) => {
           <img src={right} alt=">"/>
         </Link>
       </div>
-      <div className="list-body bg bg2 fg fg3">
+      <div className="list-body fg fg3">
         {
             list.map(m => <MovieCardSmall key={m.id} m={m} />)
         }

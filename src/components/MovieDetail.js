@@ -125,6 +125,7 @@ const MovieDetail = ({ match }) => {
               <h4 className="fg fg3">{movie.belongs_to_collection.name}</h4>
             </div>):null
           }
+
         </>
       ) : (
         <div className="no-movie">
