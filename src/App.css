@@ -29,6 +29,11 @@
   animation: popup 500ms 300ms ease-out forwards;
 }
 
+.animate-fadein {
+  -webkit-animation: fadein 200ms ease-out;
+  animation: fadein 200ms ease-out;
+}
+
 @keyframes popup {
   0%{
     opacity: 0;
@@ -55,5 +60,14 @@
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
         transform: scale(1);
+  }
+}
+
+@keyframes fadein {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
   }
 }

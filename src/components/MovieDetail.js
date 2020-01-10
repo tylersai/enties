@@ -8,6 +8,7 @@ import { API_END_POINT, API_KEY, POSTER_PATH } from "../utils/Constant";
 import Loading from "./Loading";
 import Rating from "./Rating";
 import PriceTag from "./PriceTag";
+import Trailers from "./Trailers";
 
 const MovieDetail = ({ match }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -125,7 +126,7 @@ const MovieDetail = ({ match }) => {
               <h4 className="fg fg3">{movie.belongs_to_collection.name}</h4>
             </div>):null
           }
-
+          <Trailers movie_id={movie.id} />
         </>
       ) : (
         <div className="no-movie">
