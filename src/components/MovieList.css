@@ -62,6 +62,11 @@ div.list > div.list-body {
   overflow-x: auto;
 }
 
+div.list > div.list-body > .load-3{
+  align-self: center;
+  width: 100%;
+}
+
 div.discover-list > div.list-header > img {
   transform: rotate(100deg);
 }

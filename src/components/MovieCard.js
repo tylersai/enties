@@ -14,7 +14,7 @@ const MovieCard = ({ m }) => {
   const goDetail = () => { history.push(`/movie/${m.id}`) };
 
   return (
-    <div onClick={goDetail} className="movie-card bg bg2 ent-shadow">
+    <div onClick={goDetail} className="movie-card bg bg2 ent-shadow animate-enlarge">
       <div className="movie-header">
         <div className="movie-poster">
           {m.poster_path ? (

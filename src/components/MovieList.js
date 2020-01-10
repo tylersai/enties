@@ -4,8 +4,9 @@ import { Link } from "react-router-dom";
 import "./MovieList.css";
 import right from "../assets/right.svg";
 import MovieCardSmall from "./MovieCardSmall";
+import Loading from "./Loading";
 
-const MovieList = ({ icon, title, list, toLink }) => {
+const MovieList = ({ icon, title, list, toLink, isLoading }) => {
   return (
     <div className={"MovieList list" + (title === "Discover" ? " discover-list":"")}>
       <div className="list-header">
@@ -18,7 +19,7 @@ const MovieList = ({ icon, title, list, toLink }) => {
       </div>
       <div className="list-body fg fg3">
         {
-            list.map(m => <MovieCardSmall key={m.id} m={m} />)
+          isLoading ? <Loading/>:list.map(m => <MovieCardSmall key={m.id} m={m} />)
         }
       </div>
     </div>
