@@ -9,6 +9,7 @@ import Loading from "./Loading";
 import Rating from "./Rating";
 import PriceTag from "./PriceTag";
 import Trailers from "./Trailers";
+import MoviesRelated from "./MoviesRelated";
 
 const MovieDetail = ({ match }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -39,7 +40,7 @@ const MovieDetail = ({ match }) => {
     const dt = document.getElementById("detail-title").clientHeight;
     console.log(dp, dt);
 
-    if (dt > (dp / 2)) {
+    if (dt > dp / 2) {
       id = "lower";
       document.getElementById("lower").style.padding = "4vw";
       document.getElementById("upper").style.display = "none";
@@ -85,7 +86,11 @@ const MovieDetail = ({ match }) => {
           <div className="detail-wrapper">
             <div className="detail-poster" id="detail-poster">
               {movie.poster_path ? (
-                <img className="animate-enlarge" src={POSTER_PATH + movie.poster_path} alt="POSTER" />
+                <img
+                  className="animate-enlarge"
+                  src={POSTER_PATH + movie.poster_path}
+                  alt="POSTER"
+                />
               ) : (
                 <img className="animate-enlarge" src={movieLogo} alt="POSTER" />
               )}
@@ -119,14 +124,30 @@ const MovieDetail = ({ match }) => {
             <PriceTag popularity={movie.popularity} />
           </div>
           <div id="lower" className="fg fg2" />
-          {
-            movie.belongs_to_collection ? (<div className="collection">
-              <h3 className="fg fg3">Also Included In</h3><hr align="left" className="bgg" />
-              <img className="animate-enlarge" src={ POSTER_PATH + movie.belongs_to_collection.backdrop_path} alt="POSTER"/>
+          {movie.belongs_to_collection ? (
+            <div className="collection">
+              <h3 className="fg fg3">Also Included In</h3>
+              <hr align="left" className="bgg" />
+              <img
+                className="animate-enlarge"
+                src={POSTER_PATH + movie.belongs_to_collection.backdrop_path}
+                alt="POSTER"
+              />
               <h4 className="fg fg3">{movie.belongs_to_collection.name}</h4>
-            </div>):null
-          }
+            </div>
+          ) : null}
           <Trailers movie_id={movie.id} />
+
+          <div className="similar">
+            <h3 className="fg fg3">You Might Also Like</h3>
+            <hr align="left" className="bgg fullwidth" />
+            <div><MoviesRelated type="similar" movie_id={movie.id}/></div>
+          </div>
+          <div className="recommended">
+            <h3 className="fg fg3">Viewers Also Bought</h3>
+            <hr align="left" className="bgg fullwidth" />
+            <div><MoviesRelated type="recommendations" movie_id={movie.id}/></div>
+          </div>
         </>
       ) : (
         <div className="no-movie">
