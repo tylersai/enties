@@ -30,13 +30,13 @@
     transition: all 200ms ease-out;
 }
 .Navbar .nav-menu > h3:active {
-    color: var(--reactblue);
+    color: #0bb391;
     transform: scale(0.95);
     transition: all 200ms ease-in;
 }
 
 .Navbar .nav-menu::after{
-    background-color: var(--reactblue);
+    background-color: #0bb391;
     content: "";
     display: block;
     position: absolute;
@@ -49,7 +49,7 @@
 }
 
 .Navbar .nav-menu:hover{
-    color: var(--reactblue);
+    color: #0bb391;
     text-shadow: none;
     transition: all 200ms 50ms ease-out;
 }
