@@ -72,7 +72,7 @@
 }
 
 .collection, .Trailers, .similar, .recommended {
-  padding: 0px 4vw 2vw 4vw;
+  padding: 2vw 4vw;
 }
 
 .similar > div, .recommended > div{
@@ -92,4 +92,6 @@
 
 hr{
   max-width: 110vmin;
+  color: var(--entdark) !important;
+  border-color: var(--entdark);
 }

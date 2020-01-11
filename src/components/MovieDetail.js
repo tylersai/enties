@@ -49,7 +49,7 @@ const MovieDetail = ({ match }) => {
       return (
         <>
           <h3 className="fg fg3">About the Movie</h3>
-          <hr align="left" className="bgg" />
+          <hr align="left" className="fg" />
           <p className="fg fg3">{movie.overview}</p>
         </>
       );
@@ -127,7 +127,7 @@ const MovieDetail = ({ match }) => {
           {movie.belongs_to_collection ? (
             <div className="collection">
               <h3 className="fg fg3">Also Included In</h3>
-              <hr align="left" className="bgg" />
+              <hr align="left" className="fg" />
               <img
                 className="animate-enlarge"
                 src={POSTER_PATH + movie.belongs_to_collection.backdrop_path}
@@ -140,12 +140,12 @@ const MovieDetail = ({ match }) => {
 
           <div className="similar">
             <h3 className="fg fg3">You Might Also Like</h3>
-            <hr align="left" className="bgg fullwidth" />
+            <hr align="left" className="fg fullwidth" />
             <div><MoviesRelated type="similar" movie_id={movie.id}/></div>
           </div>
           <div className="recommended">
             <h3 className="fg fg3">Viewers Also Bought</h3>
-            <hr align="left" className="bgg fullwidth" />
+            <hr align="left" className="fg fullwidth"/>
             <div><MoviesRelated type="recommendations" movie_id={movie.id}/></div>
           </div>
         </>
