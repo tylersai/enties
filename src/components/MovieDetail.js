@@ -10,6 +10,7 @@ import Rating from "./Rating";
 import PriceTag from "./PriceTag";
 import Trailers from "./Trailers";
 import MoviesRelated from "./MoviesRelated";
+import Credits from "./Credits";
 
 const MovieDetail = ({ match }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -124,6 +125,18 @@ const MovieDetail = ({ match }) => {
             <PriceTag popularity={movie.popularity} />
           </div>
           <div id="lower" className="fg fg2" />
+          
+          <div className="similar">
+            <h3 className="fg fg3">You Might Also Like</h3>
+            <hr align="left" className="fg fullwidth" />
+            <div><MoviesRelated type="similar" movie_id={movie.id}/></div>
+          </div>
+          <div className="recommended">
+            <h3 className="fg fg3">Viewers Also Bought</h3>
+            <hr align="left" className="fg fullwidth"/>
+            <div><MoviesRelated type="recommendations" movie_id={movie.id}/></div>
+          </div>
+          
           {movie.belongs_to_collection ? (
             <div className="collection">
               <h3 className="fg fg3">Also Included In</h3>
@@ -136,18 +149,15 @@ const MovieDetail = ({ match }) => {
               <h4 className="fg fg3">{movie.belongs_to_collection.name}</h4>
             </div>
           ) : null}
+
+          <div className="credits">
+            <h3 className="fg fg3 text-center">Cast &amp; Crew</h3>
+            <hr align="left" className="fg fullwidth" />
+          </div>
+          <Credits movie_id={movie.id} />
+
           <Trailers movie_id={movie.id} />
 
-          <div className="similar">
-            <h3 className="fg fg3">You Might Also Like</h3>
-            <hr align="left" className="fg fullwidth" />
-            <div><MoviesRelated type="similar" movie_id={movie.id}/></div>
-          </div>
-          <div className="recommended">
-            <h3 className="fg fg3">Viewers Also Bought</h3>
-            <hr align="left" className="fg fullwidth"/>
-            <div><MoviesRelated type="recommendations" movie_id={movie.id}/></div>
-          </div>
         </>
       ) : (
         <div className="no-movie">
