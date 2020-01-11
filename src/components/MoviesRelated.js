@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import "./MoviesRelated.css";
-import discover from "../assets/discover.svg";
-import trend from "../assets/trend.svg";
 
 import { API_END_POINT, API_KEY } from "../utils/Constant";
-import MovieList from "./MovieList";
 import MovieCardSmall from "./MovieCardSmall";
+import Loading from "./Loading";
 
 const MoviesRelated = ({type, movie_id}) => {
   const [loadRelated, setLoadRelated] = useState(false);
@@ -29,7 +27,7 @@ const MoviesRelated = ({type, movie_id}) => {
   return (
     <div className="MoviesRelated">
         {
-            relatedMovies.map(
+          loadRelated ? <Loading/>:relatedMovies.map(
                 movie => <MovieCardSmall key={movie.id} m={movie}/>
             )
         }
