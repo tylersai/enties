@@ -1,4 +1,15 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Enties
+This is a React Frontend web project for enties and movie geeks using REST API provided by [The Movie Database](http://themoviedb.org).<br/>
+The features and functionalities of `Enties` include search, movie listing, pricing idea, movie reviews, official credits, official YouTube trailers, similar items and TMDB's very own recommendation system. I also try to make UI/UX attractive. Please take a look at [http://enties.netlify.com](http://enties.netlify.com).<br/><br/>
+
+*Disclaimer: Also note that the commercial idea on the aforementioned website by this project is totally for demo purpose only. Moreover, this project is under development and some expected featues might not be available by the time you view it. But, if you have crazy new innovative idea, let me know, shoot me a DM at [http://linkedin.com/in/thesaihan](http://linkedin.com/in/thesaihan)*<br/>
+
+## Configurations
+
+Before you run this project, sign up and get your own `api_key` from TMDB. For convenience, create environment variable file named `.env` and paste the following like so:<br/><br/>
+`REACT_APP_API_END_POINT=https://api.themoviedb.org/3`<br/>
+`REACT_APP_API_KEY=<YOUR_TMDB_API_KEY>`<br/>
+`REACT_APP_POSTER_PATH=https://image.tmdb.org/t/p/w500`<br/><br/>
 
 ## Available Scripts
 
@@ -37,27 +48,10 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
 ### Making a Progressive Web App
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
 ### Deployment
 
