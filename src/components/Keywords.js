@@ -22,7 +22,7 @@ const Keywords = ({ movie_id }) => {
   return (
     <>
     {
-        keywords.map(kw => <div key={kw.id} className="fg fg3 bg bg3 keyword">{kw.name}</div>)
+        keywords.map(kw => <div key={kw.id} className="fg fg3 bg bg2 keyword">{kw.name}</div>)
     }
     </>
   );
