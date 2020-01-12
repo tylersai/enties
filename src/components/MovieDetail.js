@@ -42,7 +42,7 @@ const MovieDetail = ({ match }) => {
     const dt = document.getElementById("detail-title").clientHeight;
     console.log(dp, dt);
 
-    if (dt > dp / 2) {
+    if (dt > (dp / 2) - 10) {
       id = "lower";
       document.getElementById("lower").style.padding = "4vw";
       document.getElementById("upper").style.display = "none";
