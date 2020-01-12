@@ -1,0 +1,10 @@
+.keyword {
+    border: 1px solid var(--entgray);
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: normal;
+    padding: 3px 8px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    cursor: default;
+}

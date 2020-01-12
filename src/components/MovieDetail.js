@@ -11,6 +11,7 @@ import PriceTag from "./PriceTag";
 import Trailers from "./Trailers";
 import MoviesRelated from "./MoviesRelated";
 import Credits from "./Credits";
+import Keywords from "./Keywords";
 
 const MovieDetail = ({ match }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -123,6 +124,10 @@ const MovieDetail = ({ match }) => {
           <div className="download">
             <div className="fg fg3">Download : </div>
             <PriceTag popularity={movie.popularity} />
+          </div>
+          <div className="download">
+            <div className="fg fg3">Keywords : </div>
+            <Keywords movie_id={movie.id} />
           </div>
           <div id="lower" className="fg fg2" />
           

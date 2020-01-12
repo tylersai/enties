@@ -29,7 +29,7 @@
 }
 
 .MovieDetail .download {
-  padding: 0px 4vw 30px 4vw;
+  padding: 0px 4vw 1vw 4vw;
 }
 
 .MovieDetail .download > div {
@@ -99,4 +99,8 @@ hr{
   max-width: 110vmin;
   color: var(--entdark) !important;
   border-color: var(--entdark);
+}
+
+#lower {
+  margin-top: 2vh;
 }
