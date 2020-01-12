@@ -13,7 +13,7 @@ const Credits = ({ movie_id }) => {
     Axios.get(API_END_POINT + `/movie/${movie_id}/credits?api_key=${API_KEY}`)
       .then(res => {
         setCasts(res.data.cast);
-        setCrews(res.data.crew);
+        setCrews(removeDuplicate(res.data.crew));
       })
       .catch(err => {
         console.log(err);
@@ -21,6 +21,20 @@ const Credits = ({ movie_id }) => {
         setCrews([]);
       });
   }, []);
+
+  const removeDuplicate = arr => {
+    let res = [];
+    let ids = [];
+    if(arr){
+      arr.forEach(a => {
+        if(ids.indexOf(a.id)<0){
+          ids.push(a.id);
+          res.push(a);
+        }
+      });
+    }
+    return res;
+  };
 
   return (
     <div className="Credits">
