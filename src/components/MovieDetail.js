@@ -151,7 +151,7 @@ const MovieDetail = ({ match }) => {
                 src={POSTER_PATH + movie.belongs_to_collection.backdrop_path}
                 alt="POSTER"
               />
-              <h4 className="fg fg3">{movie.belongs_to_collection.name}</h4>
+              <h5 className="fg fg3">{movie.belongs_to_collection.name}</h5>
             </div>
           ) : null}
 

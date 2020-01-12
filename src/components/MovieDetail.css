@@ -90,9 +90,10 @@
   margin: 10px 0px 4px 10px;
 }
 
-.collection h4, .Trailers h4 {
+.collection h5, .Trailers h4 {
   margin-left: 10px;
   margin-top: 5px;
+  letter-spacing: 1px;
 }
 
 hr{

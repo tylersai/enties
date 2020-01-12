@@ -2,7 +2,7 @@
     border: 1px solid var(--entgray);
     border-radius: 3px;
     font-size: 14px;
-    font-weight: normal;
+    font-weight: 200 !important;
     padding: 3px 8px;
     margin-top: 3px;
     margin-bottom: 3px;
