@@ -106,7 +106,11 @@ const SearchPage = props => {
           </button>
         </div>
       ) : null}
-      <Pagination currentPage={currentPage} searchQuery={searchQuery} totalPages={totalPages} totalResults={totalResults}/>
+      {
+        totalPages > 1 ? (
+          <Pagination currentPage={currentPage} searchQuery={searchQuery} totalPages={totalPages} totalResults={totalResults}/>
+        ):null
+      }
       {isLoading ? <Loading />: <MovieCardList movieList={movieList}/>}
     </section>
   );
