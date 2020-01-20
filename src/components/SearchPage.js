@@ -16,18 +16,30 @@ const SearchPage = props => {
 
   const queryParams = queryString.parse(props.location.search);
   const searchQuery = queryParams.q ? queryParams.q.replace("+", " ").trim() : "";
+  let currentPage = queryParams.p ? queryParams.p.trim() : 1;
+
+  try {
+    currentPage = parseInt(currentPage);
+  } catch {
+    currentPage = 1;
+  }
 
   const [isLoading, setIsLoading] = useState(false);
   const [movieList, setMovieList] = useState([]);
 
   useEffect(() => {
     if (searchQuery) {
+      window.scrollTo(0,0);
       setIsLoading(true);
 
       const queryObj = {
         api_key: API_KEY,
         query: searchQuery
       };
+
+      if(currentPage > 1){
+        queryObj.page = currentPage
+      }
 
       const link = API_END_POINT + "/search/movie?" + toQueryString(queryObj);
       Axio.get(link)
@@ -41,7 +53,7 @@ const SearchPage = props => {
           setIsLoading(false);
         });
     }
-  }, []);
+  }, [searchQuery, currentPage]);
 
   const closeSearch = () => {
     try {
@@ -61,10 +73,10 @@ const SearchPage = props => {
           fill: "forwards"
         }
       ).onfinish = () => {
-        history.goBack();
+        history.push('/');
       };
     } catch {
-      history.goBack();
+      history.push('/');
     }
   };
 
