@@ -17,7 +17,7 @@ const Keywords = ({ movie_id }) => {
         console.log(err);
         setKeywords([]);
       });
-  }, []);
+  }, [movie_id]);
 
   return (
     <>
