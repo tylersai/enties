@@ -16,7 +16,7 @@ const Trailers = ({ movie_id }) => {
         console.log(err);
         setVideos([]);
       });
-  });
+  }, [movie_id]);
 
   if (!(videos && videos.length > 0)) return null;
 
