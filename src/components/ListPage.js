@@ -30,7 +30,7 @@ const ListPage = ({ link, title }) => {
         setMovieList([]);
         setIsLoading(false);
       });
-  }, []);
+  }, [link]);
 
   const closePage = () => {
     try {

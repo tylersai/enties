@@ -22,7 +22,7 @@ const MoviesRelated = ({type, movie_id}) => {
         setLoadRelated(false);
         setRelatedMovies([]);
       });
-  }, []);
+  }, [type, movie_id]);
 
   return (
     <div className="MoviesRelated">

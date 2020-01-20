@@ -41,6 +41,7 @@ const Pagination = ({ searchQuery, currentPage, totalPages, totalResults }) => {
                   </Link>
                 </li>
               );
+              else return null;
             })
           : [...Array(totalPages).keys()].map(x => (
               <li key={x} className={x === currentPage - 1 ? "current" : ""}>

@@ -20,7 +20,7 @@ const Credits = ({ movie_id }) => {
         setCasts([]);
         setCrews([]);
       });
-  }, []);
+  }, [movie_id]);
 
   const removeDuplicate = arr => {
     let res = [];
