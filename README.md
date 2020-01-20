@@ -15,6 +15,9 @@ Before you run this project, sign up and get your own `api_key` from TMDB. For c
 
 In the project directory, you can run:
 
+### `npm install`
+To install the required dependencies.
+
 ### `npm start`
 
 Runs the app in the development mode.<br />
