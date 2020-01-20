@@ -21,7 +21,6 @@
   font-weight: 600;
   letter-spacing: 2px;
   color: var(--reactgreen);
-  opacity: 0.75;
   white-space: nowrap;
   line-height: 1.5rem;
 }

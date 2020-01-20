@@ -9,6 +9,7 @@ import cross from "../assets/cross.svg";
 import { API_END_POINT, API_KEY, toQueryString } from "../utils/Constant";
 import Loading from "./Loading";
 import MovieCardList from "./MovieCardList";
+import Pagination from "./Pagination";
 
 const SearchPage = props => {
 
@@ -20,12 +21,17 @@ const SearchPage = props => {
 
   try {
     currentPage = parseInt(currentPage);
+    if(currentPage < 1)
+      currentPage = 1;
   } catch {
     currentPage = 1;
   }
 
   const [isLoading, setIsLoading] = useState(false);
   const [movieList, setMovieList] = useState([]);
+
+  const [totalPages, setTotalPages] = useState(0);
+  const [totalResults, setTotalResults] = useState(0);
 
   useEffect(() => {
     if (searchQuery) {
@@ -44,12 +50,16 @@ const SearchPage = props => {
       const link = API_END_POINT + "/search/movie?" + toQueryString(queryObj);
       Axio.get(link)
         .then(res => {
+          setTotalPages(res.data.total_pages);
+          setTotalResults(res.data.total_results);
           setMovieList(res.data.results);
           setIsLoading(false);
         })
         .catch(err => {
           console.log(err);
           setMovieList([]);
+          setTotalPages(0);
+          setTotalResults(0);
           setIsLoading(false);
         });
     }
@@ -84,18 +94,19 @@ const SearchPage = props => {
     <section className="SearchPage bg bg1 animate-popup" id="result">
       {searchQuery ? (
         <div className="search-desc">
-          <h4 className="fg fgg">
-            {isLoading ? "Searching for : " : "Showing results for : "}
+          <h4 className="fg fgg animate-popup">
+            {isLoading ? "Searching for : " : "Results for : "}
             <span>"{searchQuery}"</span>
           </h4>
           <button
             onClick={closeSearch}
-            className="fg fg2 clear-search"
+            className="fg fg2 clear-search animate-enlarge"
           >
             <img src={cross} alt="x" />
           </button>
         </div>
       ) : null}
+      <Pagination currentPage={currentPage} searchQuery={searchQuery} totalPages={totalPages} totalResults={totalResults}/>
       {isLoading ? <Loading />: <MovieCardList movieList={movieList}/>}
     </section>
   );
