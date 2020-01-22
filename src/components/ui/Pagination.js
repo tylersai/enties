@@ -6,6 +6,25 @@ import "./Pagination.css";
 const Pagination = ({ searchQuery, currentPage, totalPages, totalResults }) => {
   if (totalPages < 2) return null;
 
+  let numSquares = 5;
+  let toSub = 2;
+  if(currentPage === 1 || currentPage === totalPages){
+    numSquares = 7;
+  }
+  if(currentPage === 2 || currentPage === totalPages-1){
+    numSquares = 6;
+  }
+  if(currentPage === totalPages){
+    toSub = 4;
+  }
+  if(currentPage === totalPages-1){
+    toSub = 3;
+  }
+
+  console.log(currentPage);
+  console.log(totalPages);
+  console.log(numSquares);
+
   const toLink = page => {
     let limitedPage = page;
     if (page < 1) limitedPage = 1;
@@ -28,13 +47,13 @@ const Pagination = ({ searchQuery, currentPage, totalPages, totalResults }) => {
         </li>
 
         {totalPages > 8
-          ? [...Array(5).keys()].map(x => {
-              const pageToShow = currentPage + x - 2;
+          ? [...Array(numSquares).keys()].map(x => {
+              const pageToShow = currentPage + x - toSub;
               if(pageToShow > 0 && pageToShow < totalPages+1)
               return (
                 <li
                   key={pageToShow - 1}
-                  className={x === 2 ? "current" : ""}
+                  className={x === toSub ? "current" : ""}
                 >
                   <Link to={toLink(pageToShow)}>
                     {pageToShow}
