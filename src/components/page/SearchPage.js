@@ -10,6 +10,7 @@ import { API_END_POINT, API_KEY, toQueryString } from "../../utils/Constant";
 import Loading from "../ui/Loading";
 import Pagination from "../ui/Pagination";
 import MovieCardList from "../element/MovieCardList";
+import ThemeButton from "../ui/ThemeButton";
 
 const SearchPage = props => {
 
@@ -98,6 +99,7 @@ const SearchPage = props => {
             {isLoading ? "Searching for : " : "Results for : "}
             <span>"{searchQuery}"</span>
           </h4>
+          <ThemeButton/>
           <button
             onClick={closeSearch}
             className="fg fg2 clear-search animate-enlarge"
