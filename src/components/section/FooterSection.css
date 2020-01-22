@@ -56,6 +56,9 @@
     align-items: baseline;
     flex-grow: 1;
 }
+.FooterSection .copy-wrapper > div.flex-too > div {
+    cursor: pointer;
+}
 .FooterSection .copy-wrapper > div.copyright {
     text-align: right;
     margin-right: 0px;
