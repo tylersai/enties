@@ -1,15 +1,15 @@
-.ListPage {
+.MovieListPage {
   min-height: 100vh;
 }
 
-.ListPage > .title-bar {
+.MovieListPage > .title-bar {
   padding: 5vmin 5vmin 1vmin 5vmin;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.ListPage > .title-bar > h2 {
+.MovieListPage > .title-bar > h2 {
   text-align: left;
   margin-left: 20px;
   flex-grow: 1;
@@ -17,7 +17,7 @@
   color: var(--reactgreen);
 }
 
-.ListPage > .title-bar > button.close-page {
+.MovieListPage > .title-bar > button.close-page {
   margin-right: 20px;
   padding: 0 !important;
   width: 1.6rem;
@@ -33,33 +33,33 @@
   background-color: var(--reactred);
 }
 
-.ListPage > .title-bar > button.close-page:active {
+.MovieListPage > .title-bar > button.close-page:active {
   background-color: var(--entdarkgray);
   -webkit-transform: scale(0.85);
   -ms-transform: scale(0.85);
   transform: scale(0.85);
 }
 
-.ListPage > .title-bar > button.close-page > img {
+.MovieListPage > .title-bar > button.close-page > img {
   width: 0.8rem;
   height: 0.8rem;
   display: block;
 }
 
 @media only screen and (min-width: 380px) {
-  .ListPage > .title-bar > h4 {
+  .MovieListPage > .title-bar > h4 {
     margin-left: 2px;
   }
-  .ListPage > .title-bar > button.close-page {
+  .MovieListPage > .title-bar > button.close-page {
     margin-right: 2px;
   }
 }
 
 @media only screen and (min-width: 600px) {
-  .ListPage > .title-bar > h4 {
+  .MovieListPage > .title-bar > h4 {
     margin-left: 15px;
   }
-  .ListPage > .title-bar > button.close-page {
+  .MovieListPage > .title-bar > button.close-page {
     margin-right: 15px;
   }
 }

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import "./Search.css";
+import "./SearchForm.css";
 
-const Search = props => {
+const SearchForm = props => {
   const input = React.createRef();
 
   const process = props.process;
@@ -15,7 +15,7 @@ const Search = props => {
   };
 
   return (
-    <div className="bg bg3 Search ent-shadow animate-popup-3">
+    <div className="bg bg3 SearchForm ent-shadow animate-popup-3">
       <form onSubmit={processSubmit}>
         <input
           className="bg bg3"
@@ -30,4 +30,4 @@ const Search = props => {
   );
 };
 
-export default Search;
+export default SearchForm;

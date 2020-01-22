@@ -1,19 +1,21 @@
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import Axio from "axios";
-import "./MovieDetail.css";
-import movieLogo from "../assets/movie-dark.svg";
 
-import { API_END_POINT, API_KEY, POSTER_PATH } from "../utils/Constant";
-import Loading from "./Loading";
-import Rating from "./Rating";
-import PriceTag from "./PriceTag";
-import Trailers from "./Trailers";
-import MoviesRelated from "./MoviesRelated";
-import Credits from "./Credits";
-import Keywords from "./Keywords";
+import "./MovieDetailPage.css";
+import movieLogo from "../../assets/movie-dark.svg";
+import { API_END_POINT, API_KEY, POSTER_PATH } from "../../utils/Constant";
 
-const MovieDetail = ({ match }) => {
+import Loading from "../ui/Loading";
+import Rating from "../ui/Rating";
+import PriceTag from "../ui/PriceTag";
+import Keywords from "../ui/Keywords";
+
+import Trailers from "../element/Trailers";
+import MoviesRelated from "../element/MoviesRelated";
+import Credits from "../element/Credits";
+
+const MovieDetailPage = ({ match }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [movie, setMovie] = useState({});
 
@@ -78,7 +80,7 @@ const MovieDetail = ({ match }) => {
   };
 
   return (
-    <section className="MovieDetail bg bg1 animate-popup">
+    <section className="MovieDetailPage bg bg1 animate-popup">
       {isLoading ? (
         <div className="center-loading">
           <Loading />
@@ -174,4 +176,4 @@ const MovieDetail = ({ match }) => {
   );
 };
 
-export default MovieDetail;
+export default MovieDetailPage;

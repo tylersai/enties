@@ -2,9 +2,9 @@ import React, { Fragment } from "react";
 import { useHistory } from "react-router-dom";
 import "./HomePage.css";
 
-import Navbar from "./Navbar";
-import Search from "./Search";
-import DiscoverSection from "./DiscoverSection";
+import Navbar from "../ui/Navbar";
+import SearchForm from "../ui/SearchForm";
+import DiscoverSection from "../section/DiscoverSection";
 
 function HomePage() {
 
@@ -41,7 +41,7 @@ function HomePage() {
             Let's Watch Movie
           </h1>
           <h4 className="fg fg3 label animate-popup-2">Search 100,000+ movies, discover new releases, and see what's trending.</h4>
-          <Search process={processSearch} />
+          <SearchForm process={processSearch} />
         </div>
       </section>
       <DiscoverSection/>

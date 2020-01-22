@@ -2,9 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import "./MovieList.css";
-import right from "../assets/right.svg";
+import right from "../../assets/right.svg";
 import MovieCardSmall from "./MovieCardSmall";
-import Loading from "./Loading";
+import Loading from "../ui/Loading";
 
 const MovieList = ({ icon, title, list, toLink, isLoading }) => {
   return (

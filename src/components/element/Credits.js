@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import "./Credits.css";
 
-import { API_END_POINT, API_KEY } from "../utils/Constant";
+import { API_END_POINT, API_KEY } from "../../utils/Constant";
 
 const Credits = ({ movie_id }) => {
     

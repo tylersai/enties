@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
-import "./DiscoverSection.css";
-import discover from "../assets/discover.svg";
-import trend from "../assets/trend.svg";
 
-import { API_END_POINT, API_KEY } from "../utils/Constant";
-import MovieList from "./MovieList";
+import "./DiscoverSection.css";
+import discover from "../../assets/discover.svg";
+import trend from "../../assets/trend.svg";
+
+import { API_END_POINT, API_KEY } from "../../utils/Constant";
+import MovieList from "../element/MovieList";
 
 const DiscoverSection = () => {
   const [loadDiscover, setLoadDiscover] = useState(false);

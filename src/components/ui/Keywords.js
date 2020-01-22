@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import "./Keywords.css";
 
-import { API_END_POINT, API_KEY } from "../utils/Constant";
+import { API_END_POINT, API_KEY } from "../../utils/Constant";
 
 const Keywords = ({ movie_id }) => {
     

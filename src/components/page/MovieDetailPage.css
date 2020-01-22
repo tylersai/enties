@@ -1,25 +1,25 @@
-.MovieDetail {
+.MovieDetailPage {
   min-height: 58vh;
   text-align: left;
 }
 
-.MovieDetail .fg {
+.MovieDetailPage .fg {
   -webkit-animation: fadein 900ms ease-out;
   animation: fadein 900ms ease-out;
 }
 
-.MovieDetail .no-movie {
+.MovieDetailPage .no-movie {
   text-align: center;
   margin-top: 100px;
   margin-bottom: 100px;
 }
 
-.MovieDetail .no-movie img {
+.MovieDetailPage .no-movie img {
   width: 30vmin;
   height: auto;
 }
 
-.MovieDetail .no-movie div {
+.MovieDetailPage .no-movie div {
   margin-top: 20px;
   font-size: 22px;
   font-weight: 600px;
@@ -28,11 +28,11 @@
   cursor: default;
 }
 
-.MovieDetail .download {
+.MovieDetailPage .download {
   padding: 0px 4vw 1vw 4vw;
 }
 
-.MovieDetail .download > div {
+.MovieDetailPage .download > div {
   font-weight: 500;
   font-size: 16px;
   letter-spacing: 1px;

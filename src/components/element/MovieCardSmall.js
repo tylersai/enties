@@ -2,7 +2,7 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import "./MovieCardSmall.css";
 
-import { POSTER_PATH } from "../utils/Constant";
+import { POSTER_PATH } from "../../utils/Constant";
 
 const MovieCardSmall = ({ m }) => {
 

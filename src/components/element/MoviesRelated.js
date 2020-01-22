@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import "./MoviesRelated.css";
 
-import { API_END_POINT, API_KEY } from "../utils/Constant";
+import { API_END_POINT, API_KEY } from "../../utils/Constant";
 import MovieCardSmall from "./MovieCardSmall";
-import Loading from "./Loading";
+import Loading from "../ui/Loading";
 
 const MoviesRelated = ({type, movie_id}) => {
   const [loadRelated, setLoadRelated] = useState(false);

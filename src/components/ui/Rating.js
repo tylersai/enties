@@ -1,9 +1,9 @@
 import React from "react";
 import "./Rating.css";
 
-import starEmpty from "../assets/star-empty.svg";
-import starHalf from "../assets/star-half.svg";
-import starFull from "../assets/star-full.svg";
+import starEmpty from "../../assets/star-empty.svg";
+import starHalf from "../../assets/star-half.svg";
+import starFull from "../../assets/star-full.svg";
 
 const Rating = ({ voteCount, voteAverage }) => {
 

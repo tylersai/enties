@@ -4,12 +4,12 @@ import Axio from "axios";
 import queryString from "query-string";
 
 import "./SearchPage.css";
-import cross from "../assets/cross.svg";
+import cross from "../../assets/cross.svg";
+import { API_END_POINT, API_KEY, toQueryString } from "../../utils/Constant";
 
-import { API_END_POINT, API_KEY, toQueryString } from "../utils/Constant";
-import Loading from "./Loading";
-import MovieCardList from "./MovieCardList";
-import Pagination from "./Pagination";
+import Loading from "../ui/Loading";
+import Pagination from "../ui/Pagination";
+import MovieCardList from "../element/MovieCardList";
 
 const SearchPage = props => {
 

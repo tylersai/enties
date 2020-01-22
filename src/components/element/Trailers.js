@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Axio from "axios";
 import "./Trailers.css";
-import { API_END_POINT, API_KEY } from "../utils/Constant";
+import { API_END_POINT, API_KEY } from "../../utils/Constant";
 
 const Trailers = ({ movie_id }) => {
   const [videos, setVideos] = useState([]);

@@ -1,11 +1,11 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import "./MovieCard.css";
-import movie from "../assets/movie-dark.svg";
+import movie from "../../assets/movie-dark.svg";
 
-import { POSTER_PATH } from "../utils/Constant";
-import Rating from "./Rating";
-import PriceTag from "./PriceTag";
+import { POSTER_PATH } from "../../utils/Constant";
+import Rating from "../ui/Rating";
+import PriceTag from "../ui/PriceTag";
 
 const MovieCard = ({ m }) => {
   const options = { year: "numeric", month: "short", day: "numeric" };

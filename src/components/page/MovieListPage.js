@@ -2,15 +2,15 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import Axio from "axios";
 
-import "./ListPage.css";
-import cross from "../assets/cross.svg";
+import "./MovieListPage.css";
+import cross from "../../assets/cross.svg";
+import { API_END_POINT, API_KEY } from "../../utils/Constant";
 
-import { API_END_POINT, API_KEY } from "../utils/Constant";
-import Loading from "./Loading";
-import ThemeButton from "./ThemeButton";
-import MovieCardList from "./MovieCardList";
+import Loading from "../ui/Loading";
+import ThemeButton from "../ui/ThemeButton";
+import MovieCardList from "../element/MovieCardList";
 
-const ListPage = ({ link, title }) => {
+const MovieListPage = ({ link, title }) => {
   const history = useHistory();
 
   const [isLoading, setIsLoading] = useState(false);
@@ -58,7 +58,7 @@ const ListPage = ({ link, title }) => {
   };
 
   return (
-    <section className="ListPage bg bg1 animate-popup" id="result">
+    <section className="MovieListPage bg bg1 animate-popup" id="result">
       <div className="title-bar">
         <h2>{title}</h2>
         <ThemeButton/>
@@ -72,4 +72,4 @@ const ListPage = ({ link, title }) => {
   );
 };
 
-export default ListPage;
+export default MovieListPage;
