@@ -21,10 +21,6 @@ const Pagination = ({ searchQuery, currentPage, totalPages, totalResults }) => {
     toSub = 3;
   }
 
-  console.log(currentPage);
-  console.log(totalPages);
-  console.log(numSquares);
-
   const toLink = page => {
     let limitedPage = page;
     if (page < 1) limitedPage = 1;
