@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
-import "./MoviesRelated.css";
+import "./RelatedMovies.css";
 
 import { API_END_POINT, API_KEY } from "../../utils/Constant";
 import MovieCardSmall from "./MovieCardSmall";
 import Loading from "../ui/Loading";
 
-const MoviesRelated = ({type, movie_id}) => {
+const RelatedMovies = ({type, movie_id}) => {
   const [loadRelated, setLoadRelated] = useState(false);
   const [relatedMovies, setRelatedMovies] = useState([]);
 
@@ -25,7 +25,7 @@ const MoviesRelated = ({type, movie_id}) => {
   }, [type, movie_id]);
 
   return (
-    <div className="MoviesRelated">
+    <div className="RelatedMovies">
         {
           loadRelated ? <Loading/>:relatedMovies.map(
                 movie => <MovieCardSmall key={movie.id} m={movie}/>
@@ -35,4 +35,4 @@ const MoviesRelated = ({type, movie_id}) => {
   );
 };
 
-export default MoviesRelated;
+export default RelatedMovies;

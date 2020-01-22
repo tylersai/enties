@@ -12,7 +12,7 @@ import PriceTag from "../ui/PriceTag";
 import Keywords from "../ui/Keywords";
 
 import Trailers from "../element/Trailers";
-import MoviesRelated from "../element/MoviesRelated";
+import RelatedMovies from "../element/RelatedMovies";
 import Credits from "../element/Credits";
 
 const MovieDetailPage = ({ match }) => {
@@ -136,12 +136,12 @@ const MovieDetailPage = ({ match }) => {
           <div className="similar">
             <h3 className="fg fg3">You Might Also Like</h3>
             <hr align="left" className="fg fullwidth" />
-            <div><MoviesRelated type="similar" movie_id={movie.id}/></div>
+            <div><RelatedMovies type="similar" movie_id={movie.id}/></div>
           </div>
           <div className="recommended">
             <h3 className="fg fg3">Viewers Also Bought</h3>
             <hr align="left" className="fg fullwidth"/>
-            <div><MoviesRelated type="recommendations" movie_id={movie.id}/></div>
+            <div><RelatedMovies type="recommendations" movie_id={movie.id}/></div>
           </div>
           
           {movie.belongs_to_collection ? (
