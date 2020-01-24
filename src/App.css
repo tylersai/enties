@@ -12,6 +12,10 @@
   justify-content: center;
 }
 
+.App .fullwidth{
+  max-width: 100vmax;
+}
+
 .animate-popup {
   -webkit-animation: popup 200ms ease-out forwards;
   animation: popup 200ms ease-out forwards;

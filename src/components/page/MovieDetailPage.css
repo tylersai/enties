@@ -8,31 +8,15 @@
   animation: fadein 900ms ease-out;
 }
 
-.MovieDetailPage .no-movie {
-  text-align: center;
-  margin-top: 100px;
-  margin-bottom: 100px;
+.MovieDetailPage .detail-sections {
+  padding: 1vmin 4vw;
 }
 
-.MovieDetailPage .no-movie img {
-  width: 30vmin;
-  height: auto;
+.MovieDetailPage .detail-sections > * {
+  margin: 3px 0 3vmax 0;
 }
 
-.MovieDetailPage .no-movie div {
-  margin-top: 20px;
-  font-size: 22px;
-  font-weight: 600px;
-  letter-spacing: 2px;
-  word-spacing: 5px;
-  cursor: default;
-}
-
-.MovieDetailPage .download {
-  padding: 0px 4vw 1vw 4vw;
-}
-
-.MovieDetailPage .download > div {
+.MovieDetailPage .section-label {
   font-weight: 500;
   font-size: 16px;
   letter-spacing: 1px;
@@ -66,37 +50,28 @@
   margin-top: 30px;
 }
 
-.collection, .Trailers, .similar, .recommended {
-  padding: 2vw 4vw;
-}
-
-.credits {
-  margin-top: 4vh;
-  padding: 2vw 4vw 0 4vw;
-}
-
-.similar > div, .recommended > div{
-  overflow-x: auto;
-}
-
-.collection img {
-  height: 20vmin;
-  width: auto;
-  margin: 10px 0px 4px 10px;
-}
-
-.collection h5, .Trailers h4 {
-  margin-left: 10px;
-  margin-top: 5px;
-  letter-spacing: 1px;
-}
-
-hr{
+.MovieDetailPage hr{
   max-width: 110vmin;
   color: var(--entdark) !important;
   border-color: var(--entdark);
 }
 
-#lower {
-  margin-top: 2vh;
+.MovieDetailPage .no-movie {
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.MovieDetailPage .no-movie img {
+  width: 30vmin;
+  height: auto;
+}
+
+.MovieDetailPage .no-movie div {
+  margin-top: 20px;
+  font-size: 22px;
+  font-weight: 600px;
+  letter-spacing: 2px;
+  word-spacing: 5px;
+  cursor: default;
 }

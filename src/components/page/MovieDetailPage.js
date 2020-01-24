@@ -9,18 +9,19 @@ import { API_END_POINT, API_KEY, POSTER_PATH } from "../../utils/Constant";
 import Loading from "../ui/Loading";
 import Rating from "../ui/Rating";
 import PriceTag from "../ui/PriceTag";
-import Keywords from "../ui/Keywords";
 
 import Trailers from "../element/Trailers";
-import RelatedMovies from "../element/RelatedMovies";
 import Credits from "../element/Credits";
+import CollectionBlock from "../element/CollectionBlock";
+import RelatedMoviesBlock from "../element/RelatedMoviesBlock";
+import KeywordsBlock from "../element/KeywordsBlock";
 
 const MovieDetailPage = ({ match }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [movie, setMovie] = useState({});
 
   useEffect(() => {
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
     setIsLoading(true);
     const fullLink =
       API_END_POINT + `/movie/${match.params.id}?api_key=${API_KEY}`;
@@ -45,7 +46,6 @@ const MovieDetailPage = ({ match }) => {
 
     if (dt > dp / 2) {
       id = "lower";
-      document.getElementById("lower").style.padding = "4vw";
       document.getElementById("upper").style.display = "none";
     }
     const Overview = props => {
@@ -66,11 +66,6 @@ const MovieDetailPage = ({ match }) => {
       renderOverview();
     } catch {}
   });
-
-  // const bgStyle = {
-  //   'background': `url(${POSTER_PATH_FULL + movie.backdrop_path}) top right no-repeat`,
-  //   'background-size': 'contain'
-  // };
 
   const options = { year: "numeric", month: "long", day: "numeric" };
 
@@ -122,39 +117,23 @@ const MovieDetailPage = ({ match }) => {
               </div>
             </div>
           </div>
-          <div className="download">
-            <div className="fg fg3">Download : </div>
-            <PriceTag popularity={movie.popularity} />
-          </div>
-          <div className="download">
-            <div className="fg fg3">Keywords : </div>
-            <Keywords movie_id={movie.id} />
-          </div>
-          <div id="lower" className="fg fg2" />
-          
-          <div className="similar">
-            <h3 className="fg fg3">You Might Also Like</h3>
-            <hr align="left" className="fg fullwidth" />
-            <div><RelatedMovies type="similar" movie_id={movie.id}/></div>
-          </div>
-          <div className="recommended">
-            <h3 className="fg fg3">Viewers Also Bought</h3>
-            <hr align="left" className="fg fullwidth"/>
-            <div><RelatedMovies type="recommendations" movie_id={movie.id}/></div>
-          </div>
-          
-          {movie.belongs_to_collection ? (
-            <div className="collection">
-              <h3 className="fg fg3">Also Included In</h3>
-              <hr align="left" className="fg" />
-              <img
-                className="animate-enlarge"
-                src={POSTER_PATH + movie.belongs_to_collection.backdrop_path}
-                alt="POSTER"
-              />
-              <h5 className="fg fg3">{movie.belongs_to_collection.name}</h5>
+          <div className="detail-sections">
+            <div>
+              <div className="fg fg3 section-label">Download : </div>
+              <PriceTag popularity={movie.popularity} />
             </div>
-          ) : null}
+
+            <KeywordsBlock movie_id={movie.id} />
+
+            <div id="lower" className="fg fg2" />
+
+            <CollectionBlock collection={movie.belongs_to_collection} />
+
+            <RelatedMoviesBlock title="You Might Also Like" type="similar" movie_id={movie.id}/>
+            
+            <RelatedMoviesBlock title="Viewers Also Bought" type="recommendations" movie_id={movie.id}/>
+
+          </div>
 
           <div className="credits">
             <h3 className="fg fg3 text-center">Cast &amp; Crew</h3>
@@ -163,7 +142,6 @@ const MovieDetailPage = ({ match }) => {
           <Credits movie_id={movie.id} />
 
           <Trailers movie_id={movie.id} />
-
         </>
       ) : (
         <div className="no-movie">
