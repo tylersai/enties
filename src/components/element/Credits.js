@@ -45,7 +45,7 @@ const Credits = ({ movie_id }) => {
             </div>
             <div className="right">
                 {
-                    casts.map(c => <span className="fg fg3" key={c.id}>{c.name}</span>)
+                  casts.map(c => <span className="fg fg3" key={c.id + c.credit_id}>{c.name}</span>)
                 }
             </div>
         </div>):null}
@@ -55,7 +55,7 @@ const Credits = ({ movie_id }) => {
             </div>
             <div className="right">
                 {
-                    crews.map(c => <span className="fg fg3" key={c.id}>{c.name}</span>)
+                  crews.map(c => <span className="fg fg3" key={c.id + c.credit_id}>{c.name}</span>)
                 }
             </div>
         </div>):null}
