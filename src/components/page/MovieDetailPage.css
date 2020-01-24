@@ -66,11 +66,6 @@
   margin-top: 30px;
 }
 
-.center-loading {
-    display: flex;
-    justify-content: center;
-}
-
 .collection, .Trailers, .similar, .recommended {
   padding: 2vw 4vw;
 }

@@ -20,18 +20,17 @@ const MovieDetailPage = ({ match }) => {
   const [movie, setMovie] = useState({});
 
   useEffect(() => {
+    window.scrollTo(0,0);
     setIsLoading(true);
     const fullLink =
       API_END_POINT + `/movie/${match.params.id}?api_key=${API_KEY}`;
     Axio.get(fullLink)
       .then(res => {
-        window.scrollTo(0, 0);
         setMovie(res.data);
         setIsLoading(false);
       })
       .catch(err => {
         console.log(err);
-        window.scrollTo(0, 0);
         setMovie({});
         setIsLoading(false);
       });

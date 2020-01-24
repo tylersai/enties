@@ -7,6 +7,11 @@
   overflow-x: hidden;
 }
 
+.App .center-loading {
+  display: flex;
+  justify-content: center;
+}
+
 .animate-popup {
   -webkit-animation: popup 200ms ease-out forwards;
   animation: popup 200ms ease-out forwards;
