@@ -20,6 +20,7 @@ const App = () => {
           <Route component={MovieDetailPage} path="/movie/:id" />
           <Route path="/discover" render={ routeProps => (<MovieListPage {...routeProps} title="Discover" link="/discover/movie"/>)} />
           <Route path="/trending" render={ routeProps => (<MovieListPage {...routeProps} title="Trending" link="/trending/movie/week"/>)} />
+          <Route path="/keyword/:kid" component={MovieListPage} />
         </Switch>
         <FooterSection/>
       </Router>

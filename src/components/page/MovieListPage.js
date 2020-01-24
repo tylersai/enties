@@ -10,16 +10,20 @@ import Loading from "../ui/Loading";
 import ThemeButton from "../ui/ThemeButton";
 import MovieCardList from "../element/MovieCardList";
 
-const MovieListPage = ({ link, title }) => {
+const MovieListPage = ({ link, title, match }) => {
   const history = useHistory();
 
   const [isLoading, setIsLoading] = useState(false);
   const [movieList, setMovieList] = useState([]);
+  const [keywordName, setKeywordName] = useState("");
 
   useEffect(() => {
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
     setIsLoading(true);
-    const fullLink = API_END_POINT + link + `?api_key=${API_KEY}`;
+    const fullLink =
+      API_END_POINT +
+      (match.params.kid ? `/keyword/${match.params.kid}/movies` : link) +
+      `?api_key=${API_KEY}`;
     Axio.get(fullLink)
       .then(res => {
         setMovieList(res.data.results);
@@ -30,7 +34,21 @@ const MovieListPage = ({ link, title }) => {
         setMovieList([]);
         setIsLoading(false);
       });
-  }, [link]);
+  }, [link, match.params.kid]);
+
+  useEffect(() => {
+    if (match.params.kid) {
+      const klink =
+        API_END_POINT + `/keyword/${match.params.kid}?api_key=${API_KEY}`;
+      Axio.get(klink)
+        .then(res => {
+          setKeywordName(res.data.name);
+        })
+        .catch(err => {
+          setKeywordName("");
+        });
+    }
+  }, [match.params.kid]);
 
   const closePage = () => {
     try {
@@ -60,9 +78,20 @@ const MovieListPage = ({ link, title }) => {
   return (
     <section className="MovieListPage bg bg1 animate-popup" id="result">
       <div className="title-bar">
-        <h2 className="ent-text-shadow">{title}</h2>
-        <ThemeButton/>
-        <button onClick={closePage} className="fg fg2 close-page animate-enlarge">
+        {match.params.kid && keywordName ? (
+          <div>
+            <h4 style={{ display: "inline-block", marginRight: "3vw"}} className="fg fgg animate-popup-1">Keyword: </h4>
+            <span className="fg fg3 bg bg2 keyword animate-enlarge">{keywordName}</span>
+          </div>
+        ) : (
+          <h2 className="ent-text-shadow">{title}</h2>
+        )}
+
+        <ThemeButton />
+        <button
+          onClick={closePage}
+          className="fg fg2 close-page animate-enlarge"
+        >
           <img src={cross} alt="x" />
         </button>
       </div>

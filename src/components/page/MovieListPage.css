@@ -9,10 +9,13 @@
   align-items: center;
 }
 
-.MovieListPage > .title-bar > h2 {
+.MovieListPage > .title-bar > *:first-child {
   text-align: left;
   margin-left: 20px;
   flex-grow: 1;
+}
+
+.MovieListPage > .title-bar > h2 {
   overflow: ellipsis;
   color: var(--reactgreen);
 }
@@ -47,7 +50,7 @@
 }
 
 @media only screen and (min-width: 380px) {
-  .MovieListPage > .title-bar > h2 {
+  .MovieListPage > .title-bar > *:first-child {
     margin-left: 5px;
   }
   .MovieListPage > .title-bar > button.close-page {
@@ -56,7 +59,7 @@
 }
 
 @media only screen and (min-width: 600px) {
-  .MovieListPage > .title-bar > h2 {
+  .MovieListPage > .title-bar > *:first-child {
     margin-left: 15px;
   }
   .MovieListPage > .title-bar > button.close-page {
