@@ -47,8 +47,8 @@
 }
 
 @media only screen and (min-width: 380px) {
-  .MovieListPage > .title-bar > h4 {
-    margin-left: 2px;
+  .MovieListPage > .title-bar > h2 {
+    margin-left: 5px;
   }
   .MovieListPage > .title-bar > button.close-page {
     margin-right: 2px;
@@ -56,7 +56,7 @@
 }
 
 @media only screen and (min-width: 600px) {
-  .MovieListPage > .title-bar > h4 {
+  .MovieListPage > .title-bar > h2 {
     margin-left: 15px;
   }
   .MovieListPage > .title-bar > button.close-page {

@@ -60,7 +60,7 @@ const MovieListPage = ({ link, title }) => {
   return (
     <section className="MovieListPage bg bg1 animate-popup" id="result">
       <div className="title-bar">
-        <h2>{title}</h2>
+        <h2 className="ent-text-shadow">{title}</h2>
         <ThemeButton/>
         <button onClick={closePage} className="fg fg2 close-page animate-enlarge">
           <img src={cross} alt="x" />
