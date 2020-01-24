@@ -118,7 +118,7 @@ const MovieDetailPage = ({ match }) => {
             </div>
           </div>
           <div className="detail-sections">
-            <div>
+            <div style={{marginBottom:"1vmax"}}>
               <div className="fg fg3 section-label">Download : </div>
               <PriceTag popularity={movie.popularity} />
             </div>
@@ -142,7 +142,7 @@ const MovieDetailPage = ({ match }) => {
             />
 
             <div>
-              <h3 className="fg fg3 text-center">Cast &amp; Crew</h3>
+              <h3 className="fg fg3 text-center" style={{marginTop:"7vh"}}>Cast &amp; Crew</h3>
               <hr align="left" className="fg fullwidth" />
               <Credits movie_id={movie.id} />
             </div>

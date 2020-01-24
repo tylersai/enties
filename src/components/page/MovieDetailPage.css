@@ -3,6 +3,10 @@
   text-align: left;
 }
 
+.MovieDetailPage h1.fg {
+  color: var(--reactgreen);
+}
+
 .MovieDetailPage .fg {
   -webkit-animation: fadein 900ms ease-out;
   animation: fadein 900ms ease-out;
@@ -13,7 +17,7 @@
 }
 
 .MovieDetailPage .detail-sections > * {
-  margin: 3px 0 3vmax 0;
+  margin: 3px 0 4vmax 0;
 }
 
 .MovieDetailPage .section-label {
