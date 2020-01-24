@@ -1,13 +1,23 @@
 .MovieCardSmall {
-    margin: 10px;
+    margin: 12px;
     cursor: default;
     position: relative;
 }
-
-.MovieCardSmall > img {
+.MovieCardSmall > div.img-section {
+    height: 15vmax;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.MovieCardSmall > div.img-section > img.with-poster {
     height: 15vmax;
     width: auto;
 }
+.MovieCardSmall > div.img-section > img.no-poster {
+    height: auto;
+    width: 10vmax;
+}
+
 .MovieCardSmall::after {
     content: "";
     position: absolute;
@@ -25,11 +35,11 @@
     opacity: 0.5;
 }
 
-.MovieCardSmall > div {
+.MovieCardSmall > div.caption-section {
     padding: 3px;
 }
 
-.MovieCardSmall > div > h5 {
+.MovieCardSmall > div.caption-section > h5 {
     letter-spacing: normal;
     text-align: left;
     overflow: hidden;
