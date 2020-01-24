@@ -83,7 +83,7 @@
 
 .footer-link:active {
     color: var(--reactgreen);
-    transform: scale(0.8);
+    transform: scale(0.9);
 }
 
 @media (hover:none){

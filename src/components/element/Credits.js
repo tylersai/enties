@@ -59,7 +59,7 @@ const Credits = ({ movie_id }) => {
                 }
             </div>
         </div>):null}
-      </div>) : <div className="fg fgg not-found">NOT FOUND</div>}
+      </div>) : <div className="fg fgg not-found">INFO NOT AVAILABLE</div>}
     </div>
   );
 };

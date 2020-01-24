@@ -129,19 +129,26 @@ const MovieDetailPage = ({ match }) => {
 
             <CollectionBlock collection={movie.belongs_to_collection} />
 
-            <RelatedMoviesBlock title="You Might Also Like" type="similar" movie_id={movie.id}/>
-            
-            <RelatedMoviesBlock title="Viewers Also Bought" type="recommendations" movie_id={movie.id}/>
+            <RelatedMoviesBlock
+              title="You Might Also Like"
+              type="similar"
+              movie_id={movie.id}
+            />
 
+            <RelatedMoviesBlock
+              title="Viewers Also Bought"
+              type="recommendations"
+              movie_id={movie.id}
+            />
+
+            <div>
+              <h3 className="fg fg3 text-center">Cast &amp; Crew</h3>
+              <hr align="left" className="fg fullwidth" />
+              <Credits movie_id={movie.id} />
+            </div>
+
+            <Trailers movie_id={movie.id} />
           </div>
-
-          <div className="credits">
-            <h3 className="fg fg3 text-center">Cast &amp; Crew</h3>
-            <hr align="left" className="fg fullwidth" />
-          </div>
-          <Credits movie_id={movie.id} />
-
-          <Trailers movie_id={movie.id} />
         </>
       ) : (
         <div className="no-movie">

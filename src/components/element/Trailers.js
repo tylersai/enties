@@ -22,7 +22,7 @@ const Trailers = ({ movie_id }) => {
 
   return (
     <div className="Trailers">
-      <h3 className="fg fg2">Trailers</h3>
+      <h3 className="fg fg2 text-center">Trailers</h3>
       <hr align="left" className="bgg fullwidth"/>
       <div className="video-wrapper">
         {videos.map(video => (
