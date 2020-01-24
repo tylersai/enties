@@ -118,14 +118,14 @@ const MovieDetailPage = ({ match }) => {
             </div>
           </div>
           <div className="detail-sections">
-            <div>
+            <div style={{marginBottom: "1vmax"}}>
               <div className="fg fg3 section-label">Download : </div>
               <PriceTag popularity={movie.popularity} />
             </div>
 
-            <div id="lower" className="fg fg2" />
-
             <KeywordsBlock movie_id={movie.id} />
+
+            <div id="lower" className="fg fg2" />
 
             <CollectionBlock collection={movie.belongs_to_collection} />
 
