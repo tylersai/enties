@@ -4,7 +4,7 @@ import "./KeywordsBlock.css";
 
 import { API_END_POINT, API_KEY } from "../../utils/Constant";
 
-import Keywords from "../ui/Keywords";
+import Keyword from "../ui/Keyword";
 
 const KeywordsBlock = ({ movie_id }) => {
   const [keywords, setKeywords] = useState([]);
@@ -23,7 +23,7 @@ const KeywordsBlock = ({ movie_id }) => {
   return (
     <div>
       <div className="fg fg3 section-label">Keywords : </div>
-      <Keywords keywords={keywords} />
+      {keywords.map(kw => <Keyword key={kw.id} keyword={kw}/>)}
     </div>
   );
   else return null;

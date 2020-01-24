@@ -80,7 +80,7 @@ const MovieListPage = ({ link, title, match }) => {
       <div className="title-bar">
         {match.params.kid && keywordName ? (
           <div>
-            <h4 style={{ display: "inline-block", marginRight: "3vw"}} className="fg fgg animate-popup-1">Keyword: </h4>
+            <h4 style={{ display: "inline-block", marginRight: "8px"}} className="fg fgg animate-popup-1">Keyword:</h4>
             <span className="fg fg3 bg bg2 keyword animate-enlarge">{keywordName}</span>
           </div>
         ) : (
