@@ -95,7 +95,7 @@ const MovieDetailPage = ({ match }) => {
             </div>
             <div className="detail-title">
               <div id="detail-title">
-                <h1 className="fg fg2">{movie.title}</h1>
+                <h1 className="fg fg2 ent-text-shadow">{movie.title}</h1>
                 {movie.vote_count ? (
                   <Rating
                     voteAverage={movie.vote_average}
