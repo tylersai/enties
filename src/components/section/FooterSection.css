@@ -25,14 +25,12 @@
 .FooterSection .social-icons .social-icon{
     margin: 8px;
     padding: 0.5vmax;
-    border-radius: 50%;
     transition: all 200ms 50ms ease-out;
     /* If icons fail to appear */
     color: var(--reactgreen);
     font-weight: 800;
     font-size: 14;
     text-align: center;
-    line-height: 23px;
 }
 
 .FooterSection .social-icons .social-icon > img {
