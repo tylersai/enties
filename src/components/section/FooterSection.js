@@ -22,7 +22,7 @@ const FooterSection = () => {
             <span className="footer-link">About</span>
           </div>
           <div>
-            <span className="footer-link">Jobs</span>
+            <span className="footer-link">Careers</span>
           </div>
           <div>
             <span className="footer-link">Contact Us</span>
