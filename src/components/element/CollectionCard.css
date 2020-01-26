@@ -1,0 +1,50 @@
+.CollectionCard {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    -webkit-tap-highlight-color: currentColor;
+}
+
+.CollectionCard::after {
+    position: absolute;
+    display: block;
+    margin: 10px;
+    height: 20vmin;
+    width: 100%;
+    background-color: var(--reactgreen);
+    opacity: 0;
+    -webkit-transition: opacity 200ms 50ms ease-out;
+    -o-transition: opacity 200ms 50ms ease-out;
+    transition: opacity 200ms 50ms ease-out;
+}
+
+.CollectionCard:hover::after {
+    opacity: 0.5;
+}
+
+.CollectionCard > div {
+    display: block;
+}
+
+.CollectionCard .collection-img {
+    padding: 10px;
+}
+
+.CollectionCard .collection-text {
+    padding: 0 10px 10px 10px;
+}
+
+.CollectionCard img {
+  height: 20vmin;
+  width: auto;
+}
+
+.CollectionCard h5 {
+  letter-spacing: 1px;
+}
+
+@media (hover:none) {
+    .CollectionCard:hover::after {
+        opacity: 0;
+    }
+}
