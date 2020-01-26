@@ -1,5 +1,6 @@
 button.price-tag {
   color: var(--reactgreen);
+  background-color: transparent;
   padding: 4px 7px;
   margin: 8px 0px;
   font-size: 14px;

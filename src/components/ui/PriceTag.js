@@ -14,7 +14,7 @@ const PriceTag = ({popularity}) => {
         }
         return 19.99;
     }
-    return <button onClick={goBuy} className="PriceTag price-tag bg bg2">${calculatePrice()}</button>;
+    return <button onClick={goBuy} className="PriceTag price-tag bg">${calculatePrice()}</button>;
 }
 
 export default PriceTag;
