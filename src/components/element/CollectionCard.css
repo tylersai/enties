@@ -1,4 +1,5 @@
 .CollectionCard {
+    padding: 10px;
     display: inline-block;
     position: relative;
     text-decoration: none;
@@ -6,13 +7,15 @@
 }
 
 .CollectionCard::after {
+    content: "";
     position: absolute;
     display: block;
-    margin: 10px;
+    margin-top: 10px;
     height: 20vmin;
-    width: 100%;
+    width: calc(100% - 20px);
     background-color: var(--reactgreen);
     opacity: 0;
+    top: 0;
     -webkit-transition: opacity 200ms 50ms ease-out;
     -o-transition: opacity 200ms 50ms ease-out;
     transition: opacity 200ms 50ms ease-out;
@@ -26,12 +29,8 @@
     display: block;
 }
 
-.CollectionCard .collection-img {
-    padding: 10px;
-}
-
 .CollectionCard .collection-text {
-    padding: 0 10px 10px 10px;
+    padding: 10px 0;
 }
 
 .CollectionCard img {

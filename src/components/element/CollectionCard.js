@@ -6,7 +6,7 @@ import { POSTER_PATH } from "../../utils/Constant";
 
 const CollectionCard = ({ collection }) => {
   return (
-    <Link className="CollectionCard">
+    <Link className="CollectionCard" to={`/collection/${collection.id}`}>
       <div className="collection-img">
         {collection.backdrop_path ? (
           <img
