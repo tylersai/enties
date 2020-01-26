@@ -1,6 +1,10 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import "./FooterSection.css";
+import facebook from "../../assets/facebook.svg";
+import instagram from "../../assets/instagram.svg";
+import twitter from "../../assets/twitter.svg";
+import github from "../../assets/github.svg";
 
 const FooterSection = () => {
   const history = useHistory();
@@ -15,6 +19,20 @@ const FooterSection = () => {
             <span onClick={goHome}>Enties</span>
           </div>
           <div className="fg fgg">Entertainment website for movie geeks!</div>
+          <div className="social-icons">
+            <div className="social-icon">
+              <img src={twitter} alt="TW"/>
+            </div>
+            <div className="social-icon">
+              <img src={facebook} alt="FB"/>
+            </div>
+            <div className="social-icon">
+              <img src={instagram} alt="IG"/>
+            </div>
+            <div className="social-icon">
+              <img src={github} alt="GH"/>
+            </div>
+          </div>
         </div>
         <div>
           <h4>company</h4>

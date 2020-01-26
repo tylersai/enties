@@ -14,6 +14,31 @@
     text-align: center;
 }
 
+.FooterSection .social-icons{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding-top: 2vh;
+}
+
+.FooterSection .social-icons .social-icon{
+    margin: 8px;
+    padding: 0.5vmax;
+    border-radius: 50%;
+    transition: all 200ms 50ms ease-out;
+}
+
+.FooterSection .social-icons .social-icon > img {
+    width: 23px;
+    height: 23px;
+}
+
+.FooterSection .social-icons .social-icon:hover{
+    opacity: 0.9;
+    transform: scale(0.9);
+}
+
 .FooterSection .footer-wrapper{
     margin: auto;
     display: flex;
@@ -89,5 +114,9 @@
 @media (hover:none){
     .footer-link:hover {
         color: var(--entlightgray);
+    }
+    .FooterSection .social-icons .social-icon:hover{
+        opacity: 1;
+        transform: scale(1);
     }
 }
