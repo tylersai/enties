@@ -63,6 +63,7 @@
   max-width: 110vmin;
   color: var(--entdark) !important;
   border-color: var(--entdark);
+  opacity: 0.4;
 }
 
 .MovieDetailPage .no-movie {
