@@ -1,9 +1,13 @@
 .CollectionParts {
   padding: 30px 4vw;
+}
+
+.CollectionParts .wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
+
 /*
 .CollectionParts .part {
   display: flex;
