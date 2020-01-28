@@ -8,6 +8,7 @@ import MovieListPage from "./components/page/MovieListPage";
 import MovieDetailPage from "./components/page/MovieDetailPage";
 
 import FooterSection from "./components/section/FooterSection";
+import CollectionPage from "./components/page/CollectionPage";
 
 const App = () => {
 
@@ -21,6 +22,7 @@ const App = () => {
           <Route path="/discover" render={ routeProps => (<MovieListPage {...routeProps} title="Discover" link="/discover/movie"/>)} />
           <Route path="/trending" render={ routeProps => (<MovieListPage {...routeProps} title="Trending" link="/trending/movie/week"/>)} />
           <Route path="/keyword/:kid" component={MovieListPage} />
+          <Route path="/collection/:cid" component={CollectionPage} />
         </Switch>
         <FooterSection/>
       </Router>
