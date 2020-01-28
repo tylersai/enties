@@ -6,6 +6,7 @@ import collectionLogo from "../../assets/collection.svg";
 import { API_END_POINT, API_KEY, POSTER_PATH } from "../../utils/Constant";
 
 import Loading from "../ui/Loading";
+import CollectionParts from "../element/CollectionParts";
 
 const CollectionPage = ({ match }) => {
   const [isLoadingImg, setIsLoadingImg] = useState(false);
@@ -71,13 +72,14 @@ const CollectionPage = ({ match }) => {
               )}
             </div>
             <div className="detail-title">
-              <div id="detail-title">
+              <div>
                 <h1 className="fg fg2 ent-text-shadow">{collection.name}</h1>
                 <hr align="left" className="fg" />
                 <p className="fg fg3">{collection.overview}</p>
               </div>
             </div>
           </div>
+          <CollectionParts parts={collection.parts} />
         </>
       ) : (
         <div className="no-data">

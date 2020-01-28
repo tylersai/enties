@@ -1,6 +1,8 @@
 .CollectionParts {
   padding: 30px 4vw;
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 /*
 .CollectionParts .part {
