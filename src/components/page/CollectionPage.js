@@ -7,6 +7,7 @@ import { API_END_POINT, API_KEY, POSTER_PATH } from "../../utils/Constant";
 
 import Loading from "../ui/Loading";
 import CollectionParts from "../element/CollectionParts";
+import PriceTag from "../ui/PriceTag";
 
 const CollectionPage = ({ match }) => {
   const [isLoadingImg, setIsLoadingImg] = useState(false);
@@ -76,6 +77,7 @@ const CollectionPage = ({ match }) => {
                 <h1 className="fg fg2 ent-text-shadow">{collection.name}</h1>
                 <hr align="left" className="fg" />
                 <p className="fg fg3">{collection.overview}</p>
+                <PriceTag price="102.99"/>
               </div>
             </div>
           </div>
