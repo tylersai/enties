@@ -33,25 +33,25 @@
   margin-right: 10px;
 }
 
-.detail-wrapper {
+.MovieDetailPage .detail-wrapper {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
 }
 
-.detail-wrapper .detail-poster img {
+.MovieDetailPage .detail-wrapper .detail-poster img {
   margin: 30px 4vw 20px 4vw;
   max-width: 30vmin;
   height: auto;
 }
 
-.detail-wrapper .detail-title {
+.MovieDetailPage .detail-wrapper .detail-title {
   flex-grow: 1;
   padding-top: 30px;
   padding-right: 4vw;
 }
 
-.detail-wrapper .detail-title > div > * {
+.MovieDetailPage .detail-wrapper .detail-title > div > * {
   margin-bottom: 8px;
 }
 

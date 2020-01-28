@@ -32,3 +32,30 @@
   display: inline-block;
   margin-right: 10px;
 }
+
+.CollectionPage .detail-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.CollectionPage .detail-wrapper .detail-poster {
+  width: 400px;
+}
+.CollectionPage .detail-wrapper .detail-poster img {
+  margin: 30px 0 0 4vw;
+  width: calc(100% - 4vw);
+  height: auto;
+}
+
+.CollectionPage .detail-wrapper .detail-title {
+  flex-grow: 1;
+  width: 400px;
+  padding-top: 30px;
+  padding-right: 4vw;
+  padding-left: 4vw;
+}
+
+.CollectionPage .detail-wrapper .detail-title > div > * {
+  margin-bottom: 8px;
+}
