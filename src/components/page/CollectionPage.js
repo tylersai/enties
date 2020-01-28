@@ -77,6 +77,7 @@ const CollectionPage = ({ match }) => {
                 <h1 className="fg fg2 ent-text-shadow">{collection.name}</h1>
                 <hr align="left" className="fg" />
                 <p className="fg fg3">{collection.overview}</p>
+                <div className="fg fg3 section-label">Buy Bundle : </div>
                 <PriceTag price="102.99"/>
               </div>
             </div>

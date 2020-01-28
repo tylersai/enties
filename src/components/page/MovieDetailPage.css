@@ -20,14 +20,6 @@
   margin: 3px 0 4vmax 0;
 }
 
-.MovieDetailPage .section-label {
-  font-weight: 500;
-  font-size: 16px;
-  letter-spacing: 1px;
-  display: inline-block;
-  margin-right: 10px;
-}
-
 .MovieDetailPage .detail-wrapper {
   display: flex;
   flex-direction: row;
@@ -52,4 +44,12 @@
 
 #upper > h3 {
   margin-top: 30px;
+}
+
+.section-label {
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  margin-right: 10px;
 }
