@@ -6,14 +6,6 @@ import collectionLogo from "../../assets/collection.svg";
 import { API_END_POINT, API_KEY, POSTER_PATH } from "../../utils/Constant";
 
 import Loading from "../ui/Loading";
-import Rating from "../ui/Rating";
-import PriceTag from "../ui/PriceTag";
-
-import Trailers from "../element/Trailers";
-import Credits from "../element/Credits";
-import CollectionBlock from "../element/CollectionBlock";
-import RelatedMoviesBlock from "../element/RelatedMoviesBlock";
-import KeywordsBlock from "../element/KeywordsBlock";
 
 const CollectionPage = ({ match }) => {
   const [isLoadingImg, setIsLoadingImg] = useState(false);
@@ -45,19 +37,13 @@ const CollectionPage = ({ match }) => {
     fetchColl();
   }, []);
 
-  const options = { year: "numeric", month: "long", day: "numeric" };
-
-  const solveGenres = genres => {
-    return genres.map(g => g.name).join(" \u2022 ");
-  };
-
   return (
     <section className="CollectionPage bg bg1 animate-popup">
       {isLoadingImg || isLoadingColl ? (
         <div className="center-loading">
           <Loading />
         </div>
-      ) : collection.title ? (
+      ) : collection.name ? (
         <>
           <div className="detail-wrapper">
             <div className="detail-poster" id="detail-poster">
