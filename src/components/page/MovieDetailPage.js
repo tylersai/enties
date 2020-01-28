@@ -153,7 +153,7 @@ const MovieDetailPage = ({ match }) => {
       ) : (
         <div className="no-movie">
           <img className="animate-enlarge" src={movieLogo} alt="POSTER" />
-          <div className="fgganimate-enlarge">NOT FOUND</div>
+          <div className="fgg animate-enlarge">NOT FOUND</div>
         </div>
       )}
     </section>
