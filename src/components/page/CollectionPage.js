@@ -78,7 +78,7 @@ const CollectionPage = ({ match }) => {
                 <hr align="left" className="fg" />
                 <p className="fg fg3">{collection.overview}</p>
                 <div className="fg fg3 section-label">Buy Bundle : </div>
-                <PriceTag price="102.99"/>
+                <PriceTag price={collection.parts.length * 13 + 0.99 + parseInt(collection.parts.length * 1.5)}/>
               </div>
             </div>
           </div>
