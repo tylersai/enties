@@ -1,7 +1,7 @@
 import React from "react";
 import "./PriceTag.css";
 
-const PriceTag = ({popularity}) => {
+const PriceTag = ({popularity, price}) => {
     const goBuy = e => {
         e.stopPropagation();
     }
@@ -14,7 +14,7 @@ const PriceTag = ({popularity}) => {
         }
         return 19.99;
     }
-    return <button onClick={goBuy} className="PriceTag price-tag bg">${calculatePrice()}</button>;
+    return <button onClick={goBuy} className="PriceTag price-tag bg">${price ? price:calculatePrice()}</button>;
 }
 
 export default PriceTag;
