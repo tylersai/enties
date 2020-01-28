@@ -82,7 +82,7 @@ const CollectionPage = ({ match }) => {
       ) : (
         <div className="no-movie">
           <img className="animate-fadein" src={collectionLogo} alt="POSTER" />
-          <div className="fgg animate-fadein">NOT FOUND</div>
+          <div className="fg fgg">NOT FOUND</div>
         </div>
       )}
     </section>
