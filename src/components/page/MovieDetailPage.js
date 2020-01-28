@@ -85,12 +85,12 @@ const MovieDetailPage = ({ match }) => {
             <div className="detail-poster" id="detail-poster">
               {movie.poster_path ? (
                 <img
-                  className="animate-enlarge"
+                  className="animate-fadein"
                   src={POSTER_PATH + movie.poster_path}
                   alt="POSTER"
                 />
               ) : (
-                <img className="animate-enlarge" src={movieLogo} alt="POSTER" />
+                <img className="animate-fadein" src={movieLogo} alt="POSTER" />
               )}
             </div>
             <div className="detail-title">

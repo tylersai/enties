@@ -60,13 +60,13 @@ const CollectionPage = ({ match }) => {
             <div className="detail-poster" id="detail-poster">
               {collection.backdrop_path ? (
                 <img
-                  className="animate-enlarge"
+                  className="animate-fadein"
                   src={POSTER_PATH + collection.backdrop_path}
                   alt="POSTER"
                 />
               ) : (
                 <img
-                  className="animate-enlarge"
+                  className="animate-fadein"
                   src={collectionLogo}
                   alt="POSTER"
                 />
