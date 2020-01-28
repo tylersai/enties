@@ -26,6 +26,8 @@
     margin: 8px;
     padding: 0.5vmax;
     transition: all 200ms 50ms ease-out;
+    -webkit-tap-highlight-color: currentColor;
+    text-decoration: none;
     /* If icons fail to appear */
     color: var(--reactgreen);
     font-weight: 800;
