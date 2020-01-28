@@ -1,0 +1,36 @@
+.CollectionParts {
+  padding: 30px 4vw;
+  display: block;
+}
+/*
+.CollectionParts .part {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin: 0.9vmax;
+}
+
+.CollectionParts .part > div {
+  padding: 1vmin;
+}
+
+.CollectionParts .part > div:last-child {
+  flex-grow: 1;
+}
+
+.CollectionParts .part > div:last-child > div.release-date {
+  font-size: 12px;
+  font-weight: 200;
+  margin: 5px 0px 2px 0px;
+}
+
+.CollectionParts .part img.with-poster {
+  height: 15vmax;
+  width: auto;
+}
+
+.CollectionParts .part img.no-poster {
+  height: auto;
+  width: 10vmax;
+}
+*/
