@@ -151,7 +151,7 @@ const MovieDetailPage = ({ match }) => {
           </div>
         </>
       ) : (
-        <div className="no-movie">
+        <div className="no-data">
           <img className="animate-fadein" src={movieLogo} alt="POSTER" />
           <div className="fg fgg">NOT FOUND</div>
         </div>

@@ -32,30 +32,3 @@
   display: inline-block;
   margin-right: 10px;
 }
-
-.CollectionPage hr{
-  max-width: 110vmin;
-  color: var(--entdark) !important;
-  border-color: var(--entdark);
-  opacity: 0.4;
-}
-
-.CollectionPage .no-movie {
-  text-align: center;
-  margin-top: 100px;
-  margin-bottom: 100px;
-}
-
-.CollectionPage .no-movie img {
-  width: 30vmin;
-  height: auto;
-}
-
-.CollectionPage .no-movie div {
-  margin-top: 20px;
-  font-size: 22px;
-  font-weight: 600px;
-  letter-spacing: 2px;
-  word-spacing: 5px;
-  cursor: default;
-}

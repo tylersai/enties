@@ -80,7 +80,7 @@ const CollectionPage = ({ match }) => {
           </div>
         </>
       ) : (
-        <div className="no-movie">
+        <div className="no-data">
           <img className="animate-fadein" src={collectionLogo} alt="POSTER" />
           <div className="fg fgg">NOT FOUND</div>
         </div>
