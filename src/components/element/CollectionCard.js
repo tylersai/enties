@@ -10,12 +10,12 @@ const CollectionCard = ({ collection }) => {
       <div className="collection-img">
         {collection.backdrop_path ? (
           <img
-            className="animate-enlarge"
+            className="animate-fadein"
             src={POSTER_PATH + collection.backdrop_path}
             alt="POSTER"
           />
         ) : (
-          <img className="animate-enlarge" src={movieLogo} alt="POSTER" />
+          <img className="animate-fadein" src={movieLogo} alt="POSTER" />
         )}
       </div>
       <div className="collection-text">

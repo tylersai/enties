@@ -39,8 +39,8 @@
 }
 
 .animate-fadein {
-  -webkit-animation: fadein 200ms ease-out;
-  animation: fadein 200ms ease-out;
+  -webkit-animation: fadein 250ms ease-out;
+  animation: fadein 250ms ease-out;
 }
 
 @keyframes popup {

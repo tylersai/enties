@@ -10,6 +10,7 @@ const FooterSection = () => {
   const history = useHistory();
   const goHome = () => {
     history.push("/");
+    window.scrollTo(0,0);
   };
   return (
     <section className="FooterSection bg bg2" id="footer">
