@@ -3,7 +3,7 @@
     display: inline-block;
     position: relative;
     text-decoration: none;
-    -webkit-tap-highlight-color: currentColor;
+    -webkit-tap-highlight-color: inherit;
 }
 
 .CollectionCard::after {
