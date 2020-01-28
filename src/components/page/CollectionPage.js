@@ -16,19 +16,28 @@ const CollectionPage = ({ match }) => {
   const fetchImg = async () => {
     setIsLoadingImg(true);
     const imgLink =
-      API_END_POINT + `/collection/${match.params.cid}/images?api_key=${API_KEY}`;
-    const resImg = await Axio.get(imgLink);
-    setImg(resImg.data);
-    setIsLoadingImg(false);
+      API_END_POINT +
+      `/collection/${match.params.cid}/images?api_key=${API_KEY}`;
+    try {
+      const resImg = await Axio.get(imgLink);
+      setImg(resImg.data);
+      setIsLoadingImg(false);
+    } catch {
+      setIsLoadingImg(false);
+    }
   };
 
   const fetchColl = async () => {
     setIsLoadingColl(true);
     const collLink =
       API_END_POINT + `/collection/${match.params.cid}?api_key=${API_KEY}`;
-    const collImg = await Axio.get(collLink);
-    setCollection(collImg.data);
-    setIsLoadingColl(false);
+    try {
+      const collImg = await Axio.get(collLink);
+      setCollection(collImg.data);
+      setIsLoadingColl(false);
+    } catch {
+      setIsLoadingColl(false);
+    }
   };
 
   useEffect(() => {
@@ -54,7 +63,11 @@ const CollectionPage = ({ match }) => {
                   alt="POSTER"
                 />
               ) : (
-                <img className="animate-enlarge" src={collectionLogo} alt="POSTER" />
+                <img
+                  className="animate-enlarge"
+                  src={collectionLogo}
+                  alt="POSTER"
+                />
               )}
             </div>
             <div className="detail-title">
@@ -69,7 +82,7 @@ const CollectionPage = ({ match }) => {
       ) : (
         <div className="no-movie">
           <img className="animate-enlarge" src={collectionLogo} alt="POSTER" />
-          <div className="fgganimate-enlarge">NOT FOUND</div>
+          <div className="fgg animate-enlarge">NOT FOUND</div>
         </div>
       )}
     </section>
