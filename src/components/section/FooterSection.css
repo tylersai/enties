@@ -2,7 +2,7 @@
     max-width: calc(100% - 10vmax);
     text-align: left;
     min-height: 42vh;
-    padding: 5vmax;
+    padding: 3vmax 5vmax;
     z-index: 5;
 }
 

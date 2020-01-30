@@ -1,17 +1,21 @@
 .NoData {
   text-align: center;
-  margin-top: 100px;
-  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 25vh;
 }
 
 .NoData img {
-  width: 30vmin;
+  width: 28vmin;
   height: auto;
+  margin: 0 auto;
+  margin-top: 15vh;
 }
 
-.NoData div {
-  margin-top: 20px;
-  font-size: 22px;
+.NoData div:last-child {
+  margin-top: 15px;
+  font-size: 2vmax;
   font-weight: 600px;
   letter-spacing: 2px;
   word-spacing: 5px;
@@ -19,6 +23,9 @@
 }
 
 .NoData div.status-code {
-    font-size: 28px;
+    margin-top: 0px;
+    font-size: 6vmax;
+    letter-spacing: 1vmax;
     font-weight: 800;
+    cursor: default;
 }

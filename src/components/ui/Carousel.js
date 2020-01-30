@@ -25,7 +25,7 @@ const Carousel = ({ imgs }) => {
         data-scale="0.5"
         data-scale-bottom="0.75"
       >
-        <div data-u="prototype" className="i">
+        <div data-u="prototype" className="i bg bg3">
           <svg viewbox="0 0 16000 16000">
             <circle className="b" cx="8000" cy="8000" r="5000" />
           </svg>
@@ -34,7 +34,7 @@ const Carousel = ({ imgs }) => {
 
       <div
         data-u="arrowleft"
-        className="jssora073 arrowleft"
+        className="jssora073 arrowleft bg bg3"
         data-autocenter="2"
         data-scale="0.75"
         data-scale-left="0.75"
@@ -48,7 +48,7 @@ const Carousel = ({ imgs }) => {
       </div>
       <div
         data-u="arrowright"
-        className="jssora073 arrowright"
+        className="jssora073 arrowright bg bg3"
         data-autocenter="2"
         data-scale="0.75"
         data-scale-right="0.75"
