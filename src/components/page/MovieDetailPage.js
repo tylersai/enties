@@ -15,6 +15,7 @@ import Credits from "../element/Credits";
 import CollectionBlock from "../element/CollectionBlock";
 import RelatedMoviesBlock from "../element/RelatedMoviesBlock";
 import KeywordsBlock from "../element/KeywordsBlock";
+import NoData from "../element/NoData";
 
 const MovieDetailPage = ({ match }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -151,10 +152,7 @@ const MovieDetailPage = ({ match }) => {
           </div>
         </>
       ) : (
-        <div className="no-data">
-          <img className="animate-fadein" src={movieLogo} alt="POSTER" />
-          <div className="fg fgg">NOT FOUND</div>
-        </div>
+        <NoData svgPath={movieLogo} label="MOVIE NOT FOUND"/>
       )}
     </section>
   );
