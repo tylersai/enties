@@ -8,6 +8,7 @@ import { API_END_POINT, API_KEY, POSTER_PATH } from "../../utils/Constant";
 import Loading from "../ui/Loading";
 import CollectionParts from "../element/CollectionParts";
 import PriceTag from "../ui/PriceTag";
+import NoData from "../element/NoData";
 
 const CollectionPage = ({ match }) => {
   const [isLoadingImg, setIsLoadingImg] = useState(false);
@@ -85,10 +86,7 @@ const CollectionPage = ({ match }) => {
           <CollectionParts parts={collection.parts} />
         </>
       ) : (
-        <div className="no-data">
-          <img className="animate-fadein" src={collectionLogo} alt="POSTER" />
-          <div className="fg fgg">NOT FOUND</div>
-        </div>
+        <NoData svgPath={collectionLogo} label="BUNDLE NOT FOUND"/>
       )}
     </section>
   );
