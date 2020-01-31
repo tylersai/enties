@@ -9,6 +9,7 @@ import Loading from "../ui/Loading";
 import CollectionParts from "../element/CollectionParts";
 import PriceTag from "../ui/PriceTag";
 import NoData from "../element/NoData";
+import Carousel from "../ui/Carousel";
 
 const CollectionPage = ({ match }) => {
   const [isLoadingImg, setIsLoadingImg] = useState(false);
@@ -57,6 +58,7 @@ const CollectionPage = ({ match }) => {
         </div>
       ) : collection.name ? (
         <>
+          <Carousel imgs={img.backdrops} />
           <div className="detail-wrapper">
             <div className="detail-poster" id="detail-poster">
               {collection.backdrop_path ? (
