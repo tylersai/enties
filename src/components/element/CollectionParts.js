@@ -9,7 +9,7 @@ const CollectionParts = ({ parts }) => {
       <hr align="left" className="fg fullwidth" />
       <div className="wrapper">
         {parts.map(m => (
-          <MovieCard m={m} />
+          <MovieCard m={m} key={m.id} />
         ))}
       </div>
     </div>
