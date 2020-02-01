@@ -36,11 +36,13 @@ const CollectionPage = ({ match }) => {
     const collLink =
       API_END_POINT + `/collection/${match.params.cid}?api_key=${API_KEY}`;
     try {
-      const collImg = await Axio.get(collLink);
-      setCollection(collImg.data);
+      const resColl = await Axio.get(collLink);
+      setCollection(resColl.data);
       setIsLoadingColl(false);
+      document.title = `Enties \u2022 ${resColl.data.name}`;
     } catch {
       setIsLoadingColl(false);
+      document.title = "Enties \u2022 Collection";
     }
   };
 

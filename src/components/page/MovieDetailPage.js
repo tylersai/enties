@@ -30,9 +30,10 @@ const MovieDetailPage = ({ match }) => {
       .then(res => {
         setMovie(res.data);
         setIsLoading(false);
+        document.title = `Enties \u2022 ${res.data.title}`;
       })
       .catch(err => {
-        console.log(err);
+        document.title = "Enties \u2022 Movie Details";
         setMovie({});
         setIsLoading(false);
       });

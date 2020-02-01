@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import "./HomePage.css";
 
@@ -9,6 +9,10 @@ import DiscoverSection from "../section/DiscoverSection";
 function HomePage() {
 
   const history = useHistory();
+
+  useEffect(() => {
+    document.title = "Enties";
+  }, []);
 
   const processSearch = (qs) => history.push(`/search?q=${qs}`);
 

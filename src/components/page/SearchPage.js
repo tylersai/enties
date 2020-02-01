@@ -37,6 +37,7 @@ const SearchPage = props => {
   useEffect(() => {
     if (searchQuery) {
       window.scrollTo(0,0);
+      document.title = `Enties \u2022 Search "${searchQuery}"`;
       setIsLoading(true);
 
       const queryObj = {

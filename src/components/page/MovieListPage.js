@@ -43,10 +43,14 @@ const MovieListPage = ({ link, title, match }) => {
       Axio.get(klink)
         .then(res => {
           setKeywordName(res.data.name);
+          document.title = `Enties \u2022 "${res.data.name}"`;
         })
         .catch(err => {
           setKeywordName("");
+          document.title = `Enties \u2022 Keyword`;
         });
+    } else {
+      document.title = `Enties \u2022 ${title}`;
     }
   }, [match.params.kid]);
 
