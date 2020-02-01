@@ -1,24 +1,38 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Carousel.css";
 
 import { POSTER_PATH } from "../../utils/Constant";
 
 const Carousel = ({ imgs }) => {
+  const [showBtn, setShowBtn] = useState(false);
 
-  const scrollX = async (e) => {
-    let pixAmt = e.target.id === "btnRight" ? 10:-10;
-    for(let i=0; i<40; i++){
-      document.querySelector('.Carousel .slides').scrollLeft += pixAmt;
-      await new Promise(r => setTimeout(r,15));
+  useEffect(() => {
+    setTimeout(() => {
+      const slideWidth = document.querySelector(".Carousel .slides")
+        .scrollWidth;
+      const docWidth = document.documentElement.clientWidth;
+      setShowBtn(slideWidth > docWidth);
+      console.log(slideWidth, docWidth);
+    }, 2500);
+  });
+
+  const scrollX = async e => {
+    let pixAmt = e.target.id === "btnRight" ? 5 : -5;
+    for (let i = 0; i < 30; i++) {
+      document.querySelector(".Carousel .slides").scrollLeft += pixAmt;
+      await new Promise(r => setTimeout(r, 15));
     }
   };
 
-  if(!imgs || imgs.length === 1)
-    return null;
+  if (!imgs || imgs.length < 3) return null;
 
   return (
     <div className="Carousel">
-      <button onClick={scrollX} id="btnLeft">&lsaquo;</button>
+      {showBtn ? (
+        <button onClick={scrollX} id="btnLeft">
+          &lsaquo;
+        </button>
+      ) : null}
       <div className="slides">
         {imgs.slice(1).map((img, i) => (
           <img
@@ -29,7 +43,11 @@ const Carousel = ({ imgs }) => {
           />
         ))}
       </div>
-      <button onClick={scrollX} id="btnRight">&rsaquo;</button>
+      {showBtn ? (
+        <button onClick={scrollX} id="btnRight">
+          &rsaquo;
+        </button>
+      ) : null}
     </div>
   );
 };
