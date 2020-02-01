@@ -40,6 +40,7 @@
 .CollectionCard img {
   height: 20vmin;
   width: auto;
+  border-radius: 3px;
 }
 
 .CollectionCard h5 {
