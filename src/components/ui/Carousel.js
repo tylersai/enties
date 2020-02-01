@@ -7,13 +7,15 @@ const Carousel = ({ imgs }) => {
   const [showBtn, setShowBtn] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => {
-      const slideWidth = document.querySelector(".Carousel .slides")
-        .scrollWidth;
-      const docWidth = document.documentElement.clientWidth;
-      setShowBtn(slideWidth > docWidth);
-      console.log(slideWidth, docWidth);
-    }, 2500);
+    if (imgs && imgs.length >= 3) {
+      setTimeout(() => {
+        const slideWidth = document.querySelector(".Carousel .slides")
+          .scrollWidth;
+        const docWidth = document.documentElement.clientWidth;
+        setShowBtn(slideWidth > docWidth);
+        console.log(slideWidth, docWidth);
+      }, 2500);
+    }
   });
 
   const scrollX = async e => {
