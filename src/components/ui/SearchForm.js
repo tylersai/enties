@@ -15,10 +15,10 @@ const SearchForm = props => {
   };
 
   return (
-    <div className="bg bg3 SearchForm ent-shadow animate-popup-3">
+    <div className="bg bg2 SearchForm ent-shadow animate-popup-3">
       <form onSubmit={processSubmit}>
         <input
-          className="bg bg3"
+          className="bg bg2"
           name="query"
           id="query"
           type="text"
