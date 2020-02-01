@@ -1,22 +1,24 @@
-import React, {useEffect} from "react";
+import React from "react";
 import "./Carousel.css";
 
 import { POSTER_PATH } from "../../utils/Constant";
 
 const Carousel = ({ imgs }) => {
 
-  const scrollRight = async () => {
-    // setInterval(()=> {
-    //   document.querySelector('.Carousel .slides').scrollLeft += 4;
-    // }, 30);
+  const scrollX = async (e) => {
+    let pixAmt = e.target.id === "btnRight" ? 10:-10;
     for(let i=0; i<40; i++){
-      document.querySelector('.Carousel .slides').scrollLeft += 10;
+      document.querySelector('.Carousel .slides').scrollLeft += pixAmt;
       await new Promise(r => setTimeout(r,15));
     }
-  }
+  };
+
+  if(!imgs || imgs.length === 1)
+    return null;
 
   return (
     <div className="Carousel">
+      <button onClick={scrollX} id="btnLeft">&lsaquo;</button>
       <div className="slides">
         {imgs.slice(1).map((img, i) => (
           <img
@@ -27,7 +29,7 @@ const Carousel = ({ imgs }) => {
           />
         ))}
       </div>
-      <button onClick={scrollRight} style={{backgroundColor:"transparent", color:"var(--reactgreen)", fontSize:"50px"}}>&rsaquo;</button>
+      <button onClick={scrollX} id="btnRight">&rsaquo;</button>
     </div>
   );
 };

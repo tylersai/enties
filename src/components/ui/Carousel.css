@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
 }
+
 .Carousel .slides {
   overflow-x: hidden;
   overflow-y: hidden;
@@ -19,7 +20,11 @@
   display: inline-block;
 }
 
-/* .Carousel button:active {
-  padding-left: 8px;
-  padding-right: 8px;
-} */
+.Carousel button {
+  background-color: transparent;
+  color: var(--reactgreen);
+  font-size: 50px;
+  width: 60px;
+  min-width: 60px;
+  max-width: 60px;
+}
