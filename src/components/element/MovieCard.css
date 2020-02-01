@@ -35,7 +35,7 @@
   width: 100%;
 }
 
-.movie-card .movie-desc {
+.movie-card .movie-desc, .ent-small-text {
   font-size: 0.9rem;
 }
 .movie-card .movie-desc p {
@@ -58,7 +58,7 @@
     margin-right: 2px;
   }
 
-  .movie-card .movie-desc {
+  .movie-card .movie-desc, .ent-small-text {
     font-size: 0.8rem;
   }
 
@@ -87,7 +87,7 @@
 }
 
 @media only screen and (min-width: 920px) {
-  .movie-card .movie-desc {
+  .movie-card .movie-desc, .ent-small-text {
     font-size: 0.9rem;
   }
 }
