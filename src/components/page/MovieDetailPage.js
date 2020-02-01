@@ -46,7 +46,7 @@ const MovieDetailPage = ({ match }) => {
     const dt = document.getElementById("detail-title").clientHeight;
     console.log(dp, dt);
 
-    if (dt > dp / 2) {
+    if (dt+10 > dp / 2) {
       id = "lower";
       document.getElementById("upper").style.display = "none";
     }
