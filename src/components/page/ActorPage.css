@@ -41,6 +41,15 @@
   border: 3px solid var(--reactgreen);
   border-radius: 50%;
   object-fit: cover;
+  padding: 5px;
+}
+
+.ActorPage .profile img.no-profile {
+  width: 13vmax;
+  min-width: 130px;
+  height: 13vmax;
+  min-height: 130px;
+  padding: 15px;
 }
 
 .ActorPage .detail {

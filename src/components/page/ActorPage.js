@@ -50,7 +50,7 @@ const ActorPage = ({ match }) => {
                   alt="PROFILE"
                 />
               ) : (
-                <img className="animate-fadein" src={actorLogo} alt="PROFILE" />
+                <img className="animate-fadein no-profile" src={actorLogo} alt="PROFILE" />
               )}
             </div>
             <div className="detail" style={{ position: "relative" }}>
