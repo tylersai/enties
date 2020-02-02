@@ -7,7 +7,7 @@
   color: var(--reactgreen);
 }
 
-.MovieDetailPage .fg {
+.MovieDetailPage .fg:not(hr.fg) {
   -webkit-animation: fadein 900ms ease-out;
   animation: fadein 900ms ease-out;
 }
