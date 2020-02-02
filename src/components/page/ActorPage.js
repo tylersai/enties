@@ -13,6 +13,7 @@ const ActorPage = ({ match }) => {
   const [actor, setActor] = useState({});
 
   const fetchData = async () => {
+    window.scrollTo(0,0);
     setIsLoading(true);
     document.title = "Enties \u2022 Actor";
     try {
