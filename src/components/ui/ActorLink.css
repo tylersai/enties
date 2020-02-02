@@ -1,0 +1,15 @@
+.ActorLink {
+    display: block;
+    position: relative;
+    padding: 1px 0;
+}
+
+.ActorLink a {
+    color: var(--entlightgray);
+    text-decoration: none;
+    -webkit-tap-highlight-color: inherit;
+}
+
+.ActorLink a:focus {
+    outline: none !important;
+}
