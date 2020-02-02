@@ -41,9 +41,9 @@ const ActorPage = ({ match }) => {
             <div className="profile">
                 {
                     actor.profile_path ? (
-                        <img src={actor.profile_path} alt="PROFILE"/>
+                        <img className="animate-popup" src={actor.profile_path} alt="PROFILE"/>
                     ):(
-                        <img src={actorLogo} alt="PROFILE"/>
+                        <img className="animate-fadein" src={actorLogo} alt="PROFILE"/>
                     )
                 }
             </div>
