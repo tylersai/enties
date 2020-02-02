@@ -1,25 +1,41 @@
+.ActorPage {
+  padding: 30px 4vw;
+  text-align: left;
+}
 .ActorPage .wrapper {
+    max-width: 92vw;
   display: flex;
   flex-wrap: wrap;
-  padding: 5px;
 }
 
-.ActorPage .profile > * {
-  padding: 4vw;
+.ActorPage .wrapper > * {
+  padding: 2vw;
+}
+
+.ActorPage .profile {
+  margin: auto;
 }
 
 .ActorPage .profile img {
-  width: 25vmax;
-  height: auto;
+  width: 15vmax;
+  min-width: 150px;
+  height: 15vmax;
+  min-height: 150px;
   border: 3px solid var(--reactgreen);
-  border-radius: 12.5vmax;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.ActorPage .detail {
+  flex-grow: 1;
+  max-width: 88vw;
 }
 
 .ActorPage h1.fg {
   color: var(--reactgreen);
 }
 
-.ActorPage .fg {
+.ActorPage .fg:not(hr.fg) {
   -webkit-animation: fadein 900ms ease-out;
   animation: fadein 900ms ease-out;
 }

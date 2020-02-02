@@ -41,15 +41,17 @@ const ActorPage = ({ match }) => {
             <div className="profile">
                 {
                     actor.profile_path ? (
-                        <img className="animate-popup" src={POSTER_PATH + actor.profile_path} alt="PROFILE"/>
+                        <img className="animate-enlarge" src={POSTER_PATH + actor.profile_path} alt="PROFILE"/>
                     ):(
                         <img className="animate-fadein" src={actorLogo} alt="PROFILE"/>
                     )
                 }
             </div>
-            <div className="detail">
+            <div className="detail" style={{position:"relative"}}>
                 <div>
                     <h1 className="fg fg2 ent-text-shadow">{actor.name}</h1>
+                    <hr align="left" className="fg" />
+                    <p className="fg fg3">{actor.biography}</p>
                 </div>
             </div>
         </div>
