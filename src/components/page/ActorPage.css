@@ -1,6 +1,7 @@
 .ActorPage {
   padding: 30px 4vw;
   min-height: 100vh;
+  max-width: 92vw;
   text-align: left;
 }
 
