@@ -14,6 +14,7 @@ const ActorPage = ({ match }) => {
 
   const fetchData = async () => {
       setIsLoading(true);
+      document.title = "Enties \u2022 Actor";
     try {
         const res = await Axio.get(API_END_POINT + `/person/${match.params.aid}?api_key=${API_KEY}`);
         setActor(res.data);
@@ -22,7 +23,6 @@ const ActorPage = ({ match }) => {
     } catch {
         setActor({});
         setIsLoading(false);
-        document.title = "Enties \u2022 Actor";
     }
   };
 

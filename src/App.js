@@ -10,6 +10,7 @@ import MovieDetailPage from "./components/page/MovieDetailPage";
 import FooterSection from "./components/section/FooterSection";
 import CollectionPage from "./components/page/CollectionPage";
 import NoData from "./components/element/NoData";
+import ActorPage from "./components/page/ActorPage";
 
 const App = () => {
 
@@ -24,6 +25,7 @@ const App = () => {
           <Route path="/trending" render={ routeProps => (<MovieListPage {...routeProps} title="Trending" link="/trending/movie/week"/>)} />
           <Route path="/keyword/:kid" component={MovieListPage} />
           <Route path="/collection/:cid" component={CollectionPage} />
+          <Route path="/actor/:aid" component={ActorPage} />
           <Route render={routeProps => <section className="bg bg1"><NoData {...routeProps}/></section>}/>
         </Switch>
         <FooterSection/>
