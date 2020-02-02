@@ -12,6 +12,24 @@ const ActorPage = ({ match }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [actor, setActor] = useState({});
 
+  const fetchData = async () => {
+      setIsLoading(true);
+    try {
+        const res = await Axio.get(API_END_POINT + `/person/${match.params.aid}`);
+        setActor(res.data);
+        setIsLoading(false);
+        document.title = `Enties \u2022 ${res.data.name}`;
+    } catch {
+        setActor({});
+        setIsLoading(false);
+        document.title = "Enties \u2022 Actor";
+    }
+  };
+
+  useEffect(() => {
+      fetchData();
+  }, [match.params.aid]);
+
   return (
     <section className="ActorPage bg bg1 animate-popup">
       {isLoading ? (
