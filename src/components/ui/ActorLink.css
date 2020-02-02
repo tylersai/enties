@@ -8,6 +8,7 @@
     color: var(--entlightgray);
     text-decoration: none;
     -webkit-tap-highlight-color: inherit;
+    white-space: nowrap;
 }
 
 .ActorLink a:focus {

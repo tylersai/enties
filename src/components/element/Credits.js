@@ -3,6 +3,7 @@ import Axios from "axios";
 import "./Credits.css";
 
 import { API_END_POINT, API_KEY } from "../../utils/Constant";
+import ActorLink from "../ui/ActorLink";
 
 const Credits = ({ movie_id }) => {
     
@@ -45,7 +46,7 @@ const Credits = ({ movie_id }) => {
             </div>
             <div className="right">
                 {
-                  casts.map(c => <span className="fg fg3 ent-small-text" key={c.id + c.credit_id}>{c.name}</span>)
+                  casts.map(c => <ActorLink aid={c.id} key={c.id + c.credit_id}>{c.name}</ActorLink>)
                 }
             </div>
         </div>):null}
@@ -55,7 +56,7 @@ const Credits = ({ movie_id }) => {
             </div>
             <div className="right">
                 {
-                  crews.map(c => <span className="fg fg3 ent-small-text" key={c.id + c.credit_id}>{c.name}</span>)
+                  crews.map(c => <ActorLink aid={c.id} key={c.id + c.credit_id}>{c.name}</ActorLink>)
                 }
             </div>
         </div>):null}
