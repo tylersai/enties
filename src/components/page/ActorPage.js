@@ -15,7 +15,7 @@ const ActorPage = ({ match }) => {
   const fetchData = async () => {
       setIsLoading(true);
     try {
-        const res = await Axio.get(API_END_POINT + `/person/${match.params.aid}`);
+        const res = await Axio.get(API_END_POINT + `/person/${match.params.aid}?api_key=${API_KEY}`);
         setActor(res.data);
         setIsLoading(false);
         document.title = `Enties \u2022 ${res.data.name}`;
@@ -41,7 +41,7 @@ const ActorPage = ({ match }) => {
             <div className="profile">
                 {
                     actor.profile_path ? (
-                        <img className="animate-popup" src={actor.profile_path} alt="PROFILE"/>
+                        <img className="animate-popup" src={POSTER_PATH + actor.profile_path} alt="PROFILE"/>
                     ):(
                         <img className="animate-fadein" src={actorLogo} alt="PROFILE"/>
                     )
