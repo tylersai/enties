@@ -1,9 +1,23 @@
 .ActorPage {
   padding: 30px 4vw;
+  min-height: 100vh;
   text-align: left;
 }
-.ActorPage .wrapper {
+
+.ActorPage .wrapper, .ActorPage .section-detail {
     max-width: 92vw;
+}
+
+.ActorPage .section-detail {
+    max-width: 88vw;
+    margin: 0 2vw 20px 2vw;
+}
+
+.ActorPage .section-detail > div {
+    margin-top: 15px;
+}
+
+.ActorPage .wrapper {
   display: flex;
   flex-wrap: wrap;
 }
