@@ -1,0 +1,25 @@
+.ActorPage .wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px;
+}
+
+.ActorPage .profile > * {
+  padding: 4vw;
+}
+
+.ActorPage .profile img {
+  width: 25vmax;
+  height: auto;
+  border: 3px solid var(--reactgreen);
+  border-radius: 12.5vmax;
+}
+
+.ActorPage h1.fg {
+  color: var(--reactgreen);
+}
+
+.ActorPage .fg {
+  -webkit-animation: fadein 900ms ease-out;
+  animation: fadein 900ms ease-out;
+}

@@ -37,7 +37,22 @@ const ActorPage = ({ match }) => {
           <Loading />
         </div>
       ) : actor.name ? (
-        <div />
+        <div className="wrapper">
+            <div className="profile">
+                {
+                    actor.profile_path ? (
+                        <img src={actor.profile_path} alt="PROFILE"/>
+                    ):(
+                        <img src={actorLogo} alt="PROFILE"/>
+                    )
+                }
+            </div>
+            <div className="detail">
+                <div>
+                    <h1 className="fg fg2 ent-text-shadow">{actor.name}</h1>
+                </div>
+            </div>
+        </div>
       ) : (
         <NoData svgPath={actorLogo} label="ACTOR NOT FOUND" />
       )}
