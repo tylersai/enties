@@ -5,24 +5,29 @@ import "./RelatedMoviesBlock.css";
 import { API_END_POINT, API_KEY } from "../../utils/Constant";
 import RelatedMovies from "./RelatedMovies";
 
-const RelatedMoviesBlock = ({ movie_id, title, type }) => {
+const RelatedMoviesBlock = ({ movie_id, title, type, link }) => {
 
     const [loadRelated, setLoadRelated] = useState(false);
   const [relatedMovies, setRelatedMovies] = useState([]);
 
   useEffect(() => {
     setLoadRelated(true);
-    Axios.get(API_END_POINT + `/movie/${movie_id}/${type}?api_key=${API_KEY}`)
+    const apiLink = link ? link:`/movie/${movie_id}/${type}`;
+    Axios.get(API_END_POINT + `${apiLink}?api_key=${API_KEY}`)
       .then(res => {
         setLoadRelated(false);
-        setRelatedMovies(res.data.results);
+        if(link){
+          setRelatedMovies(res.data[type]);
+        } else {
+          setRelatedMovies(res.data.results);
+        }
       })
       .catch(err => {
         console.log(err);
         setLoadRelated(false);
         setRelatedMovies([]);
       });
-  }, [type, movie_id]);
+  }, [type, movie_id, link]);
 
   if(!loadRelated && relatedMovies.length===0) return null;
 
