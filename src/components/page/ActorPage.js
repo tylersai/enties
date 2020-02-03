@@ -3,6 +3,7 @@ import "./ActorPage.css";
 import Axio from "axios";
 
 import actorLogo from "../../assets/actor.svg";
+import actorGreenLogo from "../../assets/actor-green.svg";
 import { API_END_POINT, API_KEY, POSTER_PATH } from "../../utils/Constant";
 
 import Loading from "../ui/Loading";
@@ -50,7 +51,7 @@ const ActorPage = ({ match }) => {
                   alt="PROFILE"
                 />
               ) : (
-                <img className="animate-fadein no-profile" src={actorLogo} alt="PROFILE" />
+                <img className="animate-fadein no-profile" src={actorGreenLogo} alt="PROFILE" />
               )}
             </div>
             <div className="detail" style={{ position: "relative" }}>
