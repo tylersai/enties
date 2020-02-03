@@ -1,20 +1,13 @@
 .ImageGallery .gallery {
-  display: -ms-flexbox;
-  -ms-flex-wrap: wrap;
-  -ms-flex-direction: column;
-  -webkit-flex-flow: row wrap;
-  flex-flow: row wrap;
-  display: -webkit-box;
   display: flex;
+  flex-wrap: wrap;
 }
 .ImageGallery .gallery div {
-  -webkit-box-flex: auto;
-  -ms-flex: auto;
   flex: auto;
-  width: 200px;
+  width: 140px;
   margin: 0.5vw;
 }
 .ImageGallery .gallery div img {
-  width: 100%;
-  height: auto;
+    width: 100%; 
+    height: auto;
 }

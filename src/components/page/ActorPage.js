@@ -9,6 +9,7 @@ import { API_END_POINT, API_KEY, POSTER_PATH } from "../../utils/Constant";
 import Loading from "../ui/Loading";
 import NoData from "../element/NoData";
 import RelatedMoviesBlock from "../element/RelatedMoviesBlock";
+import ImageGallery from "../ui/ImageGallery";
 
 const ActorPage = ({ match }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -73,7 +74,7 @@ const ActorPage = ({ match }) => {
             </div>
           </div>
           <div className="section-detail">
-            <h3 className="fg fg3 text-center">Detail Information</h3>
+            <h3 className="fg fg3">Detail Information</h3>
             <hr align="left" className="fg fullwidth" />
             <div>
               <div className="fg fgg section-label">
@@ -109,6 +110,8 @@ const ActorPage = ({ match }) => {
             <RelatedMoviesBlock title="Appears On" link={`/person/${actor.id}/movie_credits`} type="cast"/>
             
             <RelatedMoviesBlock title="Works As Crew On" link={`/person/${actor.id}/movie_credits`} type="crew"/>
+
+            <ImageGallery title="Related Images" id={actor.id} type="person"/>
 
           </div>
         </>

@@ -19,7 +19,8 @@
   margin-top: 15px;
 }
 
-.ActorPage .section-detail > div.RelatedMoviesBlock {
+.ActorPage .section-detail > div.RelatedMoviesBlock, 
+.ActorPage .section-detail > div.ImageGallery {
   margin-top: 35px;
 }
 

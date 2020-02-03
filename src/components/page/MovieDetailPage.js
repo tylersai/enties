@@ -14,6 +14,7 @@ import Trailers from "../element/Trailers";
 import Credits from "../element/Credits";
 import CollectionBlock from "../element/CollectionBlock";
 import RelatedMoviesBlock from "../element/RelatedMoviesBlock";
+import ImageGallery from "../ui/ImageGallery";
 import KeywordsBlock from "../element/KeywordsBlock";
 import NoData from "../element/NoData";
 
@@ -142,6 +143,8 @@ const MovieDetailPage = ({ match }) => {
               type="recommendations"
               movie_id={movie.id}
             />
+
+            <ImageGallery title="Related Images" id={movie.id} type="movie"/>
 
             <div>
               <h3 className="fg fg3 text-center" style={{marginTop:"7vh"}}>Cast &amp; Crew</h3>
