@@ -8,6 +8,7 @@ import { API_END_POINT, API_KEY, POSTER_PATH } from "../../utils/Constant";
 
 import Loading from "../ui/Loading";
 import NoData from "../element/NoData";
+import RelatedMoviesBlock from "../element/RelatedMoviesBlock";
 
 const ActorPage = ({ match }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -104,6 +105,11 @@ const ActorPage = ({ match }) => {
                 </span>
               </div>
             </div>
+
+            <RelatedMoviesBlock title="Appears On" link={`/person/${actor.id}/movie_credits`} type="cast"/>
+            
+            <RelatedMoviesBlock title="Works As Crew On" link={`/person/${actor.id}/movie_credits`} type="crew"/>
+
           </div>
         </>
       ) : (

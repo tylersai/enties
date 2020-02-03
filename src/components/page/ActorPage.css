@@ -16,7 +16,11 @@
 }
 
 .ActorPage .section-detail > div {
-    margin-top: 15px;
+  margin-top: 15px;
+}
+
+.ActorPage .section-detail > div.RelatedMoviesBlock {
+  margin-top: 35px;
 }
 
 .ActorPage .wrapper {
