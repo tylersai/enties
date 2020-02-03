@@ -1,4 +1,4 @@
-.ImageGallery {
+.ImageGallery .gallery {
   display: -ms-flexbox;
   -ms-flex-wrap: wrap;
   -ms-flex-direction: column;
@@ -7,14 +7,14 @@
   display: -webkit-box;
   display: flex;
 }
-.ImageGallery div {
+.ImageGallery .gallery div {
   -webkit-box-flex: auto;
   -ms-flex: auto;
   flex: auto;
   width: 200px;
   margin: 0.5vw;
 }
-.ImageGallery div img {
+.ImageGallery .gallery div img {
   width: 100%;
   height: auto;
 }
