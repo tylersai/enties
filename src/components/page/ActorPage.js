@@ -67,7 +67,7 @@ const ActorPage = ({ match }) => {
                 <p className="fg fgg ent-small-text">
                   Popularity : <span className="fg3">{actor.popularity}</span>
                 </p>
-                <p className="fg fg3" style={{ textAlign: "justify" }}>
+                <p className="fg fg3">
                   {actor.biography}
                 </p>
               </div>

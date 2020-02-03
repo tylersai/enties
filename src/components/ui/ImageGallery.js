@@ -13,9 +13,9 @@ const ImageGallery = ({ id, type, title }) => {
       const apiLink = `${API_END_POINT}/${type}/${id}/images?api_key=${API_KEY}`;
       const res = await Axio.get(apiLink);
       if(type === "person"){
-        setImages(res.data.profiles.map(p => p.file_path).slice(0,10));
+        setImages(res.data.profiles.map(p => p.file_path).slice(0,12));
       } else if (type === "movie"){
-        setImages(res.data.backdrops.map(p => p.file_path).slice(0,10));
+        setImages(res.data.backdrops.map(p => p.file_path).slice(0,12));
       }
       setIsLoading(false);
     } catch {
@@ -37,7 +37,7 @@ const ImageGallery = ({ id, type, title }) => {
       <div className="gallery">
         {images.map(image => (
           <div key={image}>
-            <img src={POSTER_PATH + image} alt="IMG" />
+            <img className="animate-fadein" src={POSTER_PATH + image} alt="IMG" />
           </div>
         ))}
       </div>
