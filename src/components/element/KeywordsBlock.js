@@ -28,7 +28,9 @@ const KeywordsBlock = ({ movie_id, searchQuery }) => {
     return (
       <div className="KeywordsBlock">
         {searchQuery ? (
-          <h2 className="fg fg2">Related Keywords</h2>
+          <>
+          <h3 className="fg fg3">Search Keywords</h3>
+          </>
         ) : (
           <div className="fg fg3 section-label">Keywords : </div>
         )}

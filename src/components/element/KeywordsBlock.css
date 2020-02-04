@@ -1,0 +1,8 @@
+.SearchPage .KeywordsBlock {
+    -webkit-animation: fadein 250ms ease-out;
+    animation: fadein 250ms ease-out;
+}
+
+.SearchPage .KeywordsBlock h3 {
+    margin-bottom: 15px;
+}
