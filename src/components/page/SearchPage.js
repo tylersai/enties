@@ -11,19 +11,20 @@ import Loading from "../ui/Loading";
 import Pagination from "../ui/Pagination";
 import MovieCardList from "../element/MovieCardList";
 import ThemeButton from "../ui/ThemeButton";
+import KeywordsBlock from "../element/KeywordsBlock";
 
 const SearchPage = props => {
-
   const history = useHistory();
 
   const queryParams = queryString.parse(props.location.search);
-  const searchQuery = queryParams.q ? queryParams.q.replace("+", " ").trim() : "";
+  const searchQuery = queryParams.q
+    ? queryParams.q.replace("+", " ").trim()
+    : "";
   let currentPage = queryParams.p ? queryParams.p.trim() : 1;
 
   try {
     currentPage = parseInt(currentPage);
-    if(currentPage < 1)
-      currentPage = 1;
+    if (currentPage < 1) currentPage = 1;
   } catch {
     currentPage = 1;
   }
@@ -36,7 +37,7 @@ const SearchPage = props => {
 
   useEffect(() => {
     if (searchQuery) {
-      window.scrollTo(0,0);
+      window.scrollTo(0, 0);
       document.title = `Enties \u2022 Search "${searchQuery}"`;
       setIsLoading(true);
 
@@ -45,8 +46,8 @@ const SearchPage = props => {
         query: searchQuery
       };
 
-      if(currentPage > 1){
-        queryObj.page = currentPage
+      if (currentPage > 1) {
+        queryObj.page = currentPage;
       }
 
       const link = API_END_POINT + "/search/movie?" + toQueryString(queryObj);
@@ -85,10 +86,10 @@ const SearchPage = props => {
           fill: "forwards"
         }
       ).onfinish = () => {
-        history.push('/');
+        history.push("/");
       };
     } catch {
-      history.push('/');
+      history.push("/");
     }
   };
 
@@ -100,7 +101,7 @@ const SearchPage = props => {
             {isLoading ? "Searching for : " : "Results for : "}
             <span>"{searchQuery}"</span>
           </h4>
-          <ThemeButton/>
+          <ThemeButton />
           <button
             onClick={closeSearch}
             className="fg fg2 clear-search animate-enlarge"
@@ -109,12 +110,22 @@ const SearchPage = props => {
           </button>
         </div>
       ) : null}
-      {
-        totalPages > 1 ? (
-          <Pagination currentPage={currentPage} searchQuery={searchQuery} totalPages={totalPages} totalResults={totalResults}/>
-        ):null
-      }
-      {isLoading ? <Loading />: <MovieCardList movieList={movieList}/>}
+      {totalPages > 1 ? (
+        <Pagination
+          currentPage={currentPage}
+          searchQuery={searchQuery}
+          totalPages={totalPages}
+          totalResults={totalResults}
+        />
+      ) : null}
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <>
+          <MovieCardList movieList={movieList} />
+          <KeywordsBlock searchQuery={searchQuery} />
+        </>
+      )}
     </section>
   );
 };

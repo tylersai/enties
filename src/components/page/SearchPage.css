@@ -72,6 +72,11 @@
   cursor: default;
 }
 
+.SearchPage .KeywordsBlock {
+  text-align: left;
+  padding: 0 5vmin 10vmin 5vmin;
+}
+
 @media only screen and (min-width: 380px) {
   .SearchPage > .search-desc > h4 {
     margin-left: 2px;
