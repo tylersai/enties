@@ -23,6 +23,7 @@ const App = () => {
           <Route component={MovieDetailPage} path="/movie/:id" />
           <Route path="/discover" render={ routeProps => (<MovieListPage {...routeProps} title="Discover" link="/discover/movie"/>)} />
           <Route path="/trending" render={ routeProps => (<MovieListPage {...routeProps} title="Trending" link="/trending/movie/week"/>)} />
+          <Route path="/highest-rated" render={ routeProps => (<MovieListPage {...routeProps} title="Highest Rated" link="/movie/top_rated"/>)} />
           <Route path="/keyword/:kid" component={MovieListPage} />
           <Route path="/collection/:cid" component={CollectionPage} />
           <Route path="/actor/:aid" component={ActorPage} />
