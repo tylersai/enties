@@ -1,0 +1,22 @@
+.FoldedBox {
+    display: block;
+    position: relative;
+    margin: 1.5vmax 1vw;
+    padding: 20px;
+    border: 1px solid var(--entdark);
+    border-radius: 5px;
+    transition: border-color 250ms ease-out;
+}
+
+.FoldedBox h2 {
+    color: var(--reactgreen);
+}
+
+.FoldedBox > .header-bar {
+    display: flex;
+    align-items: center;
+}
+
+.FoldedBox > .header-bar > .total-results {
+    flex-grow: 1;
+}
