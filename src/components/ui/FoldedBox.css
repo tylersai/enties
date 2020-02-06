@@ -12,11 +12,19 @@
     color: var(--reactgreen);
 }
 
+.FoldedBox button {
+    background-color: transparent;
+    border: none;
+    outline: none !important;
+}
+
+.FoldedBox button > img {
+    transform: rotate(90deg);
+    height: 30px;
+    width: auto;
+}
+
 .FoldedBox > .header-bar {
     display: flex;
     align-items: center;
-}
-
-.FoldedBox > .header-bar > .total-results {
-    flex-grow: 1;
 }

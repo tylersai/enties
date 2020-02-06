@@ -1,5 +1,6 @@
 import React from "react";
 import "./FoldedBox.css";
+import back from "../../assets/back.svg";
 
 const FoldedBox = ({title, totalResults, children}) => {
     return(
@@ -8,12 +9,14 @@ const FoldedBox = ({title, totalResults, children}) => {
                 <div className="type-title">
                     <h2>{title}</h2>
                 </div>
-                <div className="total-results fg fgg">{totalResults}</div>
+                <div className="total-results fg fgg" style={{flexGrow:"1"}}>{totalResults}</div>
                 <div className="fold-btn">
-                    <button></button>
+                    <button>
+                        <img src={back} alt="<"/>
+                    </button>
                 </div>
             </div>
-            {children}
+            <div>{children}</div>
         </div>
     );
 };
