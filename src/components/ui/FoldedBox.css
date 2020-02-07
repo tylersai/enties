@@ -16,19 +16,35 @@
     background-color: transparent;
     border: none;
     outline: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
 }
 
 .FoldedBox button > img {
     transform: rotate(90deg);
-    height: 30px;
-    width: auto;
+    height: 1.5rem;
+    width: 1.5rem;
+    object-fit: contain;
 }
 
 .FoldedBox > .header-bar {
     display: flex;
-    align-items: center;
+    align-items: baseline;
+    position: relative;
+    text-align: left;
 }
 
 .FoldedBox > .detail-container {
     padding: 0 1vw 1vw 1vw;
+    overflow: hidden;
+}
+
+.FoldedBox > .detail-container .detail-container-wrapper {
+    display: flex;
+    overflow-x: auto;
 }

@@ -8,65 +8,59 @@ import cross from "../../assets/cross.svg";
 import { API_END_POINT, API_KEY, toQueryString } from "../../utils/Constant";
 
 import Loading from "../ui/Loading";
-import Pagination from "../ui/Pagination";
-import MovieCardList from "../element/MovieCardList";
 import ThemeButton from "../ui/ThemeButton";
 import KeywordsBlock from "../element/KeywordsBlock";
+import FoldedBox from "../ui/FoldedBox";
+import MovieCardSmall from "../element/MovieCardSmall";
 
 const SearchPage = props => {
   const history = useHistory();
+
+  const [isLoading, setIsLoading] = useState(false);
+
+  const [movieRes, setMovieRes] = useState({});
+  const [actorRes, setActorRes] = useState({});
+  const [collectionRes, setCollectionRes] = useState({});
 
   const queryParams = queryString.parse(props.location.search);
   const searchQuery = queryParams.q
     ? queryParams.q.replace("+", " ").trim()
     : "";
-  let currentPage = queryParams.p ? queryParams.p.trim() : 1;
 
-  try {
-    currentPage = parseInt(currentPage);
-    if (currentPage < 1) currentPage = 1;
-  } catch {
-    currentPage = 1;
-  }
+  const getLink = mediaType => {
+    const queryObj = {
+      api_key: API_KEY,
+      query: searchQuery
+    };
+    return `${API_END_POINT}/search/${mediaType}?${toQueryString(queryObj)}`;
+  };
 
-  const [isLoading, setIsLoading] = useState(false);
-  const [movieList, setMovieList] = useState([]);
-
-  const [totalPages, setTotalPages] = useState(0);
-  const [totalResults, setTotalResults] = useState(0);
-
-  useEffect(() => {
+  const fetchData = async () => {
     if (searchQuery) {
       window.scrollTo(0, 0);
       document.title = `Enties \u2022 Search "${searchQuery}"`;
       setIsLoading(true);
 
-      const queryObj = {
-        api_key: API_KEY,
-        query: searchQuery
-      };
+      try {
+        let res = await Axio.get(getLink("movie"));
+        setMovieRes(res.data);
 
-      if (currentPage > 1) {
-        queryObj.page = currentPage;
+        res = await Axio.get(getLink("actor"));
+        setActorRes(res.data);
+
+        res = await Axio.get(getLink("collection"));
+        setCollectionRes(res.data);
+
+        setIsLoading(false);
+      } catch {
+        setIsLoading(false);
       }
-
-      const link = API_END_POINT + "/search/movie?" + toQueryString(queryObj);
-      Axio.get(link)
-        .then(res => {
-          setTotalPages(res.data.total_pages);
-          setTotalResults(res.data.total_results);
-          setMovieList(res.data.results);
-          setIsLoading(false);
-        })
-        .catch(err => {
-          console.log(err);
-          setMovieList([]);
-          setTotalPages(0);
-          setTotalResults(0);
-          setIsLoading(false);
-        });
     }
-  }, [searchQuery, currentPage]);
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, [searchQuery]);
 
   const closeSearch = () => {
     try {
@@ -95,36 +89,34 @@ const SearchPage = props => {
 
   return (
     <section className="SearchPage bg bg1 animate-popup" id="result">
-      {searchQuery ? (
-        <div className="search-desc">
-          <h4 className="fg fgg animate-popup">
-            {isLoading ? "Searching for : " : "Results for : "}
-            <span>"{searchQuery}"</span>
-          </h4>
-          <ThemeButton />
-          <button
-            onClick={closeSearch}
-            className="fg fg2 clear-search animate-enlarge"
-          >
-            <img src={cross} alt="x" />
-          </button>
-        </div>
-      ) : null}
-      {totalPages > 1 ? (
-        <Pagination
-          currentPage={currentPage}
-          searchQuery={searchQuery}
-          totalPages={totalPages}
-          totalResults={totalResults}
-        />
-      ) : null}
+      <div className="search-desc">
+        <h4 className="fg fgg animate-popup">
+          {isLoading ? "Searching for : " : "Results for : "}
+          <span>"{searchQuery}"</span>
+        </h4>
+        <ThemeButton />
+        <button
+          onClick={closeSearch}
+          className="fg fg2 clear-search animate-enlarge"
+        >
+          <img src={cross} alt="x" />
+        </button>
+      </div>
+
       {isLoading ? (
         <Loading />
       ) : (
+        movieRes.total_results || actorRes.total_results || collectionRes.total_results ? (
         <>
-          <MovieCardList movieList={movieList} />
+          <FoldedBox totalResults={movieRes.total_results} title="Movie">
+          {
+            movieRes.results.slice(0,10).map(m => <MovieCardSmall m={m}/>)
+          }
+          </FoldedBox>
           <KeywordsBlock searchQuery={searchQuery} />
-        </>
+        </>):(
+          <div className="not-found">NOT FOUND</div>
+        )
       )}
     </section>
   );

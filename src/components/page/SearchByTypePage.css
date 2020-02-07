@@ -1,15 +1,15 @@
-.SearchPage {
+.SearchByTypePage {
   min-height: 100vh;
 }
 
-.SearchPage > .search-desc {
+.SearchByTypePage > .search-desc {
   padding: 5vmin 5vmin 1vmin 5vmin;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.SearchPage > .search-desc > h4{
+.SearchByTypePage > .search-desc > h4{
   text-align: left;
   margin-left: 20px;
   letter-spacing: 1px;
@@ -17,7 +17,7 @@
   overflow: ellipsis;
 }
 
-.SearchPage > .search-desc > h4 > span{
+.SearchByTypePage > .search-desc > h4 > span{
   font-weight: 600;
   letter-spacing: 2px;
   color: var(--reactgreen);
@@ -25,7 +25,7 @@
   line-height: 1.5rem;
 }
 
-.SearchPage > .search-desc > button.clear-search{
+.SearchByTypePage > .search-desc > button.clear-search{
   margin-top: 2px;
   margin-right: 20px;
   padding: 0 !important;
@@ -42,38 +42,38 @@
   background-color: var(--reactred);
 }
 
-.SearchPage > .search-desc > button.clear-search:active{
+.SearchByTypePage > .search-desc > button.clear-search:active{
   background-color: var(--entdarkgray);
   -webkit-transform: scale(0.85);
   -ms-transform: scale(0.85);
   transform: scale(0.85);
 }
 
-.SearchPage > .search-desc > button.clear-search > img {
+.SearchByTypePage > .search-desc > button.clear-search > img {
   width: 0.8rem;
   height: 0.8rem;
   display: block;
 }
 
-.SearchPage .KeywordsBlock {
+.SearchByTypePage .KeywordsBlock {
   text-align: left;
   padding: 0 5vmin 10vmin 5vmin;
 }
 
 @media only screen and (min-width: 380px) {
-  .SearchPage > .search-desc > h4 {
+  .SearchByTypePage > .search-desc > h4 {
     margin-left: 2px;
   }
-  .SearchPage > .search-desc > button.clear-search {
+  .SearchByTypePage > .search-desc > button.clear-search {
     margin-right: 2px;
   }
 }
 
 @media only screen and (min-width: 600px) {
-  .SearchPage > .search-desc > h4 {
+  .SearchByTypePage > .search-desc > h4 {
     margin-left: 15px;
   }
-  .SearchPage > .search-desc > button.clear-search {
+  .SearchByTypePage > .search-desc > button.clear-search {
     margin-right: 15px;
   }
 

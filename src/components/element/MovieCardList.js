@@ -5,7 +5,7 @@ import MovieCard from "./MovieCard";
 
 const MovieCardList = ({ movieList }) => {
   if (movieList.length === 0)
-    return <div className="fg fgg not-found">NOT FOUND</div>;
+    return <div className="not-found">NOT FOUND</div>;
 
   return (
     <div className="res-wrapper">
