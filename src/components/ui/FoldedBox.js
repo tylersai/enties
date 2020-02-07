@@ -16,7 +16,7 @@ const FoldedBox = ({title, totalResults, children}) => {
                     </button>
                 </div>
             </div>
-            <div>{children}</div>
+            <div className="detail-container">{children}</div>
         </div>
     );
 };
