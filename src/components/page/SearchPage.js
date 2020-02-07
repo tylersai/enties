@@ -110,7 +110,7 @@ const SearchPage = props => {
         <>
           <FoldedBox totalResults={movieRes.total_results} title="Movie">
           {
-            movieRes.results.slice(0,10).map(m => <MovieCardSmall m={m}/>)
+            movieRes.results.slice(0,10).map(m => <MovieCardSmall m={m} key={m.id}/>)
           }
           </FoldedBox>
           <KeywordsBlock searchQuery={searchQuery} />

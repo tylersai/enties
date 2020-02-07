@@ -34,7 +34,6 @@
 
 .FoldedBox > .header-bar {
     display: flex;
-    align-items: baseline;
     position: relative;
     text-align: left;
 }
@@ -44,9 +43,15 @@
     padding-left: 8px;
 }
 
+.FoldedBox > .header-bar > .total-results > span {
+    margin-top: 3px;
+    display: inline-block;
+}
+
 .FoldedBox > .detail-container {
     padding: 0.5vw 1vw;
     overflow: hidden;
+    transition: height 200ms ease-out, padding-top 200ms ease-out, padding-bottom 200ms ease-out;
 }
 
 .FoldedBox > .detail-container .detail-container-wrapper {
