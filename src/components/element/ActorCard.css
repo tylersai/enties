@@ -4,10 +4,8 @@
     position: absolute;
     display: block;
     margin-top: 10px;
-    width: 15vmax;
-    min-width: 150px;
-    height: 15vmax;
-    min-height: 150px;
+    width: calc(15vmax + 16px);
+    height: calc(15vmax + 16px);
     border-radius: 50%;
     background-color: var(--reactgreen);
     opacity: 0;

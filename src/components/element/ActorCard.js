@@ -8,10 +8,10 @@ const ActorCard = ({ actor }) => {
   return (
     <Link className="ActorCard" to={`/actor/${actor.id}`}>
       <div className="actor-img">
-        {actor.profile ? (
+        {actor.profile_path ? (
           <img
             className="animate-fadein profile"
-            src={POSTER_PATH + actor.profile}
+            src={POSTER_PATH + actor.profile_path}
             alt="PROFILE"
           />
         ) : (
@@ -19,7 +19,7 @@ const ActorCard = ({ actor }) => {
         )}
       </div>
       <div className="actor-text">
-        <h5 className="fg fg3">{actor.name}</h5>
+        <h5 className="fg fg3 text-center">{actor.name}</h5>
       </div>
     </Link>
   );

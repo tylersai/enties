@@ -13,6 +13,7 @@ import KeywordsBlock from "../element/KeywordsBlock";
 import FoldedBox from "../ui/FoldedBox";
 import MovieCardSmall from "../element/MovieCardSmall";
 import CollectionCard from "../element/CollectionCard";
+import ActorCard from "../element/ActorCard";
 
 const SearchPage = props => {
   const history = useHistory();
@@ -49,7 +50,7 @@ const SearchPage = props => {
       }
 
       try {
-        let res = await Axio.get(getLink("actor"));
+        let res = await Axio.get(getLink("person"));
         setActorRes(res.data);
       } catch {
       }
@@ -119,11 +120,19 @@ const SearchPage = props => {
             movieRes.results.slice(0,10).map(m => <MovieCardSmall m={m} key={m.id}/>)
           }
           </FoldedBox>
+
           <FoldedBox totalResults={collectionRes.total_results} title="Collection">
             {
               collectionRes.results.slice(0,10).map(coll => <div key={coll.id}><CollectionCard collection={coll}/></div>)
             }
           </FoldedBox>
+
+          <FoldedBox totalResults={actorRes.total_results} title="Actor">
+            {
+              actorRes.results.slice(0,10).map(a => <div key={a.id}><ActorCard actor={a}/></div>)
+            }
+          </FoldedBox>
+
           <KeywordsBlock searchQuery={searchQuery} />
         </>):(
           <div className="not-found">NOT FOUND</div>
