@@ -58,6 +58,7 @@
 .SearchPage .KeywordsBlock {
   text-align: left;
   padding: 0 5vmin 10vmin 5vmin;
+  margin-top: 30px;
 }
 
 @media only screen and (min-width: 380px) {
