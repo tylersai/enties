@@ -12,10 +12,12 @@
 .MovieCardSmall > div.img-section > img.with-poster {
     height: 15vmax;
     width: auto;
+    object-fit: contain;
 }
 .MovieCardSmall > div.img-section > img.no-poster {
     height: auto;
     width: 10vmax;
+    object-fit: contain;
 }
 
 .MovieCardSmall::after {
