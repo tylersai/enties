@@ -10,8 +10,10 @@ const SearchForm = props => {
 
   const processSubmit = event => {
     event.preventDefault();
-    document.getElementById("query").blur();
-    process(input.current.value.trim().replace(" ","+"));
+    if(input.current.value.trim()){
+      document.getElementById("query").blur();
+      process(input.current.value.trim().replace(" ","+"));
+    }
   };
 
   return (
