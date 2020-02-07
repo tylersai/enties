@@ -12,6 +12,7 @@ import ThemeButton from "../ui/ThemeButton";
 import KeywordsBlock from "../element/KeywordsBlock";
 import FoldedBox from "../ui/FoldedBox";
 import MovieCardSmall from "../element/MovieCardSmall";
+import CollectionCard from "../element/CollectionCard";
 
 const SearchPage = props => {
   const history = useHistory();
@@ -44,17 +45,22 @@ const SearchPage = props => {
       try {
         let res = await Axio.get(getLink("movie"));
         setMovieRes(res.data);
-
-        res = await Axio.get(getLink("actor"));
-        setActorRes(res.data);
-
-        res = await Axio.get(getLink("collection"));
-        setCollectionRes(res.data);
-
-        setIsLoading(false);
       } catch {
-        setIsLoading(false);
       }
+
+      try {
+        let res = await Axio.get(getLink("actor"));
+        setActorRes(res.data);
+      } catch {
+      }
+
+      try {
+        let res = await Axio.get(getLink("collection"));
+        setCollectionRes(res.data);
+      } catch {
+      }
+
+      setIsLoading(false);
     }
   };
 
@@ -112,6 +118,11 @@ const SearchPage = props => {
           {
             movieRes.results.slice(0,10).map(m => <MovieCardSmall m={m} key={m.id}/>)
           }
+          </FoldedBox>
+          <FoldedBox totalResults={collectionRes.total_results} title="Collection">
+            {
+              collectionRes.results.slice(0,10).map(coll => <div key={coll.id}><CollectionCard collection={coll}/></div>)
+            }
           </FoldedBox>
           <KeywordsBlock searchQuery={searchQuery} />
         </>):(
