@@ -8,6 +8,7 @@ const FoldedBox = ({title, totalResults, children}) => {
     const [detailHeight, setDetailHeight] = useState(0.0);
 
     useEffect(() => {
+        if(totalResults>0)
         setTimeout(() => {
             setDetailHeight(ref.current.clientHeight);
         }, 1000);
@@ -29,6 +30,8 @@ const FoldedBox = ({title, totalResults, children}) => {
             e.target.classList.remove("rotate-180");
         }
     };
+
+    if(totalResults===0) return null;
 
     return(
         <div className="FoldedBox">
