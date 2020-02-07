@@ -1,4 +1,4 @@
-.CollectionCard {
+.CollectionCard, .ActorCard {
     padding: 10px;
     display: inline-block;
     position: relative;
@@ -7,7 +7,7 @@
     text-align: left;
 }
 
-.CollectionCard:focus {
+.CollectionCard:focus, .ActorCard:focus {
     outline: none !important;
 }
 
@@ -27,11 +27,11 @@
     transition: opacity 200ms 50ms ease-out;
 }
 
-.CollectionCard:hover::after {
+.CollectionCard:hover::after, .ActorCard:hover::after {
     opacity: 0.5;
 }
 
-.CollectionCard > div {
+.CollectionCard > div, .ActorCard > div {
     display: block;
 }
 
@@ -42,7 +42,7 @@
     transition: border-color 300ms ease-in;
 }
 
-.CollectionCard .collection-text {
+.CollectionCard .collection-text, .ActorCard .actor-text {
     padding: 10px 0;
 }
 
@@ -53,12 +53,12 @@
   min-width: 150px;
 }
 
-.CollectionCard h5 {
+.CollectionCard h5, .ActorCard h5 {
   letter-spacing: 1px;
 }
 
 @media (hover:none) {
-    .CollectionCard:hover::after {
+    .CollectionCard:hover::after, .ActorCard:hover::after {
         opacity: 0;
     }
 }
