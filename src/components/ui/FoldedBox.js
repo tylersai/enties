@@ -7,9 +7,9 @@ const FoldedBox = ({title, totalResults, children}) => {
         <div className="FoldedBox">
             <div className="header-bar ent-text-shadow">
                 <div className="type-title">
-                    <h2>{title}</h2>
+                    <h3>{title}</h3>
                 </div>
-                <div className="total-results fg fgg" style={{flexGrow:"1", flexFlow:"1"}}> &bull; {totalResults} results</div>
+                <div className="total-results fg fgg">&bull; {totalResults} results</div>
                 <div className="fold-btn" style={{alignSelf:"stretch"}}>
                     <button>
                         <img src={back} alt="<"/>
