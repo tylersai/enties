@@ -69,13 +69,7 @@ const CollectionPage = ({ match }) => {
                   src={POSTER_PATH + collection.backdrop_path}
                   alt="POSTER"
                 />
-              ) : (
-                <img
-                  className="animate-fadein"
-                  src={collectionLogo}
-                  alt="POSTER"
-                />
-              )}
+              ) : null}
             </div>
             <div className="detail-title">
               <div>
