@@ -17,7 +17,7 @@
     position: absolute;
     display: block;
     margin-top: 10px;
-    height: 20vmin;
+    height: 21vmin;
     width: calc(100% - 20px);
     background-color: var(--reactgreen);
     opacity: 0;
@@ -35,14 +35,22 @@
     display: block;
 }
 
+.CollectionCard .collection-img {
+    max-height: 21vmin;
+    border: 1px solid var(--entdark);
+    border-radius: 3px;
+    transition: border-color 300ms ease-in;
+}
+
 .CollectionCard .collection-text {
     padding: 10px 0;
 }
 
 .CollectionCard img {
-  height: 20vmin;
+  height: 21vmin;
   width: auto;
   border-radius: 3px;
+  min-width: 150px;
 }
 
 .CollectionCard h5 {
