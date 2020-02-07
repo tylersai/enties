@@ -26,10 +26,10 @@
 }
 
 .FoldedBox button > img {
-    transform: rotate(90deg);
     height: 1.3rem;
     width: 1.3rem;
     object-fit: contain;
+    transition: transform 200ms ease-out;
 }
 
 .FoldedBox > .header-bar {
@@ -57,4 +57,8 @@
 .FoldedBox > .detail-container .detail-container-wrapper {
     display: flex;
     overflow-x: auto;
+}
+
+.rotate-180 {
+    transform: rotate(180deg);
 }

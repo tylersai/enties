@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./FoldedBox.css";
-import back from "../../assets/back.svg";
+import top from "../../assets/top.svg";
 
 const FoldedBox = ({title, totalResults, children}) => {
 
@@ -13,15 +13,20 @@ const FoldedBox = ({title, totalResults, children}) => {
         }, 1000);
     }, []);
 
-    const toggleFold = () => {
+    const toggleFold = (e) => {
+        // e.target.style.transition = "transform 200ms ease-out";
         if(ref.current.clientHeight) {
             ref.current.style.height = 0;
             ref.current.style.paddingTop = 0;
             ref.current.style.paddingBottom = 0;
+            // e.target.style.transform = "rotate(180deg)";
+            e.target.classList.add("rotate-180");
         } else {
             ref.current.style.height = detailHeight + "px";
             ref.current.style.paddingTop = "0.5vw";
             ref.current.style.paddingBottom = "0.5vw";
+            // e.target.style.transform = "rotate(0deg)";
+            e.target.classList.remove("rotate-180");
         }
     };
 
@@ -36,7 +41,7 @@ const FoldedBox = ({title, totalResults, children}) => {
                 </div>
                 <div className="fold-btn" style={{alignSelf:"stretch"}}>
                     <button onClick={toggleFold}>
-                        <img src={back} alt="<"/>
+                        <img src={top} alt="<"/>
                     </button>
                 </div>
             </div>
