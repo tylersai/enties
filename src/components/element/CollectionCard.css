@@ -12,6 +12,7 @@
 }
 
 .CollectionCard::after {
+    border-radius: 3px;
     content: "";
     position: absolute;
     display: block;
