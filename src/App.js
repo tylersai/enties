@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 
 import HomePage from "./components/page/HomePage";
+import SearchByTypePage from "./components/page/SearchByTypePage";
 import SearchPage from "./components/page/SearchPage";
 import MovieListPage from "./components/page/MovieListPage";
 import MovieDetailPage from "./components/page/MovieDetailPage";
@@ -19,6 +20,7 @@ const App = () => {
       <Router>
         <Switch>
           <Route component={HomePage} path="/" exact />
+          <Route component={SearchByTypePage} path="/search/movie" />
           <Route component={SearchPage} path="/search" />
           <Route component={MovieDetailPage} path="/movie/:id" />
           <Route path="/discover" render={ routeProps => (<MovieListPage {...routeProps} title="Discover" link="/discover/movie"/>)} />
