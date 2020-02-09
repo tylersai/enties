@@ -47,7 +47,7 @@
 .CollectionCard img {
   height: 21vmin;
   width: auto;
-  min-width: 150px;
+  min-width: 35vmin;
   border-radius: 3px;
   border: 1px solid var(--entdark);
   border-radius: 3px;
