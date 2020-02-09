@@ -59,6 +59,22 @@
     overflow-x: auto;
 }
 
+.FoldedBox > .detail-container > .see-all > a {
+    float: right;
+    color: var(--reactgreen);
+    text-decoration: none;
+    margin-top: 10px;
+    -webkit-tap-highlight-color: inherit;
+}
+
+.FoldedBox > .detail-container > .see-all > a:active {
+    color: var(--reactgreen);
+}
+
+.FoldedBox > .detail-container > .see-all > a:visited {
+    color: var(--reactgreen);
+}
+
 .rotate-180 {
     transform: rotate(180deg);
 }

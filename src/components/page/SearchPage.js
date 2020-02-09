@@ -115,7 +115,7 @@ const SearchPage = props => {
       ) : (
         movieRes.total_results || actorRes.total_results || collectionRes.total_results ? (
         <>
-          <FoldedBox totalResults={movieRes.total_results} title="Movie">
+          <FoldedBox totalResults={movieRes.total_results} title="Movie" routeLink={`/search/movie/?q=${searchQuery.replace(' ','+')}`}>
           {
             movieRes.results.slice(0,10).map(m => <MovieCardSmall m={m} key={m.id}/>)
           }
