@@ -1,16 +1,25 @@
 .ActorCard::after {
-    border-radius: 3px;
-    content: "";
-    position: absolute;
-    display: block;
-    margin-top: 10px;
-    width: calc(15vmax + 16px);
-    height: calc(15vmax + 16px);
-    border-radius: 50%;
-    background-color: var(--reactgreen);
-    opacity: 0;
-    top: 0;
-    -webkit-transition: opacity 200ms 50ms ease-out;
-    -o-transition: opacity 200ms 50ms ease-out;
-    transition: opacity 200ms 50ms ease-out;
+  border-radius: 3px;
+  content: "";
+  position: absolute;
+  display: block;
+  margin-top: 10px;
+  width: calc(12vmax + 16px);
+  height: calc(12vmax + 16px);
+  border-radius: 50%;
+  background-color: var(--reactgreen);
+  opacity: 0;
+  top: 0;
+  -webkit-transition: opacity 200ms 50ms ease-out;
+  -o-transition: opacity 200ms 50ms ease-out;
+  transition: opacity 200ms 50ms ease-out;
+}
+
+.ActorCard img {
+  width: 12vmax;
+  height: 12vmax;
+  border: 3px solid var(--reactgreen);
+  border-radius: 50%;
+  object-fit: cover;
+  padding: 5px;
 }
