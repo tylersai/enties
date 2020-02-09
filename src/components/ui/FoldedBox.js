@@ -9,10 +9,17 @@ const FoldedBox = ({title, totalResults, children, routeLink}) => {
     const [detailHeight, setDetailHeight] = useState(0.0);
 
     useEffect(() => {
-        if(totalResults>0)
-        setTimeout(() => {
-            setDetailHeight(ref.current.clientHeight);
-        }, 1000);
+        let timeout;
+        if(totalResults>0){
+            timeout = setTimeout(() => {
+                setDetailHeight(ref.current.clientHeight);
+            }, 1000);
+        }
+        
+        return () => {
+            if(totalResults>0)
+                clearTimeout(timeout);
+        };
     }, []);
 
     const toggleFold = (e) => {

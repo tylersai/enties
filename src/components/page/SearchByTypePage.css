@@ -60,6 +60,10 @@
   padding: 0 5vmin 10vmin 5vmin;
 }
 
+.SearchByTypePage .ThemeButton {
+  animation: none;
+}
+
 @media only screen and (min-width: 380px) {
   .SearchByTypePage > .search-desc > h4 {
     margin-left: 2px;

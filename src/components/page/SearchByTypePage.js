@@ -86,25 +86,23 @@ const SearchByTypePage = props => {
           fill: "forwards"
         }
       ).onfinish = () => {
-        history.push("/");
+        history.goBack();
       };
     } catch {
-      history.push("/");
+      history.goBack();
     }
   };
 
   return (
-    <section className="SearchByTypePage bg bg1 animate-popup" id="result">
+    <section className="SearchByTypePage bg bg1" id="result">
       {searchQuery ? (
         <div className="search-desc">
-          <h4 className="fg fgg animate-popup">
-            {isLoading ? "Searching for : " : "Results for : "}
-            <span>"{searchQuery}"</span>
+          <h4 className="fg fgg">Results for : <span>"{searchQuery}"</span>
           </h4>
           <ThemeButton />
           <button
             onClick={closeSearch}
-            className="fg fg2 clear-search animate-enlarge"
+            className="fg fg2 clear-search"
           >
             <img src={cross} alt="x" />
           </button>
