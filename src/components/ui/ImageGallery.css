@@ -8,6 +8,8 @@
   margin: 0.5vw;
 }
 .ImageGallery .gallery div img {
-    width: 100%; 
-    height: auto;
+  width: 100%; 
+  height: auto;
+  max-height: 300px;
+  object-fit: contain;
 }
