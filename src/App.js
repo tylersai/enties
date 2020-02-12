@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 
@@ -12,10 +12,18 @@ import FooterSection from "./components/section/FooterSection";
 import CollectionPage from "./components/page/CollectionPage";
 import NoData from "./components/element/NoData";
 import ActorPage from "./components/page/ActorPage";
+import { ThemeContext, toggleTheme } from "./utils/Theme";
 
 const App = () => {
 
+  const [theme, setTheme] = useState("dark");
+  const changeTheme = () => {
+    setTheme(theme === "dark" ? "light":"dark");
+    toggleTheme();
+  };
+
   return (
+    <ThemeContext.Provider value={{theme, changeTheme}}>
     <div className="App">
       <Router>
         <Switch>
@@ -34,6 +42,7 @@ const App = () => {
         <FooterSection/>
       </Router>
     </div>
+    </ThemeContext.Provider>
   );
 }
 
