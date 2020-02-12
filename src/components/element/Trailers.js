@@ -10,7 +10,7 @@ const Trailers = ({ movie_id }) => {
     const link = API_END_POINT + `/movie/${movie_id}/videos?api_key=${API_KEY}`;
     Axio.get(link)
       .then(res => {
-        setVideos(res.data.results);
+        setVideos(res.data.results.slice(0,6));
       })
       .catch(err => {
         console.log(err);
