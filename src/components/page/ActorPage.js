@@ -10,6 +10,7 @@ import Loading from "../ui/Loading";
 import NoData from "../element/NoData";
 import RelatedMoviesBlock from "../element/RelatedMoviesBlock";
 import ImageGallery from "../ui/ImageGallery";
+import Popularity from "../ui/Popularity";
 
 const ActorPage = ({ match }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -64,9 +65,15 @@ const ActorPage = ({ match }) => {
                   Known for{" "}
                   <span className="fg3">"{actor.known_for_department}"</span>
                 </p>
-                <p className="fg fgg ent-small-text">
-                  Popularity : <span className="fg3">{actor.popularity}</span>
-                </p>
+                <div style={{display:"flex", alignItems:"center"}}>
+                  <div>
+                    <p className="fg fgg ent-small-text">Popularity : </p>
+                  </div>
+                  <div style={{padding:"4px 0 0 10px"}}>
+                    <Popularity>{actor.popularity}</Popularity>
+                  </div>
+                </div>
+                
                 <p className="fg fg3">
                   {actor.biography}
                 </p>

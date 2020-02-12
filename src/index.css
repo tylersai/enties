@@ -46,6 +46,9 @@
 .fg4 {
   color: var(--black);
 }
+.fg-primary {
+  color: var(--reactgreen);
+}
 
 .bg1 {
   background-color: var(--entblack);
@@ -61,6 +64,9 @@
 }
 .bg4 {
   background-color: var(--black);
+}
+.bg-primary {
+  background-color: var(--reactgreen);
 }
 
 body {
