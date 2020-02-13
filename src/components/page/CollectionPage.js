@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Axio from "axios";
 
 import "./CollectionPage.css";
-import collectionLogo from "../../assets/collection.svg";
+import collectionDark from "../../assets/collection-dark.svg";
+import collectionLight from "../../assets/collection-light.svg";
 import { API_END_POINT, API_KEY, POSTER_PATH } from "../../utils/Constant";
 
 import Loading from "../ui/Loading";
@@ -10,12 +11,15 @@ import CollectionParts from "../element/CollectionParts";
 import PriceTag from "../ui/PriceTag";
 import NoData from "../element/NoData";
 import Carousel from "../ui/Carousel";
+import { ThemeContext } from "../../utils/Theme";
 
 const CollectionPage = ({ match }) => {
   const [isLoadingImg, setIsLoadingImg] = useState(false);
   const [isLoadingColl, setIsLoadingColl] = useState(false);
   const [collection, setCollection] = useState({});
   const [img, setImg] = useState({});
+
+  const context = useContext(ThemeContext);
 
   const fetchImg = async () => {
     setIsLoadingImg(true);
@@ -69,7 +73,11 @@ const CollectionPage = ({ match }) => {
                   src={POSTER_PATH + collection.backdrop_path}
                   alt="POSTER"
                 />
-              ) : null}
+              ) : (<img
+              className="animate-fadein no-poster"
+              src={context.theme === "dark" ? collectionDark:collectionLight}
+              alt="POSTER"
+            />)}
             </div>
             <div className="detail-title">
               <div>
@@ -84,7 +92,7 @@ const CollectionPage = ({ match }) => {
           <CollectionParts parts={collection.parts} />
         </>
       ) : (
-        <NoData svgPath={collectionLogo} label="BUNDLE NOT FOUND"/>
+        <NoData svgPath={context.theme === "dark" ? collectionDark:collectionLight} label="BUNDLE NOT FOUND"/>
       )}
     </section>
   );

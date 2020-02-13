@@ -43,6 +43,10 @@
   height: auto;
   border-radius: 3px;
 }
+.CollectionPage .detail-wrapper .detail-poster img.no-poster {
+  max-height: 35vmin;
+  object-fit: contain;
+}
 
 .CollectionPage .detail-wrapper .detail-title {
   flex-grow: 1;
