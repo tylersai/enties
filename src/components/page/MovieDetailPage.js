@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import ReactDOM from "react-dom";
 import Axio from "axios";
 
 import "./MovieDetailPage.css";
-import movieLogo from "../../assets/movie-dark.svg";
+import movieDark from "../../assets/movie-dark.svg";
+import movieLight from "../../assets/movie-light.svg";
 import { API_END_POINT, API_KEY, POSTER_PATH } from "../../utils/Constant";
 
 import Loading from "../ui/Loading";
@@ -17,10 +18,13 @@ import RelatedMoviesBlock from "../element/RelatedMoviesBlock";
 import ImageGallery from "../ui/ImageGallery";
 import KeywordsBlock from "../element/KeywordsBlock";
 import NoData from "../element/NoData";
+import { ThemeContext } from "../../utils/Theme";
 
 const MovieDetailPage = ({ match }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [movie, setMovie] = useState({});
+
+  const context = useContext(ThemeContext);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -93,7 +97,7 @@ const MovieDetailPage = ({ match }) => {
                   alt="POSTER"
                 />
               ) : (
-                <img className="animate-fadein" src={movieLogo} alt="POSTER" />
+                <img className="animate-fadein" src={context.theme === "dark" ? movieDark:movieLight} alt="POSTER" />
               )}
             </div>
             <div className="detail-title">
@@ -156,7 +160,7 @@ const MovieDetailPage = ({ match }) => {
           </div>
         </>
       ) : (
-        <NoData svgPath={movieLogo} label="MOVIE NOT FOUND"/>
+        <NoData svgPath={context.theme === "dark" ? movieDark:movieLight} label="MOVIE NOT FOUND"/>
       )}
     </section>
   );

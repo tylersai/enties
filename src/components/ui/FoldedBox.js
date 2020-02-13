@@ -12,12 +12,13 @@ const FoldedBox = ({title, totalResults, children, routeLink}) => {
         let timeout;
         if(totalResults>0){
             timeout = setTimeout(() => {
-                setDetailHeight(ref.current.clientHeight);
+                if(ref.current)
+                    setDetailHeight(ref.current.clientHeight);
             }, 1000);
         }
         
         return () => {
-            if(totalResults>0)
+            if(totalResults>0 && timeout)
                 clearTimeout(timeout);
         };
     }, []);
@@ -63,7 +64,7 @@ const FoldedBox = ({title, totalResults, children, routeLink}) => {
                 </div>
                 <div className="fold-btn" style={{alignSelf:"stretch"}}>
                     <button onClick={toggleFold}>
-                        <img src={top} alt="<"/>
+                        <img src={top} alt="^"/>
                     </button>
                 </div>
             </div>

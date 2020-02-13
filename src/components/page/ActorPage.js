@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./ActorPage.css";
 import Axio from "axios";
 
-import actorLogo from "../../assets/actor.svg";
-import actorGreenLogo from "../../assets/actor-green.svg";
+import actorDark from "../../assets/actor-dark.svg";
+import actorLight from "../../assets/actor-light.svg";
+import actorGreen from "../../assets/actor-green.svg";
 import { API_END_POINT, API_KEY, POSTER_PATH } from "../../utils/Constant";
 
 import Loading from "../ui/Loading";
@@ -11,10 +12,13 @@ import NoData from "../element/NoData";
 import RelatedMoviesBlock from "../element/RelatedMoviesBlock";
 import ImageGallery from "../ui/ImageGallery";
 import Popularity from "../ui/Popularity";
+import { ThemeContext } from "../../utils/Theme";
 
 const ActorPage = ({ match }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [actor, setActor] = useState({});
+
+  const context = useContext(ThemeContext);
 
   const fetchData = async () => {
     window.scrollTo(0,0);
@@ -54,7 +58,7 @@ const ActorPage = ({ match }) => {
                   alt="PROFILE"
                 />
               ) : (
-                <img className="animate-enlarge no-profile" src={actorGreenLogo} alt="PROFILE" />
+                <img className="animate-enlarge no-profile" src={actorGreen} alt="PROFILE" />
               )}
             </div>
             <div className="detail" style={{ position: "relative" }}>
@@ -123,7 +127,7 @@ const ActorPage = ({ match }) => {
           </div>
         </>
       ) : (
-        <NoData svgPath={actorLogo} label="ACTOR NOT FOUND" />
+        <NoData svgPath={context.theme === "dark" ? actorDark:actorLight} label="ACTOR NOT FOUND" />
       )}
     </section>
   );
