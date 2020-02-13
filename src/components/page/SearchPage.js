@@ -70,28 +70,12 @@ const SearchPage = props => {
   }, [searchQuery]);
 
   const closeSearch = () => {
-    try {
-      document.getElementById("result").animate(
-        [
-          {
-            opacity: 1,
-            transform: "translateY(0)"
-          },
-          {
-            opacity: 0,
-            transform: "translateY(10vh)"
-          }
-        ],
-        {
-          duration: 200,
-          fill: "forwards"
-        }
-      ).onfinish = () => {
-        history.push("/");
-      };
-    } catch {
-      history.push("/");
-    }
+    const resSec = document.getElementById("result");
+    resSec.classList.remove("animate-popup");
+    resSec.classList.add("animate-popdown");
+    setTimeout(() => {
+      history.push('/');
+    }, 200);
   };
 
   return (
