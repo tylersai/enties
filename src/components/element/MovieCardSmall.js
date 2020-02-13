@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
 import "./MovieCardSmall.css";
-import movie from "../../assets/movie-dark.svg";
+import movieDark from "../../assets/movie-dark.svg";
+import movieLight from "../../assets/movie-light.svg";
 
 import { POSTER_PATH } from "../../utils/Constant";
+import { ThemeContext } from "../../utils/Theme";
 
 const MovieCardSmall = ({ m }) => {
 
+  const context = useContext(ThemeContext);
   const history = useHistory();
   const goDetail = () => { history.push(`/movie/${m.id}`) };
 
@@ -17,7 +20,7 @@ const MovieCardSmall = ({ m }) => {
         m.poster_path ? (
             <img className="with-poster" src={POSTER_PATH + m.poster_path} alt="POSTER" />
           ) : (
-            <img className="no-poster" src={movie} alt="POSTER" />
+            <img className="animate-fadein no-poster" src={context.theme === "dark" ? movieDark:movieLight} alt="POSTER" />
           )
       }
       </div>

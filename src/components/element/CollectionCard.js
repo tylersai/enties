@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "./CollectionCard.css";
-import movieLogo from "../../assets/movie-dark.svg";
+import movieDark from "../../assets/movie-dark.svg";
+import movieLight from "../../assets/movie-light.svg";
 import { POSTER_PATH } from "../../utils/Constant";
+import { ThemeContext } from "../../utils/Theme";
 
 const CollectionCard = ({ collection }) => {
+
+  const context = useContext(ThemeContext);
+
   return (
     <Link className="CollectionCard" to={`/collection/${collection.id}`}>
       <div className="collection-img">
@@ -15,7 +20,7 @@ const CollectionCard = ({ collection }) => {
             alt="POSTER"
           />
         ) : (
-          <img className="animate-fadein" src={movieLogo} alt="POSTER" />
+          <img className="animate-fadein" src={context.theme === "dark" ? movieDark:movieLight} alt="POSTER" />
         )}
       </div>
       <div className="collection-text">

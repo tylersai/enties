@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
 import "./MovieCard.css";
-import movie from "../../assets/movie-dark.svg";
+import movieDark from "../../assets/movie-dark.svg";
+import movieLight from "../../assets/movie-light.svg";
 
 import { POSTER_PATH } from "../../utils/Constant";
+import { ThemeContext } from "../../utils/Theme";
 import Rating from "../ui/Rating";
 import PriceTag from "../ui/PriceTag";
 
 const MovieCard = ({ m }) => {
   const options = { year: "numeric", month: "short", day: "numeric" };
 
+  const context = useContext(ThemeContext);
   const history = useHistory();
   const goDetail = () => { history.push(`/movie/${m.id}`) };
 
@@ -20,7 +23,7 @@ const MovieCard = ({ m }) => {
           {m.poster_path ? (
             <img src={POSTER_PATH + m.poster_path} alt="POSTER" />
           ) : (
-            <img src={movie} alt="POSTER" />
+            <img className="animate-fadein" src={context.theme === "dark" ? movieDark:movieLight} alt="POSTER" />
           )}
         </div>
         <div className="movie-title">
