@@ -26,7 +26,7 @@ const Credits = ({ movie_id }) => {
   const removeDuplicate = arr => {
     let res = [];
     let ids = [];
-    if(arr){
+    if(arr && arr.length > 0){
       arr.forEach(a => {
         if(ids.indexOf(a.id)<0){
           ids.push(a.id);
@@ -37,11 +37,14 @@ const Credits = ({ movie_id }) => {
     return res;
   };
 
+  if(casts.length === 0 && crews.length === 0)
+    return null;
+
   return (
   <div className="Credits">
     <h3 className="fg fg3 text-center" style={{marginTop:"7vh"}}>Cast &amp; Crew</h3>
     <hr align="left" className="fg fullwidth" />
-      { casts.length > 0 || crews.length > 0 ? (<div className="credit-wrapper">
+      <div className="credit-wrapper">
         {casts.length > 0 ? (<div className="credit-col">
             <div className="left">
                 <h4 className="fg fgg">Actors</h4>
@@ -52,7 +55,7 @@ const Credits = ({ movie_id }) => {
                 }
             </div>
         </div>):null}
-        {casts.length > 0 ? (<div className="credit-col">
+        {crews.length > 0 ? (<div className="credit-col">
             <div className="left">
                 <h4 className="fg fgg">Crews</h4>
             </div>
@@ -62,8 +65,7 @@ const Credits = ({ movie_id }) => {
                 }
             </div>
         </div>):null}
-      </div>) : <div className="fg fgg not-found text-center" style={{marginTop:"50px"}}>INFO NOT AVAILABLE</div>}
-  
+      </div>
     </div>
   );
 };
