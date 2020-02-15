@@ -150,11 +150,7 @@ const MovieDetailPage = ({ match }) => {
 
             <ImageGallery title="Related Images" id={movie.id} type="movie"/>
 
-            <div>
-              <h3 className="fg fg3 text-center" style={{marginTop:"7vh"}}>Cast &amp; Crew</h3>
-              <hr align="left" className="fg fullwidth" />
-              <Credits movie_id={movie.id} />
-            </div>
+            <Credits movie_id={movie.id} />
 
             <Trailers movie_id={movie.id} />
           </div>

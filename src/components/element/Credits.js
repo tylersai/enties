@@ -38,7 +38,9 @@ const Credits = ({ movie_id }) => {
   };
 
   return (
-    <div className="Credits">
+  <div className="Credits">
+    <h3 className="fg fg3 text-center" style={{marginTop:"7vh"}}>Cast &amp; Crew</h3>
+    <hr align="left" className="fg fullwidth" />
       { casts.length > 0 || crews.length > 0 ? (<div className="credit-wrapper">
         {casts.length > 0 ? (<div className="credit-col">
             <div className="left">
@@ -61,6 +63,7 @@ const Credits = ({ movie_id }) => {
             </div>
         </div>):null}
       </div>) : <div className="fg fgg not-found text-center" style={{marginTop:"50px"}}>INFO NOT AVAILABLE</div>}
+  
     </div>
   );
 };
