@@ -25,7 +25,7 @@ const Pagination = ({ searchQuery, currentPage, totalPages, totalResults }) => {
     let limitedPage = page;
     if (page < 1) limitedPage = 1;
     if (page > totalPages) limitedPage = totalPages;
-    return `/search?q=${searchQuery.replace(" ", "+")}&p=${limitedPage}`;
+    return `/search/movie?q=${searchQuery.replace(" ", "+")}&p=${limitedPage}`;
   };
 
   return (
