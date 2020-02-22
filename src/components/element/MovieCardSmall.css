@@ -4,13 +4,13 @@
     position: relative;
 }
 .MovieCardSmall > div.img-section {
-    height: 15vmax;
+    height: 17vmax;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 .MovieCardSmall > div.img-section > img.with-poster {
-    height: 15vmax;
+    height: 17vmax;
     width: auto;
     object-fit: contain;
 }
@@ -24,7 +24,7 @@
     content: "";
     position: absolute;
     width: 100%;
-    height: 15vmax;
+    height: 17vmax;
     display: block;
     background-color: var(--reactgreen);
     opacity: 0;
