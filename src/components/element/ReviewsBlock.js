@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import "./ReviewsBlock.css";
 import Axios from "axios";
-import { API_END_POINT } from "../../utils/Constant";
+import { API_END_POINT, API_KEY } from "../../utils/Constant";
 
 const ReviewsBlock = ({ movie_id }) => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
     if (movie_id) {
-      Axios.get(API_END_POINT + `/movie/${movie_id}/reviews`)
+      Axios.get(API_END_POINT + `/movie/${movie_id}/reviews?api_key=${API_KEY}`)
         .then(res => {
           if (res.data && res.data.results && res.data.results.length > 0) {
             setReviews(res.data.results);
@@ -31,7 +31,7 @@ const ReviewsBlock = ({ movie_id }) => {
 					reviews.slice(0, 10).map(r => (
 						<div className="review fg fg3" key={r.id}>
 							<h4>{r.author}</h4>
-							<p>{r.content}</p>
+							<p className="ent-small-text">{r.content}</p>
 						</div>
 					))
 				}

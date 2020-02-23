@@ -1,8 +1,8 @@
-.ReviewBlock .review {
+.ReviewsBlock .review {
   padding: 5px;
 }
 
-.ReviewBlock .review > p {
+.ReviewsBlock .review > p {
   overflow: hidden;
   position: relative;
   display: -webkit-box;

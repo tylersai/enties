@@ -19,6 +19,7 @@ import ImageGallery from "../ui/ImageGallery";
 import KeywordsBlock from "../element/KeywordsBlock";
 import NoData from "../element/NoData";
 import { ThemeContext } from "../../utils/Theme";
+import ReviewsBlock from "../element/ReviewsBlock";
 
 const MovieDetailPage = ({ match }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -135,6 +136,8 @@ const MovieDetailPage = ({ match }) => {
             <div id="lower" className="fg fg2" />
 
             <CollectionBlock collection={movie.belongs_to_collection} />
+
+            <ReviewsBlock movie_id={movie.id}/>
 
             <RelatedMoviesBlock
               title="You Might Also Like"
