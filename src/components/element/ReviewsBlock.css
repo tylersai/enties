@@ -1,5 +1,13 @@
-.ReviewsBlock .review {
+.ReviewsBlock .review-wrapper {
   padding: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.ReviewsBlock .review {
+  width: 500px;
+  margin: 10px 5px;
 }
 
 .ReviewsBlock .review > p {

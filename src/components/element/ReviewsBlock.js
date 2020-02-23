@@ -27,14 +27,14 @@ const ReviewsBlock = ({ movie_id }) => {
       <div className="ReviewsBlock">
         <h3 className="fg fg3">Reviews</h3>
         <hr align="left" className="fg" />
-        {
-					reviews.slice(0, 10).map(r => (
-						<div className="review fg fg3" key={r.id}>
-							<h4>{r.author}</h4>
-							<p className="ent-small-text">{r.content}</p>
-						</div>
-					))
-				}
+        <div className="review-wrapper">
+          {reviews.slice(0, 10).map(r => (
+            <div className="review fg fg3" key={r.id}>
+              <h4>{r.author}</h4>
+              <p className="ent-small-text">{r.content}</p>
+            </div>
+          ))}
+        </div>
       </div>
     );
   else return null;
