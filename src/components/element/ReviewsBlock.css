@@ -1,0 +1,11 @@
+.ReviewBlock .review {
+  padding: 5px;
+}
+
+.ReviewBlock .review > p {
+  overflow: hidden;
+  position: relative;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+}
