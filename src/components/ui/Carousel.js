@@ -7,7 +7,11 @@ const Carousel = ({ imgs }) => {
   const [showBtn, setShowBtn] = useState(false);
 
   useEffect(() => {
-    if (imgs && imgs.length >= 3) {
+    if (
+      imgs &&
+      imgs.length >= 3 &&
+      document.querySelector(".Carousel .slides")
+    ) {
       setTimeout(() => {
         const slideWidth = document.querySelector(".Carousel .slides")
           .scrollWidth;
