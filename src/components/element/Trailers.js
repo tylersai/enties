@@ -10,7 +10,7 @@ const Trailers = ({ movie_id }) => {
     const link = API_END_POINT + `/movie/${movie_id}/videos?api_key=${API_KEY}`;
     Axio.get(link)
       .then(res => {
-        setVideos(res.data.results.slice(0,6));
+        setVideos(res.data.results.slice(0, 6));
       })
       .catch(err => {
         console.log(err);
@@ -23,7 +23,7 @@ const Trailers = ({ movie_id }) => {
   return (
     <div className="Trailers">
       <h3 className="fg fg2 text-center">Trailers</h3>
-      <hr align="left" className="bgg fullwidth"/>
+      <hr className="bgg" />
       <div className="video-wrapper">
         {videos.map(video => (
           <div key={video.id} className="video-col">

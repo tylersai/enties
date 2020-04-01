@@ -26,8 +26,8 @@ const ReviewsBlock = ({ movie_id }) => {
   if (movie_id && reviews.length > 0)
     return (
       <div className="ReviewsBlock">
-        <h3 className="fg fg3">Reviews</h3>
-        <hr align="left" className="fg" />
+        <h3 className="fg fg3 text-center">Reviews</h3>
+        <hr className="fg" />
         <div className="review-wrapper">
           {reviews.slice(0, 10).map(r => (
             <div className="review fg fg3 bg bg2" key={r.id}>
