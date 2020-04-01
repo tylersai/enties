@@ -6,7 +6,7 @@ const Avatar = ({ name, imgLink }) => {
     const nameArr = name.split(' ');
     let avaterText = "";
     if (nameArr.length > 1) {
-      avaterText = nameArr[0][0] + nameArr[nameArr.length - 1][0];
+      avaterText = nameArr[0][0] + nameArr[1][0];
     } else {
       avaterText = nameArr[0].slice(0, 2);
     }

@@ -2,12 +2,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: var(--reactgreen);
+  margin: 5px;
 }
 
 .Avatar p.Avatar-text{
   color: #fafafa;
   text-align: center;
   display: inline-block;
-  font-size: 24px;
-  background-color: var(--reactgreen);
+  font-size: 22px;
+  text-transform: uppercase;
 }
