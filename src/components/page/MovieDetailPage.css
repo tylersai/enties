@@ -30,6 +30,7 @@
   margin: 30px 4vw 20px 4vw;
   max-width: 30vmin;
   height: auto;
+  border-radius: 2px;
 }
 
 .MovieDetailPage .detail-wrapper .detail-title {
