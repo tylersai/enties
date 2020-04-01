@@ -8,6 +8,8 @@
 .ReviewsBlock .review {
   width: 500px;
   margin: 10px 5px;
+  padding: 10px 15px;
+  border-radius: 10px;
 }
 
 .ReviewsBlock .review > p {
@@ -23,7 +25,7 @@
   flex-wrap: nowrap;
   align-items: center;
   padding-bottom: 3px;
-  border-bottom: 1px dotted var(--entdark);
+  border-bottom: 1px dotted var(--entdarkgray);
 }
 
 .ReviewsBlock .review .review-header .review-header-author {

@@ -30,7 +30,7 @@ const ReviewsBlock = ({ movie_id }) => {
         <hr align="left" className="fg" />
         <div className="review-wrapper">
           {reviews.slice(0, 10).map(r => (
-            <div className="review fg fg3" key={r.id}>
+            <div className="review fg fg3 bg bg2" key={r.id}>
               <div className="review-header">
                 <Avatar name={r.author} />
                 <div className="review-header-author"><h4>{r.author}</h4></div>
