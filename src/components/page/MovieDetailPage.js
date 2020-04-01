@@ -52,7 +52,7 @@ const MovieDetailPage = ({ match }) => {
     const dt = document.getElementById("detail-title").clientHeight;
     console.log(dp, dt);
 
-    if (dt+10 > dp / 2) {
+    if (dt + 10 > dp / 2) {
       id = "lower";
       document.getElementById("upper").style.display = "none";
     }
@@ -72,7 +72,7 @@ const MovieDetailPage = ({ match }) => {
   useEffect(() => {
     try {
       renderOverview();
-    } catch {}
+    } catch { }
   });
 
   const options = { year: "numeric", month: "long", day: "numeric" };
@@ -90,7 +90,7 @@ const MovieDetailPage = ({ match }) => {
       ) : movie.title ? (
         <>
           <div className="detail-wrapper">
-            <div className="detail-poster" id="detail-poster">
+            <div className="detail-poster fg fgg" id="detail-poster">
               {movie.poster_path ? (
                 <img
                   className="animate-fadein"
@@ -98,8 +98,8 @@ const MovieDetailPage = ({ match }) => {
                   alt="POSTER"
                 />
               ) : (
-                <img className="animate-fadein" src={context.theme === "dark" ? movieDark:movieLight} alt="POSTER" />
-              )}
+                  <img className="animate-fadein" src={context.theme === "dark" ? movieDark : movieLight} alt="POSTER" />
+                )}
             </div>
             <div className="detail-title">
               <div id="detail-title">
@@ -126,7 +126,7 @@ const MovieDetailPage = ({ match }) => {
             </div>
           </div>
           <div className="detail-sections">
-            <div style={{marginBottom: "1vmax"}}>
+            <div style={{ marginBottom: "1vmax" }}>
               <div className="fg fg3 section-label">Download : </div>
               <PriceTag popularity={movie.popularity} />
             </div>
@@ -137,7 +137,7 @@ const MovieDetailPage = ({ match }) => {
 
             <CollectionBlock collection={movie.belongs_to_collection} />
 
-            <ReviewsBlock movie_id={movie.id}/>
+            <ReviewsBlock movie_id={movie.id} />
 
             <RelatedMoviesBlock
               title="You Might Also Like"
@@ -151,7 +151,7 @@ const MovieDetailPage = ({ match }) => {
               movie_id={movie.id}
             />
 
-            <ImageGallery title="Related Images" id={movie.id} type="movie"/>
+            <ImageGallery title="Related Images" id={movie.id} type="movie" />
 
             <Credits movie_id={movie.id} />
 
@@ -159,8 +159,8 @@ const MovieDetailPage = ({ match }) => {
           </div>
         </>
       ) : (
-        <NoData svgPath={context.theme === "dark" ? movieDark:movieLight} label="MOVIE NOT FOUND"/>
-      )}
+            <NoData svgPath={context.theme === "dark" ? movieDark : movieLight} label="MOVIE NOT FOUND" />
+          )}
     </section>
   );
 };

@@ -21,7 +21,7 @@ const ActorPage = ({ match }) => {
   const context = useContext(ThemeContext);
 
   const fetchData = async () => {
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
     setIsLoading(true);
     document.title = "Enties \u2022 Actor";
     try {
@@ -50,7 +50,7 @@ const ActorPage = ({ match }) => {
       ) : actor.name ? (
         <>
           <div className="wrapper">
-            <div className="profile">
+            <div className="profile fg fgg">
               {actor.profile_path ? (
                 <img
                   className="animate-enlarge"
@@ -58,8 +58,8 @@ const ActorPage = ({ match }) => {
                   alt="PROFILE"
                 />
               ) : (
-                <img className="animate-enlarge no-profile" src={actorGreen} alt="PROFILE" />
-              )}
+                  <img className="animate-enlarge no-profile" src={actorGreen} alt="PROFILE" />
+                )}
             </div>
             <div className="detail" style={{ position: "relative" }}>
               <div>
@@ -69,15 +69,15 @@ const ActorPage = ({ match }) => {
                   Known for{" "}
                   <span className="fg3">"{actor.known_for_department}"</span>
                 </p>
-                <div style={{display:"flex", alignItems:"center"}}>
+                <div style={{ display: "flex", alignItems: "center" }}>
                   <div>
                     <p className="fg fgg ent-small-text">Popularity : </p>
                   </div>
-                  <div style={{padding:"4px 0 0 10px"}}>
+                  <div style={{ padding: "4px 0 0 10px" }}>
                     <Popularity>{actor.popularity}</Popularity>
                   </div>
                 </div>
-                
+
                 <p className="fg fg3">
                   {actor.biography}
                 </p>
@@ -118,17 +118,17 @@ const ActorPage = ({ match }) => {
               </div>
             </div>
 
-            <RelatedMoviesBlock title="Appears On" link={`/person/${actor.id}/movie_credits`} type="cast"/>
-            
-            <RelatedMoviesBlock title="Works As Crew On" link={`/person/${actor.id}/movie_credits`} type="crew"/>
+            <RelatedMoviesBlock title="Appears On" link={`/person/${actor.id}/movie_credits`} type="cast" />
 
-            <ImageGallery title="Related Images" id={actor.id} type="person"/>
+            <RelatedMoviesBlock title="Works As Crew On" link={`/person/${actor.id}/movie_credits`} type="crew" />
+
+            <ImageGallery title="Related Images" id={actor.id} type="person" />
 
           </div>
         </>
       ) : (
-        <NoData svgPath={context.theme === "dark" ? actorDark:actorLight} label="ACTOR NOT FOUND" />
-      )}
+            <NoData svgPath={context.theme === "dark" ? actorDark : actorLight} label="ACTOR NOT FOUND" />
+          )}
     </section>
   );
 };

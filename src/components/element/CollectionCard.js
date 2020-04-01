@@ -12,7 +12,7 @@ const CollectionCard = ({ collection }) => {
 
   return (
     <Link className="CollectionCard" to={`/collection/${collection.id}`}>
-      <div className="collection-img">
+      <div className="collection-img fg fgg">
         {collection.backdrop_path ? (
           <img
             className="animate-fadein"
@@ -20,8 +20,8 @@ const CollectionCard = ({ collection }) => {
             alt="POSTER"
           />
         ) : (
-          <img className="animate-fadein" src={context.theme === "dark" ? movieDark:movieLight} alt="POSTER" />
-        )}
+            <img className="animate-fadein" src={context.theme === "dark" ? movieDark : movieLight} alt="POSTER" />
+          )}
       </div>
       <div className="collection-text">
         <h5 className="fg fg3">{collection.name}</h5>

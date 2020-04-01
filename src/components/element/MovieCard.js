@@ -19,12 +19,12 @@ const MovieCard = ({ m }) => {
   return (
     <div onClick={goDetail} className="movie-card bg bg2 ent-shadow animate-enlarge">
       <div className="movie-header">
-        <div className="movie-poster">
+        <div className="movie-poster fg fgg">
           {m.poster_path ? (
             <img src={POSTER_PATH + m.poster_path} alt="POSTER" />
           ) : (
-            <img className="animate-fadein" src={context.theme === "dark" ? movieDark:movieLight} alt="POSTER" />
-          )}
+              <img className="animate-fadein" src={context.theme === "dark" ? movieDark : movieLight} alt="POSTER" />
+            )}
         </div>
         <div className="movie-title">
           <h4 className="fg fg1">{m.title}</h4>

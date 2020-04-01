@@ -7,7 +7,7 @@ import { POSTER_PATH } from "../../utils/Constant";
 const ActorCard = ({ actor }) => {
   return (
     <Link className="ActorCard animate-enlarge" to={`/actor/${actor.id}`}>
-      <div className="actor-img">
+      <div className="actor-img fg fgg">
         {actor.profile_path ? (
           <img
             className="profile"
@@ -15,8 +15,8 @@ const ActorCard = ({ actor }) => {
             alt="PROFILE"
           />
         ) : (
-          <img className="no-profile" src={actorGreenLogo} alt="PROFILE" />
-        )}
+            <img className="no-profile" src={actorGreenLogo} alt="PROFILE" />
+          )}
       </div>
       <div className="actor-text">
         <h5 className="fg fg3 text-center">{actor.name}</h5>

@@ -15,14 +15,14 @@ const MovieCardSmall = ({ m }) => {
 
   return (
     <div onClick={goDetail} className="MovieCardSmall animate-enlarge">
-      <div className="img-section">
-      {
-        m.poster_path ? (
+      <div className="img-section fg fgg">
+        {
+          m.poster_path ? (
             <img className="with-poster" src={POSTER_PATH + m.poster_path} alt="POSTER" />
           ) : (
-            <img className="animate-fadein no-poster" src={context.theme === "dark" ? movieDark:movieLight} alt="POSTER" />
-          )
-      }
+              <img className="animate-fadein no-poster" src={context.theme === "dark" ? movieDark : movieLight} alt="POSTER" />
+            )
+        }
       </div>
       <div className="caption-section">
         <h5 className="fg fg3">{m.title}</h5>
