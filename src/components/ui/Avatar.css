@@ -1,0 +1,13 @@
+.Avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Avatar p.Avatar-text{
+  color: #fafafa;
+  text-align: center;
+  display: inline-block;
+  font-size: 24px;
+  background-color: var(--reactgreen);
+}
