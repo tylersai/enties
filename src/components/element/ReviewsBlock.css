@@ -17,3 +17,14 @@
   -webkit-line-clamp: 6;
   -webkit-box-orient: vertical;
 }
+
+.ReviewsBlock .review .review-header {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.ReviewsBlock .review .review-header .review-header-author {
+  flex-grow: 1;
+  padding: 0 10px;
+}
