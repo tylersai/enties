@@ -8,4 +8,10 @@
     cursor: pointer;
     text-decoration: none;
     -webkit-tap-highlight-color: inherit;
+    transition: all 200ms 50ms ease-out;
+}
+
+.keyword:hover {
+    opacity: 0.9;
+    color: var(--reactgreen);
 }
