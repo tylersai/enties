@@ -9,6 +9,11 @@
     text-decoration: none;
     -webkit-tap-highlight-color: inherit;
     white-space: nowrap;
+    transition: all 150ms 50ms ease-out;
+}
+
+.ActorLink a:hover {
+    color: var(--reactgreen);
 }
 
 .ActorLink a:focus {
