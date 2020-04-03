@@ -40,7 +40,7 @@
 }
 
 .MovieCardSmall > div.caption-section {
-  padding: 3px;
+  padding: 3px 1px;
 }
 
 .MovieCardSmall > div.caption-section > h5 {
