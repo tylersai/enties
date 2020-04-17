@@ -21,6 +21,7 @@
 .SearchForm input{
     /* width: calc(100% - 25px);
     height: 2rem; */
+    -webkit-appearance: none;
     margin: 0px;
     padding: 30px 25px;
     flex-grow: 1;
