@@ -11,7 +11,7 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="SearchBar bg bg2">
+    <div className="SearchBar bg bg2 animate-shrinkup">
       <div className="search-bar-wrapper">
         <form onSubmit={onSearch}>
           <input type="search" name="query" className="fg fg-primary" ref={ref} placeholder="Search" />
