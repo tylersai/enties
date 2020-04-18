@@ -24,6 +24,10 @@
   border: none;
   border-bottom: 2px solid var(--reactgreen);
   font-size: 1.1rem;
+  background-image: url(../../assets/search.svg);
+  background-size: 1.2rem 1.2rem;
+  background-position: 97% center;
+  background-repeat: no-repeat;
 }
 
 .SearchBar .search-bar-wrapper input[type="search"]::-webkit-input-placeholder {

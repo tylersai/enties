@@ -1,5 +1,6 @@
 import React from "react";
 import "./SearchBar.css";
+import magnify from "../../assets/search.svg";
 
 const SearchBar = () => {
 
