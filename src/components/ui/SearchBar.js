@@ -1,14 +1,19 @@
 import React from "react";
 import "./SearchBar.css";
 import homeIcon from "../../assets/home.svg";
+import { useHistory } from "react-router-dom";
 
 const SearchBar = () => {
 
+  const history = useHistory();
   const ref = React.createRef();
 
   const onSearch = e => {
     e.preventDefault();
-    console.log(ref.current.value);
+    const searchTerm = ref.current.value;
+    if (searchTerm) {
+      history.push(`/search?q=${searchTerm.replace(' ', '+')}`);
+    }
   };
 
   return (
