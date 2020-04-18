@@ -13,11 +13,13 @@ const Carousel = ({ imgs }) => {
       document.querySelector(".Carousel .slides")
     ) {
       setTimeout(() => {
-        const slideWidth = document.querySelector(".Carousel .slides")
-          .scrollWidth;
-        const docWidth = document.documentElement.clientWidth;
-        setShowBtn(slideWidth > docWidth);
-        console.log(slideWidth, docWidth);
+        if (document.querySelector(".Carousel .slides")) {
+          const slideWidth = document.querySelector(".Carousel .slides")
+            .scrollWidth;
+          const docWidth = document.documentElement.clientWidth;
+          setShowBtn(slideWidth > docWidth);
+          console.log(slideWidth, docWidth);
+        }
       }, 2500);
     }
   });
