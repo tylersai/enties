@@ -8,7 +8,17 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
+}
+.SearchBar .search-bar-wrapper > a {
+  display: inline-block;
+  margin-top: 2px;
+  padding: 2px;
+}
+.SearchBar .search-bar-wrapper > a > img {
+  width: 30px;
+  height: 30px;
 }
 .SearchBar .search-bar-wrapper > form {
   flex: auto 1 300px;

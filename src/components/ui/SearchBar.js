@@ -1,6 +1,6 @@
 import React from "react";
 import "./SearchBar.css";
-import magnify from "../../assets/search.svg";
+import homeIcon from "../../assets/home.svg";
 
 const SearchBar = () => {
 
@@ -14,6 +14,7 @@ const SearchBar = () => {
   return (
     <div className="SearchBar bg bg2 animate-shrinkup">
       <div className="search-bar-wrapper">
+        <a href="/"><img src={homeIcon} /></a>
         <form onSubmit={onSearch}>
           <input type="search" name="query" className="fg fg-primary" ref={ref} placeholder="Search" />
         </form>
