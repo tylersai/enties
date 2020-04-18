@@ -66,13 +66,13 @@
 
 .animate-shrinkup {
   transform-origin: top;
-  animation: shrinkup 200ms ease-out forwards;
+  animation: shrinkup 210ms ease-out forwards;
 }
 
 @keyframes shrinkup {
   0%{
     opacity: 0;
-    transform: scale(1.5, 6);
+    transform: scale(1.2, 5);
   }
   100%{
     opacity: 1;
