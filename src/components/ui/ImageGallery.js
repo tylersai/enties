@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Axio from "axios";
 import "./ImageGallery.css";
-import { API_END_POINT, API_KEY, POSTER_PATH } from "../../utils/Constant";
+import { API_END_POINT, POSTER_PATH } from "../../utils/Constant";
 
 const ImageGallery = ({ id, type, title }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -10,7 +10,7 @@ const ImageGallery = ({ id, type, title }) => {
   const fetchData = async () => {
     setIsLoading(true);
     try {
-      const apiLink = `${API_END_POINT}/${type}/${id}/images?api_key=${API_KEY}`;
+      const apiLink = `${API_END_POINT}/${type}/${id}/images`;
       const res = await Axio.get(apiLink);
       if (type === "person") {
         setImages(res.data.profiles.map(p => p.file_path).slice(0, 12));
