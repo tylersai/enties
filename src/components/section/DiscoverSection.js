@@ -6,7 +6,7 @@ import discover from "../../assets/discover.svg";
 import trend from "../../assets/trend.svg";
 import favourite from "../../assets/favourite.svg";
 
-import { API_END_POINT, API_KEY } from "../../utils/Constant";
+import { API_END_POINT } from "../../utils/Constant";
 import MovieList from "../element/MovieList";
 
 const DiscoverSection = () => {
