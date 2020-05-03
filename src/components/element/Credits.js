@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import "./Credits.css";
 
-import { API_END_POINT, API_KEY } from "../../utils/Constant";
+import { API_END_POINT } from "../../utils/Constant";
 import ActorLink from "../ui/ActorLink";
 
 const Credits = ({ movie_id }) => {
@@ -11,7 +11,7 @@ const Credits = ({ movie_id }) => {
   const [crews, setCrews] = useState([]);
 
   useEffect(() => {
-    Axios.get(API_END_POINT + `/movie/${movie_id}/credits?api_key=${API_KEY}`)
+    Axios.get(API_END_POINT + `/movie/${movie_id}/credits`)
       .then(res => {
         setCasts(res.data.cast);
         setCrews(removeDuplicate(res.data.crew));

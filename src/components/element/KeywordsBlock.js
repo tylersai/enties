@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import "./KeywordsBlock.css";
 
-import { API_END_POINT, API_KEY } from "../../utils/Constant";
+import { API_END_POINT } from "../../utils/Constant";
 
 import Keyword from "../ui/Keyword";
 
@@ -12,7 +12,6 @@ const KeywordsBlock = ({ movie_id, searchQuery }) => {
     let apiLink =
       API_END_POINT +
       (searchQuery ? `/search/keyword` : `/movie/${movie_id}/keywords`);
-    apiLink += `?api_key=${API_KEY}`;
     if (searchQuery) apiLink += `&query=${searchQuery}`;
     Axios.get(apiLink)
       .then(res => {
@@ -29,11 +28,11 @@ const KeywordsBlock = ({ movie_id, searchQuery }) => {
       <div className="KeywordsBlock">
         {searchQuery ? (
           <>
-          <h3 className="fg fg3">Search Keywords</h3>
+            <h3 className="fg fg3">Search Keywords</h3>
           </>
         ) : (
-          <div className="fg fg3 section-label">Keywords : </div>
-        )}
+            <div className="fg fg3 section-label">Keywords : </div>
+          )}
 
         {keywords.map(kw => (
           <Keyword key={kw.id} keyword={kw} />

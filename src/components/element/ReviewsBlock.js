@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./ReviewsBlock.css";
 import Axios from "axios";
-import { API_END_POINT, API_KEY } from "../../utils/Constant";
+import { API_END_POINT } from "../../utils/Constant";
 import Avatar from "../ui/Avatar";
 
 const ReviewsBlock = ({ movie_id }) => {
@@ -9,7 +9,7 @@ const ReviewsBlock = ({ movie_id }) => {
 
   useEffect(() => {
     if (movie_id) {
-      Axios.get(API_END_POINT + `/movie/${movie_id}/reviews?api_key=${API_KEY}`)
+      Axios.get(API_END_POINT + `/movie/${movie_id}/reviews`)
         .then(res => {
           if (res.data && res.data.results && res.data.results.length > 0) {
             setReviews(res.data.results);
