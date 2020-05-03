@@ -6,9 +6,9 @@ The features and functionalities of `Enties` include search, movie listing, pric
 
 ## Configurations
 
-Before you run this project, sign up and get your own `api_key` from TMDB. For convenience, create environment variable file named `.env` and paste the following like so:<br/><br/>
+Before you run this project, sign up and get your own `Access Token (v4 auth)` from TMDB. For convenience, create environment variable file named `.env` and paste the following like so:<br/><br/>
 `REACT_APP_API_END_POINT=https://api.themoviedb.org/3`<br/>
-`REACT_APP_API_KEY=<YOUR_TMDB_API_KEY>`<br/>
+`REACT_APP_ACCESS_TOKEN=<YOUR_TMDB_ACESS_TOKEN>`<br/>
 `REACT_APP_POSTER_PATH=https://image.tmdb.org/t/p/w500`<br/><br/>
 
 ## Available Scripts

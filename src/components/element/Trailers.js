@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Axio from "axios";
 import "./Trailers.css";
-import { API_END_POINT, API_KEY } from "../../utils/Constant";
+import { API_END_POINT } from "../../utils/Constant";
 
 const Trailers = ({ movie_id }) => {
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
-    const link = API_END_POINT + `/movie/${movie_id}/videos?api_key=${API_KEY}`;
+    const link = API_END_POINT + `/movie/${movie_id}/videos`;
     Axio.get(link)
       .then(res => {
         setVideos(res.data.results.slice(0, 6));

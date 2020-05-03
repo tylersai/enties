@@ -5,7 +5,7 @@ import Axio from "axios";
 import actorDark from "../../assets/actor-dark.svg";
 import actorLight from "../../assets/actor-light.svg";
 import actorGreen from "../../assets/actor-green.svg";
-import { API_END_POINT, API_KEY, POSTER_PATH } from "../../utils/Constant";
+import { API_END_POINT, POSTER_PATH } from "../../utils/Constant";
 
 import Loading from "../ui/Loading";
 import NoData from "../element/NoData";
@@ -26,7 +26,7 @@ const ActorPage = ({ match }) => {
     document.title = "Enties \u2022 Actor";
     try {
       const res = await Axio.get(
-        API_END_POINT + `/person/${match.params.aid}?api_key=${API_KEY}`
+        API_END_POINT + `/person/${match.params.aid}`
       );
       setActor(res.data);
       setIsLoading(false);

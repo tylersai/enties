@@ -5,7 +5,7 @@ import queryString from "query-string";
 
 import "./SearchPage.css";
 import cross from "../../assets/cross.svg";
-import { API_END_POINT, API_KEY, toQueryString } from "../../utils/Constant";
+import { API_END_POINT, toQueryString } from "../../utils/Constant";
 
 import Loading from "../ui/Loading";
 import ThemeButton from "../ui/ThemeButton";
@@ -31,7 +31,6 @@ const SearchPage = props => {
 
   const getLink = mediaType => {
     const queryObj = {
-      api_key: API_KEY,
       query: searchQuery
     };
     return `${API_END_POINT}/search/${mediaType}?${toQueryString(queryObj)}`;
@@ -97,31 +96,31 @@ const SearchPage = props => {
       {isLoading ? (
         <Loading />
       ) : (
-        movieRes.total_results || actorRes.total_results || collectionRes.total_results ? (
-        <>
-          <FoldedBox totalResults={movieRes.total_results} title="Movie" routeLink={`/search/movie/?q=${searchQuery.replace(' ','+')}`}>
-          {
-            movieRes.results.slice(0,10).map(m => <MovieCardSmall m={m} key={m.id}/>)
-          }
-          </FoldedBox>
+          movieRes.total_results || actorRes.total_results || collectionRes.total_results ? (
+            <>
+              <FoldedBox totalResults={movieRes.total_results} title="Movie" routeLink={`/search/movie/?q=${searchQuery.replace(' ', '+')}`}>
+                {
+                  movieRes.results.slice(0, 10).map(m => <MovieCardSmall m={m} key={m.id} />)
+                }
+              </FoldedBox>
 
-          <FoldedBox totalResults={collectionRes.total_results} title="Collection">
-            {
-              collectionRes.results.slice(0,10).map(coll => <div key={coll.id}><CollectionCard collection={coll}/></div>)
-            }
-          </FoldedBox>
+              <FoldedBox totalResults={collectionRes.total_results} title="Collection">
+                {
+                  collectionRes.results.slice(0, 10).map(coll => <div key={coll.id}><CollectionCard collection={coll} /></div>)
+                }
+              </FoldedBox>
 
-          <FoldedBox totalResults={actorRes.total_results} title="Actor">
-            {
-              actorRes.results.slice(0,10).map(a => <div key={a.id}><ActorCard actor={a}/></div>)
-            }
-          </FoldedBox>
+              <FoldedBox totalResults={actorRes.total_results} title="Actor">
+                {
+                  actorRes.results.slice(0, 10).map(a => <div key={a.id}><ActorCard actor={a} /></div>)
+                }
+              </FoldedBox>
 
-          <KeywordsBlock searchQuery={searchQuery} />
-        </>):(
-          <div className="not-found">NOT FOUND</div>
-        )
-      )}
+              <KeywordsBlock searchQuery={searchQuery} />
+            </>) : (
+              <div className="not-found">NOT FOUND</div>
+            )
+        )}
     </section>
   );
 };

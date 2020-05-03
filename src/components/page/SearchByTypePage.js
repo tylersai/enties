@@ -5,7 +5,7 @@ import queryString from "query-string";
 
 import "./SearchByTypePage.css";
 import cross from "../../assets/cross.svg";
-import { API_END_POINT, API_KEY, toQueryString } from "../../utils/Constant";
+import { API_END_POINT, toQueryString } from "../../utils/Constant";
 
 import Loading from "../ui/Loading";
 import Pagination from "../ui/Pagination";
@@ -42,7 +42,6 @@ const SearchByTypePage = props => {
       setIsLoading(true);
 
       const queryObj = {
-        api_key: API_KEY,
         query: searchQuery
       };
 
@@ -119,11 +118,11 @@ const SearchByTypePage = props => {
       {isLoading ? (
         <Loading />
       ) : (
-        <>
-          <MovieCardList movieList={movieList} />
-          <KeywordsBlock searchQuery={searchQuery} />
-        </>
-      )}
+          <>
+            <MovieCardList movieList={movieList} />
+            <KeywordsBlock searchQuery={searchQuery} />
+          </>
+        )}
     </section>
   );
 };

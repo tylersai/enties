@@ -4,7 +4,7 @@ import Axio from "axios";
 
 import "./MovieListPage.css";
 import cross from "../../assets/cross.svg";
-import { API_END_POINT, API_KEY } from "../../utils/Constant";
+import { API_END_POINT } from "../../utils/Constant";
 
 import Loading from "../ui/Loading";
 import ThemeButton from "../ui/ThemeButton";
@@ -22,8 +22,7 @@ const MovieListPage = ({ link, title, match }) => {
     setIsLoading(true);
     const fullLink =
       API_END_POINT +
-      (match.params.kid ? `/keyword/${match.params.kid}/movies` : link) +
-      `?api_key=${API_KEY}`;
+      (match.params.kid ? `/keyword/${match.params.kid}/movies` : link);
     Axio.get(fullLink)
       .then(res => {
         setMovieList(res.data.results);
@@ -39,7 +38,7 @@ const MovieListPage = ({ link, title, match }) => {
   useEffect(() => {
     if (match.params.kid) {
       const klink =
-        API_END_POINT + `/keyword/${match.params.kid}?api_key=${API_KEY}`;
+        API_END_POINT + `/keyword/${match.params.kid}`;
       Axio.get(klink)
         .then(res => {
           setKeywordName(res.data.name);
@@ -68,12 +67,12 @@ const MovieListPage = ({ link, title, match }) => {
       <div className="title-bar">
         {match.params.kid && keywordName ? (
           <div>
-            <h4 style={{ display: "inline-block", marginRight: "8px"}} className="fg fgg animate-enlarge">Keyword:</h4>
+            <h4 style={{ display: "inline-block", marginRight: "8px" }} className="fg fgg animate-enlarge">Keyword:</h4>
             <span className="fg fg3 bg bg2 keyword animate-enlarge">{keywordName}</span>
           </div>
         ) : (
-          <h2 className="ent-text-shadow">{title}</h2>
-        )}
+            <h2 className="ent-text-shadow">{title}</h2>
+          )}
 
         <ThemeButton />
         <button

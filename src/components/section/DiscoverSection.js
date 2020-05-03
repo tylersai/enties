@@ -6,7 +6,7 @@ import discover from "../../assets/discover.svg";
 import trend from "../../assets/trend.svg";
 import favourite from "../../assets/favourite.svg";
 
-import { API_END_POINT, API_KEY } from "../../utils/Constant";
+import { API_END_POINT } from "../../utils/Constant";
 import MovieList from "../element/MovieList";
 
 const DiscoverSection = () => {
@@ -21,7 +21,7 @@ const DiscoverSection = () => {
 
   useEffect(() => {
     setLoadDiscover(true);
-    Axios.get(API_END_POINT + `/discover/movie?api_key=${API_KEY}`)
+    Axios.get(API_END_POINT + `/discover/movie`)
       .then(res => {
         setLoadDiscover(false);
         setDiscoverList(res.data.results);
@@ -35,7 +35,7 @@ const DiscoverSection = () => {
 
   useEffect(() => {
     setLoadTrend(true);
-    Axios.get(API_END_POINT + `/trending/movie/week?api_key=${API_KEY}`)
+    Axios.get(API_END_POINT + `/trending/movie/week`)
       .then(res => {
         setLoadTrend(false);
         setTrendList(res.data.results);
@@ -46,10 +46,10 @@ const DiscoverSection = () => {
         setTrendList([]);
       });
   }, []);
-  
+
   useEffect(() => {
     setLoadRated(true);
-    Axios.get(API_END_POINT + `/movie/top_rated?api_key=${API_KEY}`)
+    Axios.get(API_END_POINT + `/movie/top_rated`)
       .then(res => {
         setLoadRated(false);
         setRatedList(res.data.results);
@@ -73,7 +73,7 @@ const DiscoverSection = () => {
       <div className="add-padding">
         <MovieList isLoading={loadRated} list={ratedList} icon={favourite} title="Highest Rated" toLink="/highest-rated" />
       </div>
-      <br/>
+      <br />
     </section>
   );
 };
