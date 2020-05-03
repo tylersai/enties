@@ -5,7 +5,7 @@ import Axio from "axios";
 import "./MovieDetailPage.css";
 import movieDark from "../../assets/movie-dark.svg";
 import movieLight from "../../assets/movie-light.svg";
-import { API_END_POINT, API_KEY, POSTER_PATH } from "../../utils/Constant";
+import { API_END_POINT, POSTER_PATH } from "../../utils/Constant";
 
 import Loading from "../ui/Loading";
 import Rating from "../ui/Rating";
@@ -32,7 +32,7 @@ const MovieDetailPage = ({ match }) => {
     window.scrollTo(0, 0);
     setIsLoading(true);
     const fullLink =
-      API_END_POINT + `/movie/${match.params.id}?api_key=${API_KEY}`;
+      API_END_POINT + `/movie/${match.params.id}`;
     Axio.get(fullLink)
       .then(res => {
         setMovie(res.data);
