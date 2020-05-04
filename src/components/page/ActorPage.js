@@ -13,6 +13,7 @@ import RelatedMoviesBlock from "../element/RelatedMoviesBlock";
 import ImageGallery from "../ui/ImageGallery";
 import Popularity from "../ui/Popularity";
 import { ThemeContext } from "../../utils/Theme";
+import SearchBar from "../ui/SearchBar";
 
 const ActorPage = ({ match }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -42,6 +43,8 @@ const ActorPage = ({ match }) => {
   }, [match.params.aid]);
 
   return (
+    <>
+    <SearchBar/>
     <section className="ActorPage bg bg1 animate-popup">
       {isLoading ? (
         <div className="center-loading">
@@ -130,6 +133,7 @@ const ActorPage = ({ match }) => {
             <NoData svgPath={context.theme === "dark" ? actorDark : actorLight} label="ACTOR NOT FOUND" />
           )}
     </section>
+    </>
   );
 };
 
