@@ -83,89 +83,86 @@ const MovieDetailPage = ({ match }) => {
   };
 
   return (
-    <>
-      <SearchBar />
-      <section className="MovieDetailPage bg bg1 animate-popup">
-        {isLoading ? (
-          <div className="center-loading">
-            <Loading />
-          </div>
-        ) : movie.title ? (
-          <>
-            <div className="detail-wrapper">
-              <div className="detail-poster fg fgg" id="detail-poster">
-                {movie.poster_path ? (
-                  <img
-                    className="animate-fadein"
-                    src={POSTER_PATH + movie.poster_path}
-                    alt="POSTER"
+    <section className="MovieDetailPage bg bg1 animate-popup">
+      {isLoading ? (
+        <div className="center-loading">
+          <Loading />
+        </div>
+      ) : movie.title ? (
+        <>
+          <div className="detail-wrapper">
+            <div className="detail-poster fg fgg" id="detail-poster">
+              {movie.poster_path ? (
+                <img
+                  className="animate-fadein"
+                  src={POSTER_PATH + movie.poster_path}
+                  alt="POSTER"
+                />
+              ) : (
+                  <img className="animate-fadein" src={context.theme === "dark" ? movieDark : movieLight} alt="POSTER" />
+                )}
+            </div>
+            <div className="detail-title">
+              <div id="detail-title">
+                <h1 className="fg fg2 ent-text-shadow">{movie.title}</h1>
+                {movie.vote_count ? (
+                  <Rating
+                    voteAverage={movie.vote_average}
+                    voteCount={movie.vote_count}
                   />
-                ) : (
-                    <img className="animate-fadein" src={context.theme === "dark" ? movieDark : movieLight} alt="POSTER" />
-                  )}
-              </div>
-              <div className="detail-title">
-                <div id="detail-title">
-                  <h1 className="fg fg2 ent-text-shadow">{movie.title}</h1>
-                  {movie.vote_count ? (
-                    <Rating
-                      voteAverage={movie.vote_average}
-                      voteCount={movie.vote_count}
-                    />
-                  ) : null}
-                  {movie.release_date ? (
-                    <div className="fg fg3">
-                      {new Date(movie.release_date).toLocaleDateString(
-                        "en-US",
-                        options
-                      )}
-                    </div>
-                  ) : null}
-                  {movie.genres ? (
-                    <div className="fg fg3">{solveGenres(movie.genres)}</div>
-                  ) : null}
-                  <div id="upper" className="fg fg2" />
-                </div>
+                ) : null}
+                {movie.release_date ? (
+                  <div className="fg fg3">
+                    {new Date(movie.release_date).toLocaleDateString(
+                      "en-US",
+                      options
+                    )}
+                  </div>
+                ) : null}
+                {movie.genres ? (
+                  <div className="fg fg3">{solveGenres(movie.genres)}</div>
+                ) : null}
+                <div id="upper" className="fg fg2" />
               </div>
             </div>
-            <div className="detail-sections">
-              <div style={{ marginBottom: "1vmax" }}>
-                <div className="fg fg3 section-label">Download : </div>
-                <PriceTag popularity={movie.popularity} />
-              </div>
-
-              <KeywordsBlock movie_id={movie.id} />
-
-              <div id="lower" className="fg fg2" />
-
-              <CollectionBlock collection={movie.belongs_to_collection} />
-
-              <ReviewsBlock movie_id={movie.id} />
-
-              <RelatedMoviesBlock
-                title="You Might Also Like"
-                type="similar"
-                movie_id={movie.id}
-              />
-
-              <RelatedMoviesBlock
-                title="Viewers Also Bought"
-                type="recommendations"
-                movie_id={movie.id}
-              />
-
-              <ImageGallery title="Related Images" id={movie.id} type="movie" />
-
-              <Credits movie_id={movie.id} />
-
-              <Trailers movie_id={movie.id} />
+          </div>
+          <div className="detail-sections">
+            <div style={{ marginBottom: "1vmax" }}>
+              <div className="fg fg3 section-label">Download : </div>
+              <PriceTag popularity={movie.popularity} />
             </div>
-          </>
-        ) : (
-              <NoData svgPath={context.theme === "dark" ? movieDark : movieLight} label="MOVIE NOT FOUND" />
-            )}
-      </section>
-    </>
+
+            <KeywordsBlock movie_id={movie.id} />
+
+            <div id="lower" className="fg fg2" />
+
+            <CollectionBlock collection={movie.belongs_to_collection} />
+
+            <ReviewsBlock movie_id={movie.id} />
+
+            <RelatedMoviesBlock
+              title="You Might Also Like"
+              type="similar"
+              movie_id={movie.id}
+            />
+
+            <RelatedMoviesBlock
+              title="Viewers Also Bought"
+              type="recommendations"
+              movie_id={movie.id}
+            />
+
+            <ImageGallery title="Related Images" id={movie.id} type="movie" />
+
+            <Credits movie_id={movie.id} />
+
+            <Trailers movie_id={movie.id} />
+          </div>
+        </>
+      ) : (
+            <NoData svgPath={context.theme === "dark" ? movieDark : movieLight} label="MOVIE NOT FOUND" />
+          )}
+    </section>
   );
 };
 

@@ -18,7 +18,7 @@ function HomePage() {
 
   return (
     <Fragment>
-      <section id="search" className="background">
+      <section id="search" className="HomePage background">
         <span />
         <span />
         <span />
@@ -48,7 +48,7 @@ function HomePage() {
           <SearchForm process={processSearch} />
         </div>
       </section>
-      <DiscoverSection/>
+      <DiscoverSection />
     </Fragment>
   );
 }

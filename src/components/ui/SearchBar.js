@@ -1,13 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import "./SearchBar.css";
 import homeIcon from "../../assets/home.svg";
 import { useHistory } from "react-router-dom";
 
-const SearchBar = () => {
+const SearchBar = ({ location }) => {
 
   const history = useHistory();
   const ref = React.createRef();
+
+  if (location.pathname === "/") {
+    return null;
+  }
 
   const onSearch = e => {
     e.preventDefault();
@@ -18,15 +22,15 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="SearchBar bg bg2 animate-shrinkup">
+    <header className="SearchBar bg bg2 animate-shrinkup">
       <div className="search-bar-wrapper">
         <Link to="/"><img src={homeIcon} alt="Home" /></Link>
         <form onSubmit={onSearch}>
           <input type="search" name="query" className="fg fg-primary" ref={ref} placeholder="Search" />
         </form>
       </div>
-    </div>
+    </header>
   );
 }
 
-export default SearchBar;
+export default withRouter(SearchBar);
