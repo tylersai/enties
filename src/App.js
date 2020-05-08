@@ -13,35 +13,37 @@ import CollectionPage from "./components/page/CollectionPage";
 import NoData from "./components/element/NoData";
 import ActorPage from "./components/page/ActorPage";
 import { ThemeContext, toggleTheme } from "./utils/Theme";
+import SearchBar from "./components/ui/SearchBar";
 
 const App = () => {
 
   const [theme, setTheme] = useState("dark");
   const changeTheme = () => {
-    setTheme(theme === "dark" ? "light":"dark");
+    setTheme(theme === "dark" ? "light" : "dark");
     toggleTheme();
   };
 
   return (
-    <ThemeContext.Provider value={{theme, changeTheme}}>
-    <div className="App">
-      <Router>
-        <Switch>
-          <Route component={HomePage} path="/" exact />
-          <Route component={SearchByTypePage} path="/search/movie" />
-          <Route component={SearchPage} path="/search" />
-          <Route component={MovieDetailPage} path="/movie/:id" />
-          <Route path="/discover" render={ routeProps => (<MovieListPage {...routeProps} title="Discover" link="/discover/movie"/>)} />
-          <Route path="/trending" render={ routeProps => (<MovieListPage {...routeProps} title="Trending" link="/trending/movie/week"/>)} />
-          <Route path="/highest-rated" render={ routeProps => (<MovieListPage {...routeProps} title="Highest Rated" link="/movie/top_rated"/>)} />
-          <Route path="/keyword/:kid" component={MovieListPage} />
-          <Route path="/collection/:cid" component={CollectionPage} />
-          <Route path="/actor/:aid" component={ActorPage} />
-          <Route render={routeProps => <section className="bg bg1"><NoData {...routeProps}/></section>}/>
-        </Switch>
-        <FooterSection/>
-      </Router>
-    </div>
+    <ThemeContext.Provider value={{ theme, changeTheme }}>
+      <div className="App">
+        <Router>
+          <SearchBar />
+          <Switch>
+            <Route component={HomePage} path="/" exact />
+            <Route component={SearchByTypePage} path="/search/movie" />
+            <Route component={SearchPage} path="/search" />
+            <Route component={MovieDetailPage} path="/movie/:id" />
+            <Route path="/discover" render={routeProps => (<MovieListPage {...routeProps} title="Discover" link="/discover/movie" />)} />
+            <Route path="/trending" render={routeProps => (<MovieListPage {...routeProps} title="Trending" link="/trending/movie/week" />)} />
+            <Route path="/highest-rated" render={routeProps => (<MovieListPage {...routeProps} title="Highest Rated" link="/movie/top_rated" />)} />
+            <Route path="/keyword/:kid" component={MovieListPage} />
+            <Route path="/collection/:cid" component={CollectionPage} />
+            <Route path="/actor/:aid" component={ActorPage} />
+            <Route render={routeProps => <section className="bg bg1"><NoData {...routeProps} /></section>} />
+          </Switch>
+          <FooterSection />
+        </Router>
+      </div>
     </ThemeContext.Provider>
   );
 }

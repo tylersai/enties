@@ -43,8 +43,6 @@ const ActorPage = ({ match }) => {
   }, [match.params.aid]);
 
   return (
-    <>
-    <SearchBar/>
     <section className="ActorPage bg bg1 animate-popup">
       {isLoading ? (
         <div className="center-loading">
@@ -133,7 +131,6 @@ const ActorPage = ({ match }) => {
             <NoData svgPath={context.theme === "dark" ? actorDark : actorLight} label="ACTOR NOT FOUND" />
           )}
     </section>
-    </>
   );
 };
 
