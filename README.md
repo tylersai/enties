@@ -1,6 +1,6 @@
 # Enties
 This is a React Frontend web project for enties and movie geeks using REST API provided by [The Movie Database](http://themoviedb.org).<br/>
-The features and functionalities of `Enties` include search, movie listing, pricing idea, movie reviews, official credits, official YouTube trailers, similar items and TMDB's very own recommendation system. I also try to make UI/UX attractive. Please take a look at [http://enties.netlify.com](http://enties.netlify.com).<br/><br/>
+The features and functionalities of `Enties` include search, movie listing, pricing idea, movie reviews, official credits, official YouTube trailers, similar items and TMDB's very own recommendation system. I also try to make UI/UX attractive. Please take a look at [http://enties.netlify.app](http://enties.netlify.app).<br/><br/>
 
 *Disclaimer: Also note that the commercial idea on the aforementioned website by this project is totally for demo purpose only. Moreover, this project is under development and some expected featues might not be available by the time you view it. But, if you have crazy new innovative idea, let me know, shoot me a DM at [http://linkedin.com/in/thesaihan](http://linkedin.com/in/thesaihan)*<br/>
 
