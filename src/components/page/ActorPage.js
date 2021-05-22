@@ -13,7 +13,6 @@ import RelatedMoviesBlock from "../element/RelatedMoviesBlock";
 import ImageGallery from "../ui/ImageGallery";
 import Popularity from "../ui/Popularity";
 import { ThemeContext } from "../../utils/Theme";
-import SearchBar from "../ui/SearchBar";
 
 const ActorPage = ({ match }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -26,9 +25,7 @@ const ActorPage = ({ match }) => {
     setIsLoading(true);
     document.title = "Enties \u2022 Actor";
     try {
-      const res = await Axio.get(
-        API_END_POINT + `/person/${match.params.aid}`
-      );
+      const res = await Axio.get(API_END_POINT + `/person/${match.params.aid}`);
       setActor(res.data);
       setIsLoading(false);
       document.title = `Enties \u2022 ${res.data.name}`;
@@ -40,6 +37,7 @@ const ActorPage = ({ match }) => {
 
   useEffect(() => {
     fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [match.params.aid]);
 
   return (
@@ -59,8 +57,12 @@ const ActorPage = ({ match }) => {
                   alt="PROFILE"
                 />
               ) : (
-                  <img className="animate-enlarge no-profile" src={actorGreen} alt="PROFILE" />
-                )}
+                <img
+                  className="animate-enlarge no-profile"
+                  src={actorGreen}
+                  alt="PROFILE"
+                />
+              )}
             </div>
             <div className="detail" style={{ position: "relative" }}>
               <div>
@@ -79,9 +81,7 @@ const ActorPage = ({ match }) => {
                   </div>
                 </div>
 
-                <p className="fg fg3">
-                  {actor.biography}
-                </p>
+                <p className="fg fg3">{actor.biography}</p>
               </div>
             </div>
           </div>
@@ -119,17 +119,27 @@ const ActorPage = ({ match }) => {
               </div>
             </div>
 
-            <RelatedMoviesBlock title="Appears On" link={`/person/${actor.id}/movie_credits`} type="cast" />
+            <RelatedMoviesBlock
+              title="Appears On"
+              link={`/person/${actor.id}/movie_credits`}
+              type="cast"
+            />
 
-            <RelatedMoviesBlock title="Works As Crew On" link={`/person/${actor.id}/movie_credits`} type="crew" />
+            <RelatedMoviesBlock
+              title="Works As Crew On"
+              link={`/person/${actor.id}/movie_credits`}
+              type="crew"
+            />
 
             <ImageGallery title="Related Images" id={actor.id} type="person" />
-
           </div>
         </>
       ) : (
-            <NoData svgPath={context.theme === "dark" ? actorDark : actorLight} label="ACTOR NOT FOUND" />
-          )}
+        <NoData
+          svgPath={context.theme === "dark" ? actorDark : actorLight}
+          label="ACTOR NOT FOUND"
+        />
+      )}
     </section>
   );
 };

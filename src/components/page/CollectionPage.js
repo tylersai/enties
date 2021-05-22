@@ -23,9 +23,7 @@ const CollectionPage = ({ match }) => {
 
   const fetchImg = async () => {
     setIsLoadingImg(true);
-    const imgLink =
-      API_END_POINT +
-      `/collection/${match.params.cid}/images`;
+    const imgLink = API_END_POINT + `/collection/${match.params.cid}/images`;
     try {
       const resImg = await Axio.get(imgLink);
       setImg(resImg.data);
@@ -37,8 +35,7 @@ const CollectionPage = ({ match }) => {
 
   const fetchColl = async () => {
     setIsLoadingColl(true);
-    const collLink =
-      API_END_POINT + `/collection/${match.params.cid}`;
+    const collLink = API_END_POINT + `/collection/${match.params.cid}`;
     try {
       const resColl = await Axio.get(collLink);
       setCollection(resColl.data);
@@ -54,6 +51,7 @@ const CollectionPage = ({ match }) => {
     window.scrollTo(0, 0);
     fetchImg();
     fetchColl();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -73,11 +71,15 @@ const CollectionPage = ({ match }) => {
                   src={POSTER_PATH + collection.backdrop_path}
                   alt="POSTER"
                 />
-              ) : (<img
-                className="animate-fadein no-poster"
-                src={context.theme === "dark" ? collectionDark : collectionLight}
-                alt="POSTER"
-              />)}
+              ) : (
+                <img
+                  className="animate-fadein no-poster"
+                  src={
+                    context.theme === "dark" ? collectionDark : collectionLight
+                  }
+                  alt="POSTER"
+                />
+              )}
             </div>
             <div className="detail-title">
               <div>
@@ -85,15 +87,24 @@ const CollectionPage = ({ match }) => {
                 <hr align="left" className="fg" />
                 <p className="fg fg3">{collection.overview}</p>
                 <div className="fg fg3 section-label">Buy Bundle : </div>
-                <PriceTag price={collection.parts.length * 13 + 0.99 + parseInt(collection.parts.length * 1.5)} />
+                <PriceTag
+                  price={
+                    collection.parts.length * 13 +
+                    0.99 +
+                    parseInt(collection.parts.length * 1.5)
+                  }
+                />
               </div>
             </div>
           </div>
           <CollectionParts parts={collection.parts} />
         </>
       ) : (
-            <NoData svgPath={context.theme === "dark" ? collectionDark : collectionLight} label="BUNDLE NOT FOUND" />
-          )}
+        <NoData
+          svgPath={context.theme === "dark" ? collectionDark : collectionLight}
+          label="BUNDLE NOT FOUND"
+        />
+      )}
     </section>
   );
 };

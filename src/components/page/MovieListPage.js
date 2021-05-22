@@ -24,11 +24,11 @@ const MovieListPage = ({ link, title, match }) => {
       API_END_POINT +
       (match.params.kid ? `/keyword/${match.params.kid}/movies` : link);
     Axio.get(fullLink)
-      .then(res => {
+      .then((res) => {
         setMovieList(res.data.results);
         setIsLoading(false);
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
         setMovieList([]);
         setIsLoading(false);
@@ -37,20 +37,20 @@ const MovieListPage = ({ link, title, match }) => {
 
   useEffect(() => {
     if (match.params.kid) {
-      const klink =
-        API_END_POINT + `/keyword/${match.params.kid}`;
+      const klink = API_END_POINT + `/keyword/${match.params.kid}`;
       Axio.get(klink)
-        .then(res => {
+        .then((res) => {
           setKeywordName(res.data.name);
           document.title = `Enties \u2022 "${res.data.name}"`;
         })
-        .catch(err => {
+        .catch((err) => {
           setKeywordName("");
           document.title = `Enties \u2022 Keyword`;
         });
     } else {
       document.title = `Enties \u2022 ${title}`;
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [match.params.kid]);
 
   const closePage = () => {
@@ -67,12 +67,19 @@ const MovieListPage = ({ link, title, match }) => {
       <div className="title-bar">
         {match.params.kid && keywordName ? (
           <div>
-            <h4 style={{ display: "inline-block", marginRight: "8px" }} className="fg fgg animate-enlarge">Keyword:</h4>
-            <span className="fg fg3 bg bg2 keyword animate-enlarge">{keywordName}</span>
+            <h4
+              style={{ display: "inline-block", marginRight: "8px" }}
+              className="fg fgg animate-enlarge"
+            >
+              Keyword:
+            </h4>
+            <span className="fg fg3 bg bg2 keyword animate-enlarge">
+              {keywordName}
+            </span>
           </div>
         ) : (
-            <h2 className="ent-text-shadow">{title}</h2>
-          )}
+          <h2 className="ent-text-shadow">{title}</h2>
+        )}
 
         <ThemeButton />
         <button

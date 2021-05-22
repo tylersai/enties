@@ -15,7 +15,7 @@ import MovieCardSmall from "../element/MovieCardSmall";
 import CollectionCard from "../element/CollectionCard";
 import ActorCard from "../element/ActorCard";
 
-const SearchPage = props => {
+const SearchPage = (props) => {
   const history = useHistory();
 
   const [isLoading, setIsLoading] = useState(false);
@@ -29,9 +29,9 @@ const SearchPage = props => {
     ? queryParams.q.replace("+", " ").trim()
     : "";
 
-  const getLink = mediaType => {
+  const getLink = (mediaType) => {
     const queryObj = {
-      query: searchQuery
+      query: searchQuery,
     };
     return `${API_END_POINT}/search/${mediaType}?${toQueryString(queryObj)}`;
   };
@@ -45,20 +45,17 @@ const SearchPage = props => {
       try {
         let res = await Axio.get(getLink("movie"));
         setMovieRes(res.data);
-      } catch {
-      }
+      } catch {}
 
       try {
         let res = await Axio.get(getLink("person"));
         setActorRes(res.data);
-      } catch {
-      }
+      } catch {}
 
       try {
         let res = await Axio.get(getLink("collection"));
         setCollectionRes(res.data);
-      } catch {
-      }
+      } catch {}
 
       setIsLoading(false);
     }
@@ -66,6 +63,7 @@ const SearchPage = props => {
 
   useEffect(() => {
     fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchQuery]);
 
   const closeSearch = () => {
@@ -73,7 +71,7 @@ const SearchPage = props => {
     resSec.classList.remove("animate-popup");
     resSec.classList.add("animate-popdown");
     setTimeout(() => {
-      history.push('/');
+      history.push("/");
     }, 200);
   };
 
@@ -95,32 +93,44 @@ const SearchPage = props => {
 
       {isLoading ? (
         <Loading />
+      ) : movieRes.total_results ||
+        actorRes.total_results ||
+        collectionRes.total_results ? (
+        <>
+          <FoldedBox
+            totalResults={movieRes.total_results}
+            title="Movie"
+            routeLink={`/search/movie/?q=${searchQuery.replace(" ", "+")}`}
+          >
+            {movieRes.results.slice(0, 10).map((m) => (
+              <MovieCardSmall m={m} key={m.id} />
+            ))}
+          </FoldedBox>
+
+          <FoldedBox
+            totalResults={collectionRes.total_results}
+            title="Collection"
+          >
+            {collectionRes.results.slice(0, 10).map((coll) => (
+              <div key={coll.id}>
+                <CollectionCard collection={coll} />
+              </div>
+            ))}
+          </FoldedBox>
+
+          <FoldedBox totalResults={actorRes.total_results} title="Actor">
+            {actorRes.results.slice(0, 10).map((a) => (
+              <div key={a.id}>
+                <ActorCard actor={a} />
+              </div>
+            ))}
+          </FoldedBox>
+
+          <KeywordsBlock searchQuery={searchQuery} />
+        </>
       ) : (
-          movieRes.total_results || actorRes.total_results || collectionRes.total_results ? (
-            <>
-              <FoldedBox totalResults={movieRes.total_results} title="Movie" routeLink={`/search/movie/?q=${searchQuery.replace(' ', '+')}`}>
-                {
-                  movieRes.results.slice(0, 10).map(m => <MovieCardSmall m={m} key={m.id} />)
-                }
-              </FoldedBox>
-
-              <FoldedBox totalResults={collectionRes.total_results} title="Collection">
-                {
-                  collectionRes.results.slice(0, 10).map(coll => <div key={coll.id}><CollectionCard collection={coll} /></div>)
-                }
-              </FoldedBox>
-
-              <FoldedBox totalResults={actorRes.total_results} title="Actor">
-                {
-                  actorRes.results.slice(0, 10).map(a => <div key={a.id}><ActorCard actor={a} /></div>)
-                }
-              </FoldedBox>
-
-              <KeywordsBlock searchQuery={searchQuery} />
-            </>) : (
-              <div className="not-found">NOT FOUND</div>
-            )
-        )}
+        <div className="not-found">NOT FOUND</div>
+      )}
     </section>
   );
 };

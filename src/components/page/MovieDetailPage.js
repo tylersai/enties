@@ -20,7 +20,6 @@ import KeywordsBlock from "../element/KeywordsBlock";
 import NoData from "../element/NoData";
 import { ThemeContext } from "../../utils/Theme";
 import ReviewsBlock from "../element/ReviewsBlock";
-import SearchBar from "../ui/SearchBar";
 
 const MovieDetailPage = ({ match }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -31,15 +30,14 @@ const MovieDetailPage = ({ match }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
     setIsLoading(true);
-    const fullLink =
-      API_END_POINT + `/movie/${match.params.id}`;
+    const fullLink = API_END_POINT + `/movie/${match.params.id}`;
     Axio.get(fullLink)
-      .then(res => {
+      .then((res) => {
         setMovie(res.data);
         setIsLoading(false);
         document.title = `Enties \u2022 ${res.data.title}`;
       })
-      .catch(err => {
+      .catch((err) => {
         document.title = "Enties \u2022 Movie Details";
         setMovie({});
         setIsLoading(false);
@@ -57,7 +55,7 @@ const MovieDetailPage = ({ match }) => {
       id = "lower";
       document.getElementById("upper").style.display = "none";
     }
-    const Overview = props => {
+    const Overview = (props) => {
       return (
         <>
           <h3 className="fg fg3">About the Movie</h3>
@@ -73,13 +71,13 @@ const MovieDetailPage = ({ match }) => {
   useEffect(() => {
     try {
       renderOverview();
-    } catch { }
+    } catch {}
   });
 
   const options = { year: "numeric", month: "long", day: "numeric" };
 
-  const solveGenres = genres => {
-    return genres.map(g => g.name).join(" \u2022 ");
+  const solveGenres = (genres) => {
+    return genres.map((g) => g.name).join(" \u2022 ");
   };
 
   return (
@@ -99,8 +97,12 @@ const MovieDetailPage = ({ match }) => {
                   alt="POSTER"
                 />
               ) : (
-                  <img className="animate-fadein" src={context.theme === "dark" ? movieDark : movieLight} alt="POSTER" />
-                )}
+                <img
+                  className="animate-fadein"
+                  src={context.theme === "dark" ? movieDark : movieLight}
+                  alt="POSTER"
+                />
+              )}
             </div>
             <div className="detail-title">
               <div id="detail-title">
@@ -160,8 +162,11 @@ const MovieDetailPage = ({ match }) => {
           </div>
         </>
       ) : (
-            <NoData svgPath={context.theme === "dark" ? movieDark : movieLight} label="MOVIE NOT FOUND" />
-          )}
+        <NoData
+          svgPath={context.theme === "dark" ? movieDark : movieLight}
+          label="MOVIE NOT FOUND"
+        />
+      )}
     </section>
   );
 };
