@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useContext } from "react";
-import ReactDOM from "react-dom";
 import Axio from "axios";
 
 import "./MovieDetailPage.css";
@@ -43,36 +42,6 @@ const MovieDetailPage = ({ match }) => {
         setIsLoading(false);
       });
   }, [match.params.id]);
-
-  const renderOverview = () => {
-    let id = "upper";
-
-    const dp = document.getElementById("detail-poster").clientHeight;
-    const dt = document.getElementById("detail-title").clientHeight;
-    console.log(dp, dt);
-
-    if (dt + 10 > dp / 2) {
-      id = "lower";
-      document.getElementById("upper").style.display = "none";
-    }
-    const Overview = (props) => {
-      return (
-        <>
-          <h3 className="fg fg3">About the Movie</h3>
-          <hr align="left" className="fg" />
-          <p className="fg fg3">{movie.overview}</p>
-        </>
-      );
-    };
-    console.log(id);
-    ReactDOM.render(<Overview />, document.getElementById(id));
-  };
-
-  useEffect(() => {
-    try {
-      renderOverview();
-    } catch {}
-  });
 
   const options = { year: "numeric", month: "long", day: "numeric" };
 
@@ -124,8 +93,11 @@ const MovieDetailPage = ({ match }) => {
                 {movie.genres ? (
                   <div className="fg fg3">{solveGenres(movie.genres)}</div>
                 ) : null}
-                <div id="upper" className="fg fg2" />
               </div>
+            </div>
+            <div className="detail-desc">
+              <h3 className="fg fg3">Overview</h3>
+              <p className="fg fg3">{movie.overview}</p>
             </div>
           </div>
           <div className="detail-sections">
@@ -135,8 +107,6 @@ const MovieDetailPage = ({ match }) => {
             </div>
 
             <KeywordsBlock movie_id={movie.id} />
-
-            <div id="lower" className="fg fg2" />
 
             <CollectionBlock collection={movie.belongs_to_collection} />
 
