@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Axio from "axios";
 import queryString from "query-string";
 
@@ -13,13 +13,11 @@ import MovieCardList from "../element/MovieCardList";
 import ThemeButton from "../ui/ThemeButton";
 import KeywordsBlock from "../element/KeywordsBlock";
 
-const SearchByTypePage = props => {
-  const history = useHistory();
+const SearchByTypePage = (props) => {
+  const history = useNavigate();
 
   const queryParams = queryString.parse(props.location.search);
-  const searchQuery = queryParams.q
-    ? queryParams.q.replace("+", " ").trim()
-    : "";
+  const searchQuery = queryParams.q ? queryParams.q.replace("+", " ").trim() : "";
   let currentPage = queryParams.p ? queryParams.p.trim() : 1;
 
   try {
@@ -42,7 +40,7 @@ const SearchByTypePage = props => {
       setIsLoading(true);
 
       const queryObj = {
-        query: searchQuery
+        query: searchQuery,
       };
 
       if (currentPage > 1) {
@@ -51,13 +49,13 @@ const SearchByTypePage = props => {
 
       const link = API_END_POINT + "/search/movie?" + toQueryString(queryObj);
       Axio.get(link)
-        .then(res => {
+        .then((res) => {
           setTotalPages(res.data.total_pages);
           setTotalResults(res.data.total_results);
           setMovieList(res.data.results);
           setIsLoading(false);
         })
-        .catch(err => {
+        .catch((err) => {
           console.log(err);
           setMovieList([]);
           setTotalPages(0);
@@ -73,16 +71,16 @@ const SearchByTypePage = props => {
         [
           {
             opacity: 1,
-            transform: "translateY(0)"
+            transform: "translateY(0)",
           },
           {
             opacity: 0,
-            transform: "translateY(10vh)"
-          }
+            transform: "translateY(10vh)",
+          },
         ],
         {
           duration: 200,
-          fill: "forwards"
+          fill: "forwards",
         }
       ).onfinish = () => {
         history.goBack();
@@ -96,13 +94,11 @@ const SearchByTypePage = props => {
     <section className="SearchByTypePage bg bg1" id="result">
       {searchQuery ? (
         <div className="search-desc">
-          <h4 className="fg fgg">Results for : <span>"{searchQuery}"</span>
+          <h4 className="fg fgg">
+            Results for : <span>"{searchQuery}"</span>
           </h4>
           <ThemeButton />
-          <button
-            onClick={closeSearch}
-            className="fg fg2 clear-search"
-          >
+          <button onClick={closeSearch} className="fg fg2 clear-search">
             <img src={cross} alt="x" />
           </button>
         </div>
@@ -118,11 +114,11 @@ const SearchByTypePage = props => {
       {isLoading ? (
         <Loading />
       ) : (
-          <>
-            <MovieCardList movieList={movieList} />
-            <KeywordsBlock searchQuery={searchQuery} />
-          </>
-        )}
+        <>
+          <MovieCardList movieList={movieList} />
+          <KeywordsBlock searchQuery={searchQuery} />
+        </>
+      )}
     </section>
   );
 };

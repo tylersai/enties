@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Axio from "axios";
 
 import "./MovieListPage.css";
@@ -11,7 +11,7 @@ import ThemeButton from "../ui/ThemeButton";
 import MovieCardList from "../element/MovieCardList";
 
 const MovieListPage = ({ link, title, match }) => {
-  const history = useHistory();
+  const history = useNavigate();
 
   const [isLoading, setIsLoading] = useState(false);
   const [movieList, setMovieList] = useState([]);
@@ -20,9 +20,7 @@ const MovieListPage = ({ link, title, match }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
     setIsLoading(true);
-    const fullLink =
-      API_END_POINT +
-      (match.params.kid ? `/keyword/${match.params.kid}/movies` : link);
+    const fullLink = API_END_POINT + (match.params.kid ? `/keyword/${match.params.kid}/movies` : link);
     Axio.get(fullLink)
       .then((res) => {
         setMovieList(res.data.results);
@@ -67,25 +65,17 @@ const MovieListPage = ({ link, title, match }) => {
       <div className="title-bar">
         {match.params.kid && keywordName ? (
           <div>
-            <h4
-              style={{ display: "inline-block", marginRight: "8px" }}
-              className="fg fgg animate-enlarge"
-            >
+            <h4 style={{ display: "inline-block", marginRight: "8px" }} className="fg fgg animate-enlarge">
               Keyword:
             </h4>
-            <span className="fg fg3 bg bg2 keyword animate-enlarge">
-              {keywordName}
-            </span>
+            <span className="fg fg3 bg bg2 keyword animate-enlarge">{keywordName}</span>
           </div>
         ) : (
           <h2 className="ent-text-shadow">{title}</h2>
         )}
 
         <ThemeButton />
-        <button
-          onClick={closePage}
-          className="fg fg2 close-page animate-enlarge"
-        >
+        <button onClick={closePage} className="fg fg2 close-page animate-enlarge">
           <img src={cross} alt="x" />
         </button>
       </div>

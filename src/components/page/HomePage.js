@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./HomePage.css";
 
 import Navbar from "../ui/Navbar";
@@ -7,8 +7,7 @@ import SearchForm from "../ui/SearchForm";
 import DiscoverSection from "../section/DiscoverSection";
 
 function HomePage() {
-
-  const history = useHistory();
+  const history = useNavigate();
 
   useEffect(() => {
     document.title = "Enties";
@@ -44,7 +43,9 @@ function HomePage() {
           <h1 className="fg fg3 ent-text-shadow animate-popup-1" id="lets-watch-movie">
             Let's Watch Movie
           </h1>
-          <h4 className="fg fg3 label animate-popup-2">Search 100,000+ movies, discover new releases, and see what's trending.</h4>
+          <h4 className="fg fg3 label animate-popup-2">
+            Search 100,000+ movies, discover new releases, and see what's trending.
+          </h4>
           <SearchForm process={processSearch} />
         </div>
       </section>

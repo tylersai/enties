@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Axio from "axios";
 import queryString from "query-string";
 
@@ -16,7 +16,7 @@ import CollectionCard from "../element/CollectionCard";
 import ActorCard from "../element/ActorCard";
 
 const SearchPage = (props) => {
-  const history = useHistory();
+  const history = useNavigate();
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -25,9 +25,7 @@ const SearchPage = (props) => {
   const [collectionRes, setCollectionRes] = useState({});
 
   const queryParams = queryString.parse(props.location.search);
-  const searchQuery = queryParams.q
-    ? queryParams.q.replace("+", " ").trim()
-    : "";
+  const searchQuery = queryParams.q ? queryParams.q.replace("+", " ").trim() : "";
 
   const getLink = (mediaType) => {
     const queryObj = {
@@ -83,19 +81,14 @@ const SearchPage = (props) => {
           <span>"{searchQuery}"</span>
         </h4>
         <ThemeButton />
-        <button
-          onClick={closeSearch}
-          className="fg fg2 clear-search animate-enlarge"
-        >
+        <button onClick={closeSearch} className="fg fg2 clear-search animate-enlarge">
           <img src={cross} alt="x" />
         </button>
       </div>
 
       {isLoading ? (
         <Loading />
-      ) : movieRes.total_results ||
-        actorRes.total_results ||
-        collectionRes.total_results ? (
+      ) : movieRes.total_results || actorRes.total_results || collectionRes.total_results ? (
         <>
           <FoldedBox
             totalResults={movieRes.total_results}
@@ -107,10 +100,7 @@ const SearchPage = (props) => {
             ))}
           </FoldedBox>
 
-          <FoldedBox
-            totalResults={collectionRes.total_results}
-            title="Collection"
-          >
+          <FoldedBox totalResults={collectionRes.total_results} title="Collection">
             {collectionRes.results.slice(0, 10).map((coll) => (
               <div key={coll.id}>
                 <CollectionCard collection={coll} />

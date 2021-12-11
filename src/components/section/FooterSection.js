@@ -1,5 +1,5 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./FooterSection.css";
 import facebook from "../../assets/facebook.svg";
 import instagram from "../../assets/instagram.svg";
@@ -7,10 +7,10 @@ import twitter from "../../assets/twitter.svg";
 import github from "../../assets/github.svg";
 
 const FooterSection = () => {
-  const history = useHistory();
+  const history = useNavigate();
   const goHome = () => {
     history.push("/");
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
   };
   return (
     <section className="FooterSection bg bg2" id="footer">
@@ -22,16 +22,21 @@ const FooterSection = () => {
           <div className="fg fgg">Entertainment website for movie geeks!</div>
           <div className="social-icons">
             <a className="social-icon" target="_blank" rel="noopener noreferrer" href="http://twitter.com/thesaihan">
-              <img src={twitter} alt="TW"/>
+              <img src={twitter} alt="TW" />
             </a>
             <a className="social-icon" target="_blank" rel="noopener noreferrer" href="http://facebook.com/thesaihan">
-              <img src={facebook} alt="FB"/>
+              <img src={facebook} alt="FB" />
             </a>
             <a className="social-icon" target="_blank" rel="noopener noreferrer" href="http://instagram.com/thesaihan">
-              <img src={instagram} alt="IG"/>
+              <img src={instagram} alt="IG" />
             </a>
-            <a className="social-icon" target="_blank" rel="noopener noreferrer" href="http://github.com/thesaihan/enties">
-              <img src={github} alt="GH"/>
+            <a
+              className="social-icon"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="http://github.com/thesaihan/enties"
+            >
+              <img src={github} alt="GH" />
             </a>
           </div>
         </div>
