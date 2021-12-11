@@ -28,27 +28,24 @@ const App = () => {
         <Router>
           <SearchBar />
           <Routes>
-            <Route children={HomePage} path="/" />
-            <Route children={SearchByTypePage} path="/search/movie" />
-            <Route children={SearchPage} path="/search" />
-            <Route children={MovieDetailPage} path="/movie/:id" />
-            <Route path="/discover">
-              <MovieListPage title="Discover" link="/discover/movie" />
-            </Route>
-            <Route path="/trending">
-              <MovieListPage title="Trending" link="/trending/movie/week" />
-            </Route>
-            <Route path="/highest-rated">
-              <MovieListPage title="Highest Rated" link="/movie/top_rated" />
-            </Route>
-            <Route path="/keyword/:kid" children={MovieListPage} />
-            <Route path="/collection/:cid" children={CollectionPage} />
-            <Route path="/actor/:aid" children={ActorPage} />
-            <Route>
-              <section className="bg bg1">
-                <NoData />
-              </section>
-            </Route>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/search/movie" element={<SearchByTypePage />} />
+            <Route path="/search" element={<SearchPage />} />
+            <Route path="/movie/:id" element={<MovieDetailPage />} />
+            <Route path="/discover" element={<MovieListPage title="Discover" link="/discover/movie" />} />
+            <Route path="/trending" element={<MovieListPage title="Trending" link="/trending/movie/week" />} />
+            <Route path="/highest-rated" element={<MovieListPage title="Highest Rated" link="/movie/top_rated" />} />
+            <Route path="/keyword/:kid" element={<MovieListPage />} />
+            <Route path="/collection/:cid" element={<CollectionPage />} />
+            <Route path="/actor/:aid" element={<ActorPage />} />
+            <Route
+              path="*"
+              element={
+                <section className="bg bg1">
+                  <NoData />
+                </section>
+              }
+            />
           </Routes>
           <FooterSection />
         </Router>
