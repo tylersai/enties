@@ -19,17 +19,18 @@ import KeywordsBlock from "../element/KeywordsBlock";
 import NoData from "../element/NoData";
 import { ThemeContext } from "../../utils/Theme";
 import ReviewsBlock from "../element/ReviewsBlock";
+import { useParams } from "react-router-dom";
 
-const MovieDetailPage = ({ match }) => {
+const MovieDetailPage = () => {
+  const { mid } = useParams();
   const [isLoading, setIsLoading] = useState(false);
   const [movie, setMovie] = useState({});
 
   const context = useContext(ThemeContext);
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
+  const fetchData = () => {
     setIsLoading(true);
-    const fullLink = API_END_POINT + `/movie/${match.params.id}`;
+    const fullLink = API_END_POINT + `/movie/${mid}`;
     Axio.get(fullLink)
       .then((res) => {
         setMovie(res.data);
@@ -41,7 +42,13 @@ const MovieDetailPage = ({ match }) => {
         setMovie({});
         setIsLoading(false);
       });
-  }, [match.params.id]);
+  };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    mid && fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mid]);
 
   const options = { year: "numeric", month: "long", day: "numeric" };
 
@@ -60,39 +67,19 @@ const MovieDetailPage = ({ match }) => {
           <div className="detail-wrapper">
             <div className="detail-poster fg fgg" id="detail-poster">
               {movie.poster_path ? (
-                <img
-                  className="animate-fadein"
-                  src={POSTER_PATH + movie.poster_path}
-                  alt="POSTER"
-                />
+                <img className="animate-fadein" src={POSTER_PATH + movie.poster_path} alt="POSTER" />
               ) : (
-                <img
-                  className="animate-fadein"
-                  src={context.theme === "dark" ? movieDark : movieLight}
-                  alt="POSTER"
-                />
+                <img className="animate-fadein" src={context.theme === "dark" ? movieDark : movieLight} alt="POSTER" />
               )}
             </div>
             <div className="detail-title">
               <div id="detail-title">
                 <h1 className="fg fg2 ent-text-shadow">{movie.title}</h1>
-                {movie.vote_count ? (
-                  <Rating
-                    voteAverage={movie.vote_average}
-                    voteCount={movie.vote_count}
-                  />
-                ) : null}
+                {movie.vote_count ? <Rating voteAverage={movie.vote_average} voteCount={movie.vote_count} /> : null}
                 {movie.release_date ? (
-                  <div className="fg fg3">
-                    {new Date(movie.release_date).toLocaleDateString(
-                      "en-US",
-                      options
-                    )}
-                  </div>
+                  <div className="fg fg3">{new Date(movie.release_date).toLocaleDateString("en-US", options)}</div>
                 ) : null}
-                {movie.genres ? (
-                  <div className="fg fg3">{solveGenres(movie.genres)}</div>
-                ) : null}
+                {movie.genres ? <div className="fg fg3">{solveGenres(movie.genres)}</div> : null}
               </div>
             </div>
             <div className="detail-desc">
@@ -112,17 +99,9 @@ const MovieDetailPage = ({ match }) => {
 
             <ReviewsBlock movie_id={movie.id} />
 
-            <RelatedMoviesBlock
-              title="You Might Also Like"
-              type="similar"
-              movie_id={movie.id}
-            />
+            <RelatedMoviesBlock title="You Might Also Like" type="similar" movie_id={movie.id} />
 
-            <RelatedMoviesBlock
-              title="Viewers Also Bought"
-              type="recommendations"
-              movie_id={movie.id}
-            />
+            <RelatedMoviesBlock title="Viewers Also Bought" type="recommendations" movie_id={movie.id} />
 
             <ImageGallery title="Related Images" id={movie.id} type="movie" />
 
@@ -132,10 +111,7 @@ const MovieDetailPage = ({ match }) => {
           </div>
         </>
       ) : (
-        <NoData
-          svgPath={context.theme === "dark" ? movieDark : movieLight}
-          label="MOVIE NOT FOUND"
-        />
+        <NoData svgPath={context.theme === "dark" ? movieDark : movieLight} label="MOVIE NOT FOUND" />
       )}
     </section>
   );

@@ -11,7 +11,7 @@ import ThemeButton from "../ui/ThemeButton";
 import MovieCardList from "../element/MovieCardList";
 
 const MovieListPage = ({ link, title }) => {
-  const match = useParams();
+  const { kid } = useParams();
   const navigate = useNavigate();
 
   const [isLoading, setIsLoading] = useState(false);
@@ -21,7 +21,7 @@ const MovieListPage = ({ link, title }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
     setIsLoading(true);
-    const fullLink = API_END_POINT + (match.params.kid ? `/keyword/${match.params.kid}/movies` : link);
+    const fullLink = API_END_POINT + (kid ? `/keyword/${kid}/movies` : link);
     Axio.get(fullLink)
       .then((res) => {
         setMovieList(res.data.results);
@@ -32,11 +32,11 @@ const MovieListPage = ({ link, title }) => {
         setMovieList([]);
         setIsLoading(false);
       });
-  }, [link, match.params.kid]);
+  }, [link, kid]);
 
   useEffect(() => {
-    if (match.params.kid) {
-      const klink = API_END_POINT + `/keyword/${match.params.kid}`;
+    if (kid) {
+      const klink = API_END_POINT + `/keyword/${kid}`;
       Axio.get(klink)
         .then((res) => {
           setKeywordName(res.data.name);
@@ -50,7 +50,7 @@ const MovieListPage = ({ link, title }) => {
       document.title = `Enties \u2022 ${title}`;
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [match.params.kid]);
+  }, [kid]);
 
   const closePage = () => {
     const resSec = document.getElementById("result");
@@ -64,7 +64,7 @@ const MovieListPage = ({ link, title }) => {
   return (
     <section className="MovieListPage bg bg1 animate-popup" id="result">
       <div className="title-bar">
-        {match.params.kid && keywordName ? (
+        {kid && keywordName ? (
           <div>
             <h4 style={{ display: "inline-block", marginRight: "8px" }} className="fg fgg animate-enlarge">
               Keyword:

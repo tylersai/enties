@@ -15,6 +15,12 @@ import ActorPage from "./components/page/ActorPage";
 import { ThemeContext, toggleTheme } from "./utils/Theme";
 import SearchBar from "./components/ui/SearchBar";
 
+const NotFound = () => (
+  <section className="bg bg1">
+    <NoData />
+  </section>
+);
+
 const App = () => {
   const [theme, setTheme] = useState("dark");
   const changeTheme = () => {
@@ -29,23 +35,17 @@ const App = () => {
           <SearchBar />
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/search/movie" element={<SearchByTypePage />} />
-            <Route path="/search" element={<SearchPage />} />
-            <Route path="/movie/:id" element={<MovieDetailPage />} />
+            <Route path="/search" element={<SearchPage />}>
+              <Route path="movie" element={<SearchByTypePage />} />
+            </Route>
+            <Route path="/movie/:mid" element={<MovieDetailPage />} />
             <Route path="/discover" element={<MovieListPage title="Discover" link="/discover/movie" />} />
             <Route path="/trending" element={<MovieListPage title="Trending" link="/trending/movie/week" />} />
             <Route path="/highest-rated" element={<MovieListPage title="Highest Rated" link="/movie/top_rated" />} />
             <Route path="/keyword/:kid" element={<MovieListPage />} />
             <Route path="/collection/:cid" element={<CollectionPage />} />
             <Route path="/actor/:aid" element={<ActorPage />} />
-            <Route
-              path="*"
-              element={
-                <section className="bg bg1">
-                  <NoData />
-                </section>
-              }
-            />
+            <Route path="*" element={<NotFound />} />
           </Routes>
           <FooterSection />
         </Router>

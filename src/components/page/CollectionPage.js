@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
+import { useParams } from "react-router-dom";
 import Axio from "axios";
 
 import "./CollectionPage.css";
@@ -13,7 +14,8 @@ import NoData from "../element/NoData";
 import Carousel from "../ui/Carousel";
 import { ThemeContext } from "../../utils/Theme";
 
-const CollectionPage = ({ match }) => {
+const CollectionPage = () => {
+  const { cid } = useParams();
   const [isLoadingImg, setIsLoadingImg] = useState(false);
   const [isLoadingColl, setIsLoadingColl] = useState(false);
   const [collection, setCollection] = useState({});
@@ -23,7 +25,7 @@ const CollectionPage = ({ match }) => {
 
   const fetchImg = async () => {
     setIsLoadingImg(true);
-    const imgLink = API_END_POINT + `/collection/${match.params.cid}/images`;
+    const imgLink = API_END_POINT + `/collection/${cid}/images`;
     try {
       const resImg = await Axio.get(imgLink);
       setImg(resImg.data);
@@ -35,7 +37,7 @@ const CollectionPage = ({ match }) => {
 
   const fetchColl = async () => {
     setIsLoadingColl(true);
-    const collLink = API_END_POINT + `/collection/${match.params.cid}`;
+    const collLink = API_END_POINT + `/collection/${cid}`;
     try {
       const resColl = await Axio.get(collLink);
       setCollection(resColl.data);
@@ -50,9 +52,9 @@ const CollectionPage = ({ match }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
     fetchImg();
-    fetchColl();
+    cid && fetchColl();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [cid]);
 
   return (
     <section className="CollectionPage bg bg1 animate-popup">
@@ -66,17 +68,11 @@ const CollectionPage = ({ match }) => {
           <div className="detail-wrapper">
             <div className="detail-poster" id="detail-poster">
               {collection.backdrop_path ? (
-                <img
-                  className="animate-fadein"
-                  src={POSTER_PATH + collection.backdrop_path}
-                  alt="POSTER"
-                />
+                <img className="animate-fadein" src={POSTER_PATH + collection.backdrop_path} alt="POSTER" />
               ) : (
                 <img
                   className="animate-fadein no-poster"
-                  src={
-                    context.theme === "dark" ? collectionDark : collectionLight
-                  }
+                  src={context.theme === "dark" ? collectionDark : collectionLight}
                   alt="POSTER"
                 />
               )}
@@ -87,23 +83,14 @@ const CollectionPage = ({ match }) => {
                 <hr align="left" className="fg" />
                 <p className="fg fg3">{collection.overview}</p>
                 <div className="fg fg3 section-label">Buy Bundle : </div>
-                <PriceTag
-                  price={
-                    collection.parts.length * 13 +
-                    0.99 +
-                    parseInt(collection.parts.length * 1.5)
-                  }
-                />
+                <PriceTag price={collection.parts.length * 13 + 0.99 + parseInt(collection.parts.length * 1.5)} />
               </div>
             </div>
           </div>
           <CollectionParts parts={collection.parts} />
         </>
       ) : (
-        <NoData
-          svgPath={context.theme === "dark" ? collectionDark : collectionLight}
-          label="BUNDLE NOT FOUND"
-        />
+        <NoData svgPath={context.theme === "dark" ? collectionDark : collectionLight} label="BUNDLE NOT FOUND" />
       )}
     </section>
   );
