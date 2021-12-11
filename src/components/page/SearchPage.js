@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Axio from "axios";
 import queryString from "query-string";
 
@@ -15,8 +15,9 @@ import MovieCardSmall from "../element/MovieCardSmall";
 import CollectionCard from "../element/CollectionCard";
 import ActorCard from "../element/ActorCard";
 
-const SearchPage = (props) => {
+const SearchPage = () => {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -24,7 +25,7 @@ const SearchPage = (props) => {
   const [actorRes, setActorRes] = useState({});
   const [collectionRes, setCollectionRes] = useState({});
 
-  const queryParams = queryString.parse(props.location.search);
+  const queryParams = queryString.parse(location.search);
   const searchQuery = queryParams.q ? queryParams.q.replace("+", " ").trim() : "";
 
   const getLink = (mediaType) => {

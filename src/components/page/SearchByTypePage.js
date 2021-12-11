@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Axio from "axios";
 import queryString from "query-string";
 
@@ -13,10 +13,11 @@ import MovieCardList from "../element/MovieCardList";
 import ThemeButton from "../ui/ThemeButton";
 import KeywordsBlock from "../element/KeywordsBlock";
 
-const SearchByTypePage = (props) => {
+const SearchByTypePage = () => {
   const navigate = useNavigate();
+  const location = useLocation();
 
-  const queryParams = queryString.parse(props.location.search);
+  const queryParams = queryString.parse(location.search);
   const searchQuery = queryParams.q ? queryParams.q.replace("+", " ").trim() : "";
   let currentPage = queryParams.p ? queryParams.p.trim() : 1;
 
