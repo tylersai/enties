@@ -1,10 +1,11 @@
 import React from "react";
-import { Link, withRouter } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./SearchBar.css";
 import homeIcon from "../../assets/home.svg";
 import { useNavigate } from "react-router-dom";
 
-const SearchBar = ({ location }) => {
+const SearchBar = () => {
+  const location = useLocation();
   const history = useNavigate();
   const ref = React.createRef();
 
@@ -34,4 +35,4 @@ const SearchBar = ({ location }) => {
   );
 };
 
-export default withRouter(SearchBar);
+export default SearchBar;
