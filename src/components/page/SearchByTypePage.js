@@ -14,7 +14,7 @@ import ThemeButton from "../ui/ThemeButton";
 import KeywordsBlock from "../element/KeywordsBlock";
 
 const SearchByTypePage = (props) => {
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   const queryParams = queryString.parse(props.location.search);
   const searchQuery = queryParams.q ? queryParams.q.replace("+", " ").trim() : "";
@@ -83,10 +83,10 @@ const SearchByTypePage = (props) => {
           fill: "forwards",
         }
       ).onfinish = () => {
-        history.goBack();
+        navigate(-1);
       };
     } catch {
-      history.goBack();
+      navigate(-1);
     }
   };
 

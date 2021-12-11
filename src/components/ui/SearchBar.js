@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 const SearchBar = () => {
   const location = useLocation();
-  const history = useNavigate();
+  const navigate = useNavigate();
   const ref = React.createRef();
 
   if (location.pathname === "/") {
@@ -17,7 +17,7 @@ const SearchBar = () => {
     e.preventDefault();
     const searchTerm = ref.current.value;
     if (searchTerm) {
-      history.push(`/search?q=${searchTerm.replace(" ", "+")}`);
+      navigate(`/search?q=${searchTerm.replace(" ", "+")}`);
     }
   };
 

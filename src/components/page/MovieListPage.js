@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Axio from "axios";
 
 import "./MovieListPage.css";
@@ -10,8 +10,9 @@ import Loading from "../ui/Loading";
 import ThemeButton from "../ui/ThemeButton";
 import MovieCardList from "../element/MovieCardList";
 
-const MovieListPage = ({ link, title, match }) => {
-  const history = useNavigate();
+const MovieListPage = ({ link, title }) => {
+  const match = useParams();
+  const navigate = useNavigate();
 
   const [isLoading, setIsLoading] = useState(false);
   const [movieList, setMovieList] = useState([]);
@@ -56,7 +57,7 @@ const MovieListPage = ({ link, title, match }) => {
     resSec.classList.remove("animate-popup");
     resSec.classList.add("animate-popdown");
     setTimeout(() => {
-      history.goBack();
+      navigate(-1);
     }, 200);
   };
 

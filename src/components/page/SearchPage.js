@@ -16,7 +16,7 @@ import CollectionCard from "../element/CollectionCard";
 import ActorCard from "../element/ActorCard";
 
 const SearchPage = (props) => {
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -69,7 +69,7 @@ const SearchPage = (props) => {
     resSec.classList.remove("animate-popup");
     resSec.classList.add("animate-popdown");
     setTimeout(() => {
-      history.push("/");
+      navigate("/");
     }, 200);
   };
 

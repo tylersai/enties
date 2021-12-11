@@ -9,9 +9,9 @@ import { ThemeContext } from "../../utils/Theme";
 
 const MovieCardSmall = ({ m }) => {
   const context = useContext(ThemeContext);
-  const history = useNavigate();
+  const navigate = useNavigate();
   const goDetail = () => {
-    history.push(`/movie/${m.id}`);
+    navigate(`/movie/${m.id}`);
   };
 
   return (

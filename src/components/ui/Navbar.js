@@ -4,9 +4,9 @@ import "./Navbar.css";
 import ThemeButton from "../ui/ThemeButton";
 
 const Navbar = (props) => {
-  const history = useNavigate();
+  const navigate = useNavigate();
 
-  const routeTo = () => history.push("/");
+  const routeTo = () => navigate("/");
 
   return (
     <nav className="Navbar">

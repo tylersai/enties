@@ -13,9 +13,9 @@ const MovieCard = ({ m }) => {
   const options = { year: "numeric", month: "short", day: "numeric" };
 
   const context = useContext(ThemeContext);
-  const history = useNavigate();
+  const navigate = useNavigate();
   const goDetail = () => {
-    history.push(`/movie/${m.id}`);
+    navigate(`/movie/${m.id}`);
   };
 
   return (

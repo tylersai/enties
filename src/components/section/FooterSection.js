@@ -7,9 +7,9 @@ import twitter from "../../assets/twitter.svg";
 import github from "../../assets/github.svg";
 
 const FooterSection = () => {
-  const history = useNavigate();
+  const navigate = useNavigate();
   const goHome = () => {
-    history.push("/");
+    navigate("/");
     window.scrollTo(0, 0);
   };
   return (

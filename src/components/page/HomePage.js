@@ -7,13 +7,13 @@ import SearchForm from "../ui/SearchForm";
 import DiscoverSection from "../section/DiscoverSection";
 
 function HomePage() {
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   useEffect(() => {
     document.title = "Enties";
   }, []);
 
-  const processSearch = (qs) => history.push(`/search?q=${qs}`);
+  const processSearch = (qs) => navigate(`/search?q=${qs}`);
 
   return (
     <Fragment>
