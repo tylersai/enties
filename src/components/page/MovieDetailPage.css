@@ -49,6 +49,8 @@
   max-width: 30vmin;
   height: auto;
   border-radius: 2px;
+  aspect-ratio: 2 / 3;
+  object-fit: contain;
 }
 
 .MovieDetailPage .detail-wrapper .detail-title {
