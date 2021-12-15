@@ -31,6 +31,9 @@
 .movie-card .movie-poster > img {
   height: auto;
   width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: contain;
+  object-position: 50% 0;
 }
 
 .movie-card .movie-desc,
