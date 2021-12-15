@@ -35,9 +35,8 @@ const App = () => {
           <SearchBar />
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/search" element={<SearchPage />}>
-              <Route path="movie" element={<SearchByTypePage />} />
-            </Route>
+            <Route path="/search" element={<SearchPage />} />
+            <Route path="/search/movie" element={<SearchByTypePage />} />
             <Route path="/movie/:mid" element={<MovieDetailPage />} />
             <Route path="/discover" element={<MovieListPage title="Discover" link="/discover/movie" />} />
             <Route path="/trending" element={<MovieListPage title="Trending" link="/trending/movie/week" />} />
