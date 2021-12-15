@@ -14,10 +14,13 @@
   width: auto;
   object-fit: contain;
   border-radius: 2px;
+  aspect-ratio: 2 / 3;
+  object-position: 50% 0;
 }
 .MovieCardSmall > div.img-section > img.no-poster {
   height: auto;
   width: 10vmax;
+  aspect-ratio: 2 / 3;
   object-fit: contain;
 }
 
