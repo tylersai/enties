@@ -14,7 +14,7 @@ const Navbar = (props) => {
         Enties
       </div>
       <div className="nav-menu-group">
-        <ThemeButton className="nav-menu" />
+        {/* <ThemeButton className="nav-menu" /> */}
         <div className="nav-menu animate-enlarge">
           <h3>Pricing</h3>
         </div>
