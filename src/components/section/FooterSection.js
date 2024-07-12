@@ -21,20 +21,20 @@ const FooterSection = () => {
           </div>
           <div className="fg fgg">Entertainment website for movie geeks!</div>
           <div className="social-icons">
-            <a className="social-icon" target="_blank" rel="noopener noreferrer" href="http://twitter.com/thesaihan">
+            <a className="social-icon" target="_blank" rel="noopener noreferrer" href="http://twitter.com/tylerthenoble">
               <img src={twitter} alt="TW" />
             </a>
             <a className="social-icon" target="_blank" rel="noopener noreferrer" href="http://facebook.com/thesaihan">
               <img src={facebook} alt="FB" />
             </a>
-            <a className="social-icon" target="_blank" rel="noopener noreferrer" href="http://instagram.com/thesaihan">
+            <a className="social-icon" target="_blank" rel="noopener noreferrer" href="http://instagram.com/tylerinouterspace">
               <img src={instagram} alt="IG" />
             </a>
             <a
               className="social-icon"
               target="_blank"
               rel="noopener noreferrer"
-              href="http://github.com/thesaihan/enties"
+              href="http://github.com/tylersai/enties"
             >
               <img src={github} alt="GH" />
             </a>
